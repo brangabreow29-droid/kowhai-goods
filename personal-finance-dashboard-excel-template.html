@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard Excel Template (2026) — Build vs Buy Guide</title>
+    <meta name="description" content="A personal finance Excel template gives you a budget dashboard, savings tracker, and debt payoff plan in one file. Here's how to build your own — and when buying one saves 10+ hours.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; color: #2c3e50; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px 40px; }
+        h1 { font-size: 2rem; margin: 40px 0 15px; color: #2c3e50; }
+        h2 { font-size: 1.4rem; margin: 30px 0 15px; color: #2c3e50; }
+        h3 { font-size: 1.1rem; margin: 20px 0 10px; color: #2c3e50; }
+        p { margin-bottom: 15px; color: #34495e; }
+        ul, ol { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 8px; }
+        a { color: #e74c3c; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        .cta-box { background: #f8f9fa; border-left: 4px solid #e74c3c; padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+        .cta-box h3 { margin-top: 0; color: #e74c3c; }
+        .meta { color: #95a5a6; font-size: 0.9rem; margin-bottom: 30px; }
+        blockquote { border-left: 3px solid #bdc3c7; padding-left: 20px; color: #7f8c8d; font-style: italic; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ecf0f1; }
+        th { background: #f8f9fa; font-weight: 600; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ecf0f1; color: #95a5a6; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <h1>Personal Finance Dashboard Excel Template (2026): Should You Build or Buy?</h1>
+    <p class="meta">Published July 2026 · 9 min read</p>
+
+    <p>If you've ever searched for a personal finance Excel template, you already know the problem: there are thousands of them, and most are either too basic to be useful or too broken to trust. The right one turns a spreadsheet into a money dashboard you actually open every week. The wrong one wastes an afternoon and quietly miscalculates your savings goal by 12&times;.</p>
+
+    <p>This guide walks through what a good personal finance dashboard actually needs, how to build one yourself in Excel, and when it's worth paying $12 for a template that's already built, tested, and ready to use today.</p>
+
+    <h2>What a Personal Finance Excel Template Should Do</h2>
+    <p>Personal finance breaks down into three jobs: tracking what comes in and goes out (budgeting), watching a number grow toward a target (savings), and paying off what you owe as cheaply as possible (debt). A solid personal finance Excel template handles all three in one workbook, with a dashboard that rolls them up into a single screen you can glance at.</p>
+
+    <p>Here's what that looks like in practice:</p>
+    <ul>
+        <li><strong>Income and expense tracker</strong> — log transactions, auto-categorise them, and see spend by category without manually adding things up</li>
+        <li><strong>Monthly budget</strong> — set limits per category, see what's left, and get a visual flag when you blow past a limit</li>
+        <li><strong>Savings goal tracker</strong> — a running balance toward a target (emergency fund, house deposit, vacation), with a projected hit-date</li>
+        <li><strong>Debt payoff calculator</strong> — snowball or avalanche method, with an amortization schedule showing how extra payments change the timeline</li>
+        <li><strong>Net worth snapshot</strong> — assets minus liabilities, updated as you log transactions</li>
+        <li><strong>Dashboard</strong> — charts and summary numbers on one screen so you don't have to click through five sheets to know where you stand</li>
+    </ul>
+
+    <p>If your current setup is a single sheet with a column of numbers and a <code>SUM</code> at the bottom, you're doing the minimum. It works, but it doesn't tell you anything — and a budget you have to decode isn't a budget you'll stick with.</p>
+
+    <h2>The Free Options (And Why They Fall Short)</h2>
+    <p>Before talking about building or buying, here's an honest look at the free personal finance Excel templates that rank highly right now:</p>
+
+    <table>
+        <tr><th>Template</th><th>Good</th><th>Missing</th></tr>
+        <tr><td>Microsoft Personal Monthly Budget (built-in)</td><td>Clean, free, no setup</td><td>No savings tracker, no debt calculator, no dashboard — just a budget grid</td></tr>
+        <tr><td>Vertex42 Budget Templates</td><td>Well-structured, regularly updated, free</td><td>Budget-only — you need separate files for savings and debt</td></tr>
+        <tr><td>Vertex42 Debt Reduction Calculator</td><td>Excellent snowball/avalanche calculator</td><td>Standalone — doesn't connect to your budget or savings tracker</td></tr>
+        <tr><td>Microsoft Personal Finance Tracker</td><td>Combines budget and basic net worth</td><td>No savings goal tracking, dashboard is minimal</td></tr>
+        <tr><td>Tiller Foundation Template (Excel)</td><td>Auto-imports bank transactions, full system</td><td>Requires a $79/year subscription — not a one-time template</td></tr>
+    </table>
+
+    <p>The pattern is the same as with most free templates: you get one piece of the puzzle, and you end up juggling 2&ndash;3 separate files that don't talk to each other. Your budget doesn't know about your debt payoff. Your savings tracker doesn't know how much you have left to save this month. Your net worth calculation is manual.</p>
+
+    <p>Tiller solves this with automation, but you're paying a yearly subscription for the privilege — and if you stop paying, your automated imports stop. For a lot of people, that's the opposite of what they want from a spreadsheet.</p>
+
+    <h2>How to Build Your Own Personal Finance Dashboard in Excel</h2>
+    <p>If you'd rather build than buy, here's the actual structure that works. This is the same architecture used by the better paid templates, so even if you end up buying one, understanding this helps you evaluate whether it's any good.</p>
+
+    <h3>Sheet 1: Transactions</h3>
+    <p>This is the raw data sheet. Every transaction goes here: date, description, amount, category, type (income or expense). Use dropdown validation on the category column so entries stay consistent — if one row says "Groceries" and another says "grocery", your <code>SUMIF</code> formulas will miss it.</p>
+    <p>The key formula: <code>=SUMIF(CategoryColumn, "Groceries", AmountColumn)</code> — this gives you total spend per category without pivot tables.</p>
+
+    <h3>Sheet 2: Budget</h3>
+    <p>List your categories with a planned amount and an actual amount. The actual pulls from the Transactions sheet using <code>SUMIF</code>. Add a column for variance (planned &minus; actual) and apply conditional formatting so any category over budget turns red. That single visual flag is what makes a budget something you glance at instead of decode.</p>
+
+    <h3>Sheet 3: Savings Goals</h3>
+    <p>One row per goal: name, target amount, current balance, monthly contribution, projected hit date. Use <code>=(Target - Current) / MonthlyContribution</code> to get months remaining, then add that to today's date with <code>EDATE(TODAY(), monthsRemaining)</code>. For anything in a high-yield savings account, apply the compound interest formula <code>=Current*(1+rate/n)^(n*years)</code> so your projection reflects real growth, not just deposits.</p>
+
+    <h3>Sheet 4: Debt Payoff</h3>
+    <p>List each debt: balance, interest rate, minimum payment, extra payment. Use the <code>PMT</code> function to calculate monthly payments: <code>=PMT(rate/12, months, -balance)</code> — and note the classic mistake here: divide the annual rate by 12 and multiply years by 12, or your payment will be off by a factor of 12. Build an amortization schedule (one row per month showing interest vs principal split) and add an "extra payment" column so you can see how an extra $50/month changes your payoff date.</p>
+
+    <h3>Sheet 5: Dashboard</h3>
+    <p>This is the payoff for all the above. Pull the key numbers to one screen: total income this month, total spend, savings rate, net worth, and progress bars for each savings goal. Add charts — a spend-by-category pie chart, a savings-vs-goal line chart, and a debt-balance-over-time chart. Use <code>=GETPIVOTDATA</code> or direct cell references; either works.</p>
+
+    <p>If you're comfortable with Excel, building this takes an afternoon. If you're not, it takes a weekend and probably a few YouTube tutorials. Either way, you'll understand your own money better by the end — which is the real argument for building it yourself.</p>
+
+    <h2>The Catch with DIY (And Why I Ended Up Buying)</h2>
+    <p>Here's what nobody tells you about hand-built personal finance spreadsheets: they break. Not immediately — they break in month three, when you add a new category and your <code>SUMIF</code> range quietly doesn't include it. Or your chart doesn't pick up the new month you added. Or you copy a formula down and the references shift. Every formula you write is a formula you have to maintain.</p>
+
+    <p>I built my own personal finance dashboard twice. The first time, I spent six hours on it and it worked for two months before a broken range reference made my savings total wrong by $400 — which I didn't notice until I checked against my bank statement. The second time, I spent four hours and got it right, but then I wanted to add a debt payoff tracker and realised that was another evening of work, plus testing the <code>PMT</code> math to make sure I hadn't made the divide-by-12 error.</p>
+
+    <p>At that point I did the math: my time was worth more than the cost of a template, and the risk of a silent formula error in something as important as my budget wasn't worth it. I bought a pre-built template, and it's what I've used ever since.</p>
+
+    <h2>When Buying a Personal Finance Excel Template Makes Sense</h2>
+    <p>You should buy a personal finance Excel template if any of these apply:</p>
+    <ul>
+        <li><strong>You want a working dashboard today, not next weekend.</strong> A pre-built template opens and works immediately. You replace example numbers with yours and you're done in 10 minutes.</li>
+        <li><strong>You don't trust your own formula writing.</strong> A silent error in a debt payoff calculation can cost you thousands. Tested, pre-built formulas remove that risk.</li>
+        <li><strong>You want everything in one workbook.</strong> Budget, savings, debt, and dashboard linked together — not three separate files you have to reconcile.</li>
+        <li><strong>You don't want a subscription.</strong> A one-time template purchase beats $79/year for Tiller if you don't need automated bank imports.</li>
+    </ul>
+
+    <p>You should build your own if you genuinely enjoy Excel, want full control over every formula, or only need a simple budget without savings or debt tracking. There's no wrong answer — but be honest with yourself about which camp you're in.</p>
+
+    <div class="cta-box">
+        <h3>Personal Finance Dashboard — $12 one-time</h3>
+        <p>Budget, savings goals, debt payoff, and a live dashboard — all in one Excel workbook. Tested formulas, conditional formatting wired up, and charts that auto-update. Works in Excel or Google Sheets. No macros, no subscriptions, no add-ins.</p>
+        <p><a href="https://brangabrew.gumroad.com/l/dofyn">Get the Personal Finance Dashboard →</a></p>
+    </div>
+
+    <h2>What's Inside the Personal Finance Dashboard Template</h2>
+    <p>If you're considering the template above, here's exactly what you get so you can decide whether it's worth $12 versus building your own:</p>
+
+    <ul>
+        <li><strong>Transaction tracker</strong> — log income and expenses with dropdown category validation; no more typos breaking your totals</li>
+        <li><strong>Monthly budget</strong> — planned vs actual per category, with over-budget categories flagged red automatically</li>
+        <li><strong>Savings goal tracker</strong> — up to 5 goals with progress bars, projected hit dates, and compound interest projection</li>
+        <li><strong>Debt payoff calculator</strong> — snowball and avalanche methods, full amortization schedule, extra-payment scenario modelling</li>
+        <li><strong>Net worth tracker</strong> — assets and liabilities with a rolling monthly snapshot</li>
+        <li><strong>Dashboard</strong> — spend-by-category pie chart, savings-vs-goal line chart, debt balance over time, and key summary numbers on one screen</li>
+        <li><strong>No locked sheets</strong> — customise categories, add columns, change colours. It's your file.</li>
+    </ul>
+
+    <p>No macros, no add-ins, no <code>GOOGLEFINANCE</code> dependencies. It runs on standard Excel functions that work identically in Google Sheets, so you can open it in either.</p>
+
+    <h2>How to Set It Up in 10 Minutes</h2>
+    <ol>
+        <li><strong>Download and open</strong> — unzip the file and open in Excel or upload to Google Drive and open in Sheets</li>
+        <li><strong>Set your budget categories</strong> — replace the example categories (Rent, Groceries, Transport, etc.) with your own in the Budget sheet</li>
+        <li><strong>Set your savings goals</strong> — enter goal name, target amount, and current balance for each goal in the Savings sheet</li>
+        <li><strong>Add your debts</strong> — enter balance, interest rate, and minimum payment for each debt in the Debt sheet; pick snowball or avalanche</li>
+        <li><strong>Log transactions</strong> — start entering income and expenses in the Transactions sheet; the dashboard updates automatically</li>
+        <li><strong>Check the dashboard</strong> — open the Dashboard sheet to see your full financial picture on one screen</li>
+    </ol>
+
+    <p>That's it. The formulas, charts, and conditional formatting are all pre-wired. You're not building anything — you're entering your numbers.</p>
+
+    <h2>Other Templates That Pair Well</h2>
+    <p>If you're overhauling how you track your life, these complement the Personal Finance Dashboard:</p>
+    <ul>
+        <li><a href="https://brangabrew.gumroad.com/l/hqpbf">Freelance Business Tracker ($9)</a> — if you're self-employed, track project income and invoices separately, then roll the totals into your personal finance dashboard</li>
+        <li><a href="https://brangabrew.gumroad.com/l/Pthc5A8r_UKkKvZR7Qbw">Job Search Tracker ($6)</a> — if you're between roles, track applications and interviews alongside your budget so you know your runway</li>
+        <li><a href="https://brangabrew.gumroad.com/l/bPzQyIMzjynbaP1t1PGq">30-Day Productivity Reset ($5)</a> — pair a financial reset with a productivity reset to start the next month sharp</li>
+    </ul>
+
+    <h2>Build vs Buy: The Honest Summary</h2>
+    <table>
+        <tr><th></th><th>Build it yourself</th><th>Buy a template ($12)</th></tr>
+        <tr><td>Cost</td><td>$0</td><td>$12 one-time</td></tr>
+        <tr><td>Time to working dashboard</td><td>4&ndash;8 hours</td><td>10 minutes</td></tr>
+        <tr><td>Formula reliability</td><td>Depends on you — silent errors are real</td><td>Tested and pre-built</td></tr>
+        <tr><td>Customisation</td><td>Total</td><td>Full (no locked sheets)</td></tr>
+        <tr><td>Savings + debt + budget in one file</td><td>Only if you build all three</td><td>Yes, linked together</td></tr>
+        <tr><td>Dashboard with charts</td><td>Build it yourself</td><td>Pre-wired and auto-updating</td></tr>
+        <tr><td>Maintenance</td><td>Every formula is yours to maintain</td><td>None — it just works</td></tr>
+    </table>
+
+    <p>If your time is worth more than $2/hour — and it is — buying wins on pure economics. But the real value isn't the time saved; it's the confidence that the math is right. A broken <code>SUMIF</code> in a budget you trust is worse than no budget at all, because it gives you false confidence.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Does Excel have a built-in personal finance template?</h3>
+    <p>Yes. Excel's template gallery (File &rarr; New &rarr; search "budget") includes a Personal Monthly Budget and a Personal Finance Tracker. Both are free and functional, but neither includes a savings goal tracker, a debt payoff calculator, or a proper dashboard. They're a starting point, not a complete system.</p>
+
+    <h3>Does a personal finance Excel template work in Google Sheets?</h3>
+    <p>If the template uses standard Excel functions (SUM, SUMIF, PMT, IF, EDATE) and no macros, yes — just upload the .xlsx file to Google Drive and open it in Sheets. The formulas work identically. Some advanced chart styling and conditional formatting may look slightly different after import, but the calculations are correct.</p>
+
+    <h3>What's the difference between a free template and a paid one?</h3>
+    <p>A free template is usually a single sheet you still have to wire up and verify — typically just a budget grid. A paid template ships with budget, savings, and debt tools already linked to a dashboard, with tested formulas and conditional formatting built in. You're paying for the assembly, the testing, and the fact that it works the day you open it.</p>
+
+    <h3>Is a spreadsheet better than a budgeting app?</h3>
+    <p>It depends. Apps like YNAB and Monarch Money offer automated bank imports and mobile convenience, but they cost $8&ndash;15/month forever. A spreadsheet is a one-time purchase (or free), lives on your computer, and never locks your data behind a subscription. If you value ownership and low cost over automation, a spreadsheet wins. If you won't maintain a spreadsheet manually, an app wins.</p>
+
+    <h3>Can I track net worth in Excel?</h3>
+    <p>Yes. List assets (checking, savings, investments, property) and liabilities (loans, credit card balances, mortgage) on a single sheet, and net worth is simply <code>=SUM(Assets) - SUM(Liabilities)</code>. Add a date column and log a snapshot monthly to see the trend over time. The Personal Finance Dashboard template includes this built in.</p>
+
+    <h3>What's the biggest mistake people make with a personal finance spreadsheet?</h3>
+    <p>Using an annual interest rate in the <code>PMT</code> function without dividing by 12. If your loan is 6% APR and you enter <code>0.06</code> as the rate with monthly periods, your calculated payment will be wildly wrong. Always divide the annual rate by 12 and multiply the years by 12 so the units match. This is the most common silent error in DIY debt payoff spreadsheets.</p>
+
+    <h3>How often should I update my personal finance dashboard?</h3>
+    <p>Weekly is the sweet spot. Log transactions once a week (10 minutes), check your dashboard, and adjust if you're off track. Monthly is the minimum — at month-end, reconcile against your bank statement, update your net worth snapshot, and review your savings progress. Daily is overkill for most people and leads to burnout.</p>
+
+    <footer>
+        <p>Templates by <a href="https://brangabrew.gumroad.com">brangabrew.gumroad.com</a> · One-time purchases, no subscriptions</p>
+    </footer>
+</body>
+</html>
