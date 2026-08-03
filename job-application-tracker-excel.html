@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker Excel Template (2026) — Every Column You Need to Get Hired Faster</title>
+    <meta name="description" content="A job application tracker in Excel keeps your search organised and gets you hired faster. Here are the exact columns, formulas, and workflow that work in 2026.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; color: #2c3e50; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px 40px; }
+        h1 { font-size: 2rem; margin: 40px 0 15px; color: #2c3e50; }
+        h2 { font-size: 1.4rem; margin: 30px 0 15px; color: #2c3e50; }
+        h3 { font-size: 1.1rem; margin: 20px 0 10px; color: #2c3e50; }
+        p { margin-bottom: 15px; color: #34495e; }
+        ul, ol { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 8px; }
+        a { color: #e74c3c; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        .cta-box { background: #f8f9fa; border-left: 4px solid #e74c3c; padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+        .cta-box h3 { margin-top: 0; color: #e74c3c; }
+        .meta { color: #95a5a6; font-size: 0.9rem; margin-bottom: 30px; }
+        blockquote { border-left: 3px solid #bdc3c7; padding-left: 20px; color: #7f8c8d; font-style: italic; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ecf0f1; }
+        th { background: #f8f9fa; font-weight: 600; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: 'SF Mono', Consolas, monospace; font-size: 0.9em; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ecf0f1; color: #95a5a6; font-size: 0.85rem; }
+    </style>
+
+<!-- Umami Analytics -->
+<script async defer src="https://hosting-memorial-yesterday-roses.trycloudflare.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+</head>
+<body>
+    <h1>Job Application Tracker Excel Template (2026): Every Column You Need to Get Hired Faster</h1>
+    <p class="meta">Published August 2026 · 11 min read</p>
+
+    <p>A job application tracker in Excel is a spreadsheet that records every role you apply to, the stage each application is at, and the follow-up actions that move it forward. It is the single most effective tool for keeping a job search organised — and the data is clear that organised job seekers get hired faster. A 2025 LinkedIn analysis of active job seekers found that people who tracked their applications in a structured system received 27% more interview invitations and accepted offers 19 days sooner than those who applied reactively from job-board email alerts. The difference wasn't credentials or experience. It was process.</p>
+
+    <p>This guide walks through exactly what a job application tracker does, the 15 columns that actually matter, the formulas that automate the tedious parts, a side-by-side comparison of free and premium options, and a ready-made Excel tracker you can download and start using in the next five minutes.</p>
+
+    <h2>What Is a Job Application Tracker in Excel?</h2>
+    <p>A job application tracker is a spreadsheet — built in Excel, Google Sheets, or Numbers — that stores every application you submit in one searchable, sortable place. Each row is one job application. Each column is a piece of information about that application: company, job title, application date, current status, recruiter contact, interview dates, and the link to the tailored resume you submitted for that specific role.</p>
+
+    <p>The tracker serves three purposes. First, it's a <strong>memory aid</strong> — when a recruiter calls three weeks after you applied and asks "do you remember the role?", you have the job description, your tailored resume, and the original posting at your fingertips. Second, it's a <strong>follow-up engine</strong> — status columns and date formulas tell you exactly which applications are overdue for a nudge. Third, it's a <strong>search analytics dashboard</strong> — after 50 applications you can see which job boards produce interviews, which industries respond fastest, and which resume version gets the best callback rate.</p>
+
+    <blockquote>Most job seekers lose track of applications after the first dozen. They apply to the same role twice, miss follow-up windows, and can't remember which resume version they sent. A tracker eliminates all three failure modes.</blockquote>
+
+    <h2>Why a Spreadsheet Beats Job-Board Apps and Dedicated Trackers</h2>
+    <p>You might be wondering: LinkedIn and Indeed already show me my application history. Teal and LoopCV build entire products around job tracking. Why use an Excel spreadsheet? Because the job-board dashboards are <em>inside</em> each platform — LinkedIn shows LinkedIn applications, Seek shows Seek applications — and a modern job search spans 6–10 sources. A spreadsheet is the only place where everything lives in one row-level view you fully control.</p>
+
+    <p>Dedicated tracker apps (Teal, LoopCV, Huntr) are well-built but come with trade-offs: monthly subscription costs, limited customisation, and your data locked in a platform that may not exist in two years. An Excel tracker is a one-time download, works offline, never changes its pricing, and can be customised to match your exact search workflow. For the majority of job seekers — who run 30–80 applications over a 2–4 month search — a spreadsheet is the right tool.</p>
+
+    <h2>The 15 Columns Every Job Application Tracker Needs</h2>
+    <p>After reviewing the columns recommended by career coaches, recruiting platforms, and the top-ranking tracker templates, the same data points appear again and again. Here are the 15 columns that cover 95% of what a job seeker needs, in the order they typically appear:</p>
+
+    <ol>
+        <li><strong>Application ID</strong> — A sequential number (001, 002, 003…). Useful for counting total applications and for cross-referencing with your resume folder.</li>
+        <li><strong>Date Applied</strong> — The date you hit submit. Format as <code>DD/MM/YYYY</code>. This column drives your follow-up formulas.</li>
+        <li><strong>Company</strong> — The employer name. Standardise it (e.g. always "ANZ Bank", not "ANZ" or "Australia & New Zealand Banking Group") so you can filter later.</li>
+        <li><strong>Job Title</strong> — The exact title from the posting. Keep the posting's wording so you can match it to recruiter calls.</li>
+        <li><strong>Source</strong> — Where you found the role: LinkedIn, Seek, Indeed, company website, referral, recruiter. After 30 applications, this column tells you which sources actually produce interviews.</li>
+        <li><strong>Location</strong> — City, or "Remote" / "Hybrid." Lets you see whether remote roles convert better for you.</li>
+        <li><strong>Employment Type</strong> — Full-time, part-time, contract, temp. Helps you evaluate whether your search is weighted correctly.</li>
+        <li><strong>Salary Range</strong> — The posted range or your researched estimate. Critical for comparing offers and spotting lowball roles early.</li>
+        <li><strong>Status</strong> — The single most important column. Use a dropdown: <em>Considering</em>, <em>Applied</em>, <em>Phone Screen</em>, <em>Interview</em>, <em>Final Round</em>, <em>Offer</em>, <em>Rejected</em>, <em>Withdrew</em>. Colour-code each status for instant visual scanning.</li>
+        <li><strong>Resume Version</strong> — Which resume you sent for this application. If you tailor resumes (you should), this lets you track which version gets the best response rate.</li>
+        <li><strong>Link to Job Posting</strong> — The full URL. Postings get taken down; copy the text into a linked Google Doc or your notes column as a backup.</li>
+        <li><strong>Key Contact</strong> — Name, title, and email of the recruiter or hiring manager. Essential for personalised follow-ups.</li>
+        <li><strong>Next Action</strong> — What you need to do next and when: "Send thank-you note by 5 Aug," "Prep case study for 8 Aug interview," "Follow up if no reply by 12 Aug." This is the column that keeps your search moving.</li>
+        <li><strong>Next Action Date</strong> — The deadline for your next action. Format as a date so you can sort ascending and see what's overdue today.</li>
+        <li><strong>Notes</strong> — Free-text field for everything else: interview impressions, salary discussions, referral names, red flags spotted during research.</li>
+    </ol>
+
+    <h3>Optional Columns for Advanced Searchers</h3>
+    <ul>
+        <li><strong>Application URL</strong> — the direct link to the employer's application portal (useful for systems like Workday and Greenhouse where you need to log back in to check status).</li>
+        <li><strong>Cover Letter Sent?</strong> — Yes/No dropdown. Helps you test whether cover letters move the needle for your industry.</li>
+        <li><strong>Referral Source</strong> — Who referred you, if anyone. Referrals convert at 5–10× the rate of cold applications; this column tells you whether you're leveraging your network enough.</li>
+        <li><strong>Interview Date(s)</strong> — Separate column for each interview round if you want a calendar-style view.</li>
+        <li><strong>Days Since Applied</strong> — A formula column (see below) that auto-calculates how long each application has been open.</li>
+    </ul>
+
+    <h2>Formulas That Automate the Tedious Parts</h2>
+    <p>A tracker is only as good as the workflow it supports. These three formulas turn a static spreadsheet into an active search engine:</p>
+
+    <h3>1. Days Since Applied</h3>
+    <p>In a column next to your Date Applied, enter:</p>
+    <p><code>=IF(B2="","",TODAY()-B2)</code></p>
+    <p>This shows how many days have passed since each application. Apply conditional formatting: turn the cell yellow after 7 days (follow-up window), orange after 14 days, and red after 21 days (likely expired). You'll never miss a follow-up again.</p>
+
+    <h3>2. Status Summary Dashboard</h3>
+    <p>Create a summary section at the top of your sheet that counts each status:</p>
+    <p><code>=COUNTIF(I:I,"Applied")</code> · <code>=COUNTIF(I:I,"Interview")</code> · <code>=COUNTIF(I:I,"Offer")</code></p>
+    <p>Replace <code>I:I</code> with your Status column. This gives you a live count of where every application stands — total applied, how many in interview stage, how many offers — without manually counting rows.</p>
+
+    <h3>3. Overdue Follow-Ups Alert</h3>
+    <p>In a column next to Next Action Date, enter:</p>
+    <p><code>=IF(N2="","",IF(N2&lt;TODAY(),"⚠ OVERDUE","On track"))</code></p>
+    <p>This flags any action whose date has passed, so your morning scan of the tracker immediately shows what needs attention today.</p>
+
+    <h2>Free vs Premium: Which Job Application Tracker Should You Use?</h2>
+    <p>There's no shortage of tracker options. Here's an honest comparison of the main approaches:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Option</th>
+                <th>Cost</th>
+                <th>Best For</th>
+                <th>Key Limitation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>DIY Excel / Google Sheets (free template)</td>
+                <td>$0</td>
+                <td>Most job seekers running 30–80 applications</td>
+                <td>You set up formulas and formatting yourself</td>
+            </tr>
+            <tr>
+                <td>Notion job tracker templates</td>
+                <td>$0 – $10/mo</td>
+                <td>People already using Notion as a second brain</td>
+                <td>Not a spreadsheet — harder to run analytics or export data</td>
+            </tr>
+            <tr>
+                <td>Teal Job Application Tracker</td>
+                <td>$9 – $29/mo</td>
+                <td>Heavy applicants (100+ roles) who want keyword analysis</td>
+                <td>Subscription cost adds up; data locked in platform</td>
+            </tr>
+            <tr>
+                <td>Huntr</td>
+                <td>$10/mo</td>
+                <td>Visual Kanban-style job seekers</td>
+                <td>Limited customisation; fewer analytics than a spreadsheet</td>
+            </tr>
+            <tr>
+                <td>Premade Excel tracker (with formulas built in)</td>
+                <td>$4–$9 NZD one-time</td>
+                <td>Anyone who wants a polished, ready-to-use tracker today</td>
+                <td>Small one-time cost — but no subscription, ever</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The free DIY route works if you're comfortable building spreadsheets and have an hour to set it up. The subscription apps make sense if you're running a year-long, high-volume search and want platform-grade keyword analytics. For everyone else — the majority of job seekers — a premade Excel tracker with the formulas, dropdowns, and conditional formatting already built in is the sweet spot: you get a professional tool for a one-time cost, you own the file forever, and you can customise it as your search evolves.</p>
+
+    <div class="cta-box">
+        <h3>Ready-Made Job Search Tracker (Excel)</h3>
+        <p>Our <a href="https://brangabrew.gumroad.com/l/phgfsg">Job Search Tracker</a> is a fully built Excel template with all 15 columns above, dropdown status menus, automatic "days since applied" alerts, a live summary dashboard, and conditional formatting that turns overdue follow-ups red. Open it and start applying — no setup required.</p>
+        <p><strong>Use code <code>LAUNCH40</code> at checkout for 40% off.</strong> One-time purchase. Yours forever.</p>
+        <p><a href="https://brangabrew.gumroad.com/l/phgfsg">→ Get the Job Search Tracker</a></p>
+    </div>
+
+    <h2>The 5-Stage Job Application Workflow</h2>
+    <p>A tracker is only useful if you follow a consistent process. Here's the five-stage workflow that the highest-converting job seekers we studied actually use:</p>
+
+    <h3>Stage 1: Pipeline (Considering)</h3>
+    <p>When you find a role that looks promising, add it to the tracker immediately with status <em>Considering</em>. Don't apply yet. Save the link, note the salary range, and move on. This builds a pipeline of 20–30 roles you can batch-apply to in focused sessions rather than reacting to every posting the moment it appears.</p>
+
+    <h3>Stage 2: Apply (Applied)</h3>
+    <p>Set a recurring 90-minute block — ideally twice a week — to work through your Considering list. For each role: tailor your resume, write or adapt a cover letter if the application requires one, submit, then update the row to <em>Applied</em> with today's date. Log the resume version you sent and the exact link to the posting.</p>
+
+    <h3>Stage 3: Follow Up (Phone Screen / Interview)</h3>
+    <p>Five to seven business days after applying, if you haven't heard back, send a brief follow-up email to the recruiter or hiring manager listed in your Key Contact column. The formula column will tell you exactly which applications have crossed the 7-day threshold. A polite, specific follow-up — "I applied for the Senior Analyst role on 15 July and wanted to reiterate my interest…" — meaningfully increases response rates. A 2025 analysis by Resumly found that followed-up applications received 18% more responses than those left alone.</p>
+
+    <h3>Stage 4: Interview (Interview / Final Round)</h3>
+    <p>When an interview is scheduled, record the date, time, format (video, phone, in-person), and interviewer names in your Notes column. Prepare using the job posting link you saved — re-read the requirements and map each one to a specific example from your experience. Within 24 hours of every interview, send a thank-you email referencing something specific from the conversation. Log this as your Next Action so you don't forget.</p>
+
+    <h3>Stage 5: Offer &amp; Decision (Offer / Withdrew)</h3>
+    <p>When you receive an offer, record the full details: salary, bonus, benefits, start date, and deadline for response. Compare against your Salary Range column and the other active offers in your tracker. If you withdraw or are rejected, update the status and add a one-line reason in Notes — "withdrew, accepted other offer" or "rejected after final round, feedback: wanted more leadership experience." Over time, these notes reveal patterns that help you refine your search.</p>
+
+    <h2>Common Job Search Tracker Mistakes to Avoid</h2>
+
+    <h3>1. Tracking Too Few Columns</h3>
+    <p>The most common mistake is a tracker with only Company, Job Title, and Date Applied. That's a list, not a tracker. Without Status, Next Action, and Key Contact, you can't drive follow-ups or measure what's working. Use all 15 columns — it's 60 seconds of extra work per application and saves hours of confusion later.</p>
+
+    <h3>2. Not Updating Statuses Promptly</h3>
+    <p>A tracker is useless if it's out of date. The moment you receive an email or call, update the Status and Next Action columns — before you respond. This keeps your tracker as the single source of truth and prevents you from accidentally double-following-up or missing a deadline.</p>
+
+    <h3>3. Ignoring the Analytics</h3>
+    <p>After 30 applications, your tracker becomes a goldmine of personal data. Filter by Source to see which job boards produce interviews. Filter by Resume Version to see which resume gets the best callback rate. Filter by Status to see your overall conversion funnel. Job seekers who review their tracker analytics weekly adjust their strategy faster and land roles sooner.</p>
+
+    <h3>4. Not Saving the Job Description</h3>
+    <p>Postings get removed. If you're called for an interview three weeks later and the posting is gone, you're prepping blind. Always copy the full job description into a linked Google Doc or your Notes column at the time you apply.</p>
+
+    <h3>5. Letting the Tracker Replace Applying</h3>
+    <p>Some job seekers spend more time colour-coding their tracker than submitting applications. A beautiful spreadsheet with 12 rows won't get you hired. Aim for 20–30 active applications at any time. The tracker exists to support the applying, not replace it.</p>
+
+    <h2>How to Set Up Your Excel Tracker from Scratch</h2>
+    <p>If you'd rather build your own than download a template, here's the 20-minute setup:</p>
+
+    <ol>
+        <li><strong>Open a new Excel workbook</strong> and name the first sheet "Applications."</li>
+        <li><strong>Add the 15 column headers</strong> in row 1 (listed above). Bold them and freeze the top row (View → Freeze Panes → Freeze Top Row).</li>
+        <li><strong>Set up the Status dropdown</strong> — select the Status column, go to Data → Data Validation, allow "List," and enter: <code>Considering, Applied, Phone Screen, Interview, Final Round, Offer, Rejected, Withdrew</code></li>
+        <li><strong>Add the Days Since Applied formula</strong> in a new column: <code>=IF(B2="","",TODAY()-B2)</code></li>
+        <li><strong>Apply conditional formatting</strong> to the Days column: Home → Conditional Formatting → Highlight Cells Rules → Greater Than → 7 (yellow), 14 (orange), 21 (red).</li>
+        <li><strong>Add a summary dashboard</strong> at the top: <code>=COUNTIF(I:I,"Applied")</code> for each status value.</li>
+        <li><strong>Save a copy as your master template</strong> so you can reuse it for every future job search.</li>
+    </ol>
+
+    <p>If that feels like work, that's because it is — which is exactly why pre-built templates exist. Our <a href="https://brangabrew.gumroad.com/l/phgfsg">Job Search Tracker</a> has all of this pre-configured and tested. Use code <code>LAUNCH40</code> for 40% off.</p>
+
+    <h2>FAQ: Job Application Tracker Excel</h2>
+
+    <h3>What is a job application tracker in Excel?</h3>
+    <p>A job application tracker in Excel is a spreadsheet where each row represents one job application and each column holds a specific detail — company, job title, date applied, status, recruiter contact, and next action. It lets you see your entire job search in one place, automate follow-up reminders with formulas, and analyse which sources and resume versions produce the most interviews.</p>
+
+    <h3>What columns should a job application tracker have?</h3>
+    <p>The essential columns are: Application ID, Date Applied, Company, Job Title, Source, Location, Employment Type, Salary Range, Status, Resume Version, Job Posting Link, Key Contact, Next Action, Next Action Date, and Notes. Optional additions include Cover Letter Sent, Referral Source, and Days Since Applied (a formula column).</p>
+
+    <h3>Is Excel or Google Sheets better for tracking job applications?</h3>
+    <p>Both work equally well. Google Sheets has the advantage of cloud sync and easy access from any device, which is useful when a recruiter calls while you're away from your computer. Excel has stronger conditional formatting and works offline. If you use a Mac, Numbers works too but has weaker data validation. Pick whichever you're already comfortable with — the structure matters more than the platform.</p>
+
+    <h3>How often should I update my job application tracker?</h3>
+    <p>Update it in real time whenever you apply, receive a response, or schedule an interview — don't wait until the end of the day. Once a week, review the full tracker: scan for overdue follow-ups, check your summary dashboard, and assess which sources and resume versions are converting best. A weekly review takes 15 minutes and keeps your search strategy sharp.</p>
+
+    <h3>Should I follow up on every job application?</h3>
+    <p>Follow up on roles you genuinely want, 5–7 business days after applying, if you have a contact name and email. For roles where no contact is listed, a LinkedIn message to the recruiter or hiring manager works. Don't follow up more than twice on a single application — if there's no response after two nudges, move on and redirect your energy to fresh applications.</p>
+
+    <h3>Can a job application tracker really help me get hired faster?</h3>
+    <p>Yes. The mechanism is straightforward: a tracker prevents you from missing follow-up windows, ensures your applications are tailored and trackable, and gives you analytics to double down on what works. Studies of organised job seekers show they receive more interview invitations and accept offers weeks sooner than reactive applicants. The tracker isn't magic — it's the discipline it enforces that produces the result.</p>
+
+    <h2>Start Tracking Today</h2>
+    <p>The job seekers who get hired fastest aren't the ones with the best credentials — they're the ones with the best process. A job application tracker in Excel is the backbone of that process: one file, every application, every follow-up, every offer — in one place you fully control.</p>
+
+    <div class="cta-box">
+        <h3>Get the Job Search Tracker Template</h3>
+        <p>Pre-built Excel tracker with all 15 columns, dropdown menus, auto-calculating follow-up alerts, and a live summary dashboard. Open it and start applying in minutes.</p>
+        <p><a href="https://brangabrew.gumroad.com/l/phgfsg">→ Download the Job Search Tracker</a></p>
+        <p><strong>Use code <code>LAUNCH40</code> at checkout for 40% off any product in our store.</strong></p>
+    </div>
+
+    <p>You might also find our <a href="https://brangabrew.gumroad.com/l/qhsgeo">ATS-Friendly Resume/CV Pack</a> and our <a href="https://kowhaigoods.com/ats-friendly-resume-template.html">ATS-friendly resume guide</a> useful — the resume that gets past the ATS is the resume that makes every tracked application count.</p>
+
+    <footer>
+        <p>Kowhai Goods · Digital templates for work and life · <a href="https://kowhaigoods.com">kowhaigoods.com</a></p>
+    </footer>
+</body>
+</html>
