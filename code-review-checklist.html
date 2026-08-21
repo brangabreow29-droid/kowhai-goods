@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Review Checklist: 7 Layers Every PR Must Pass</title>
+  <meta name="description" content="A practical code review checklist covering logic, security, tests, performance, and style — the 7-layer framework that stops bugs reaching production.">
+  <link rel="canonical" href="https://kowhaigoods.com/code-review-checklist.html">
+  <script async defer src="https://hosting-memorial-yesterday-roses.trycloudflare.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a code review checklist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A code review checklist is a structured list of items a reviewer verifies before approving a pull request. It covers seven layers: purpose and scope, correctness and logic, security and data handling, tests and coverage, performance and resource use, readability and maintainability, and release and rollback readiness. A checklist beats an ad-hic review because it eliminates reliance on memory, catches categories of bugs reviewers habitually miss, and produces consistent quality regardless of who reviews the PR."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you write a code review checklist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To write a code review checklist, group review items by failure category rather than dumping everything into one list. Start with purpose (does the PR solve the right problem), then logic (does the code do what it claims), security (input validation, auth, injection), tests (do new paths have coverage), performance (N+1 queries, memory, blocking I/O), readability (naming, complexity, comments), and release (feature flags, migrations, rollback). Write each item as a yes/no question so it is verifiable. Aim for 30-50 items total — long enough to be thorough, short enough to actually use on every PR."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a code review checklist or handbook cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A code review checklist costs nothing if you build it yourself from blog posts, but a structured handbook with checklists for general, logic, security, tests, and performance reviews, plus language-specific guidance for 8 languages and a 30-day improvement plan, costs around $14 USD as a one-time purchase. The Code Review Handbook at $14 includes 5 ready-to-use checklists, a 50+ phrase comment bank, review smell quick reference, and measurement framework for review health metrics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best code review checklist for developers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best code review checklist for developers is the 7-layer framework: purpose, logic, security, tests, performance, readability, and release. Each layer has 5-10 yes/no questions that a reviewer can verify in under 15 minutes on a typical PR. The Code Review Handbook expands this into 5 detailed checklists (general, logic, security, tests, performance) with language-specific sections for Python, JavaScript, TypeScript, Java, Go, Rust, C#, Ruby, and C/C++."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I look for when reviewing a pull request?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When reviewing a pull request, look for seven things in order: does the PR solve the stated problem without scope creep, is the logic correct including edge cases, are inputs validated and outputs sanitised, do new code paths have tests and do existing tests still pass, are there performance issues like N+1 queries or blocking calls, is the code readable and maintainable, and is the change safe to deploy with a rollback plan. Working through a checklist in this order prevents the common failure of focusing only on style and missing logic or security bugs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should a code review take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A code review should take 15-30 minutes for a typical PR under 400 lines of diff. Reviews of more than 400 lines should be split or reviewed in batches because reviewer effectiveness drops sharply beyond that threshold — a SmartBear study found defect detection rates fall by over 50% when reviewers inspect more than 500 lines of code at once. If a review is taking longer than an hour, the PR is too large and should be broken up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Code review vs. static analysis — do you need both?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you need both. Static analysis tools (linters, SAST, type checkers) catch mechanical defects — style violations, type errors, known vulnerability patterns, unused imports. Human code review catches what tools cannot: logic errors, misnamed variables, missing edge cases, architectural problems, unclear intent, and whether the code actually solves the user's problem. The code review checklist should assume static analysis has already run and focus the reviewer's attention on the categories humans do better."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "The Code Review Handbook — A Developer's Guide to Better Code Reviews",
+    "description": "18-page PDF guide with a 7-layer review framework, 5 checklists, language-specific guidance for 8 languages, comment phrase bank, and 30-day improvement plan.",
+    "category": "Software Development",
+    "brand": "Kowhai Goods",
+    "offers": {
+      "@type": "Offer",
+      "price": "14.00",
+      "priceCurrency": "USD",
+      "url": "https://brangabrew.gumroad.com/l/reabj",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; max-width: 780px; margin: 0 auto; padding: 1.5rem 1rem; color: #1a1a1a; background: #fafafa; }
+    h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.45rem; margin-top: 2.5rem; margin-bottom: 0.75rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .subtitle { color: #555; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; }
+    .cta-box { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: #fff; border-radius: 0.75rem; padding: 1.5rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; color: #fff; }
+    .cta-box p { margin-bottom: 1rem; color: #e0e7ff; }
+    .cta-button { display: inline-block; background: #fff; color: #1e3a5f; font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-size: 1.05rem; transition: transform 0.15s; }
+    .cta-button:hover { transform: translateY(-2px); }
+    .faq-section { margin: 2rem 0; }
+    .faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-item summary { padding: 1rem; cursor: pointer; font-weight: 600; list-style: none; font-size: 1.02rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before { content: "\25B6 "; color: #2563eb; font-size: 0.8rem; transition: transform 0.2s; display: inline-block; }
+    .faq-item[open] summary::before { transform: rotate(90deg); }
+    .faq-answer { padding: 0 1rem 1rem; color: #334155; }
+    .faq-answer p { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; text-align: left; }
+    th { background: #1e3a5f; color: #fff; font-weight: 600; }
+    tr:nth-child(even) { background: #f1f5f9; }
+    .comparison-wrap { overflow-x: auto; }
+    blockquote { border-left: 4px solid #2563eb; margin: 1.5rem 0; padding: 0.75rem 1.25rem; background: #eff6ff; border-radius: 0 0.5rem 0.5rem 0; color: #1e3a5f; }
+    blockquote p { margin: 0; }
+    .key-takeaway { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .key-takeaway strong { color: #92400e; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-size: 0.9em; }
+    .internal-links { background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 2rem 0; }
+    .internal-links h4 { margin-top: 0; color: #166534; }
+    .internal-links ul { margin-bottom: 0; }
+    .internal-links a { color: #15803d; }
+    footer { margin-top: 2.5rem; font-size: 0.85rem; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Code Review Checklist: 7 Layers Every Pull Request Must Pass</h1>
+  <p class="subtitle">Published August 2026 · 13-minute read · Category: Software Development</p>
+
+  <p>Most code reviews fail in the same way: the reviewer opens the PR, scrolls until something catches their eye, leaves a comment about a naming convention, and approves. The bug ships anyway. The reason isn't laziness — it's that without a <strong>code review checklist</strong>, a reviewer's attention is random. They notice what they happen to be good at (often style) and miss entire categories of defects (often logic and security) because nothing prompted them to look.</p>
+
+  <p>A checklist fixes this. It forces a reviewer to check every failure category in a fixed order, so the things humans miss without a prompt — race conditions, unvalidated inputs, missing tests for edge cases — actually get checked. This guide gives you a 7-layer code review checklist you can use on every PR today, explains how it compares to static analysis, and shows what changes when you review by language.</p>
+
+  <div class="key-takeaway">
+    <strong>Key takeaway:</strong> A code review checklist works because it eliminates reliance on memory. The seven layers — purpose, logic, security, tests, performance, readability, and release — cover every category of defect that reaches production. If your review process only checks style and "looks good to me," you are catching maybe 30% of the bugs you could.
+  </div>
+
+  <!-- ============ FAQ SECTION (NEAR TOP) ============ -->
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <div class="faq-section">
+    <details class="faq-item" open>
+      <summary>What is a code review checklist?</summary>
+      <div class="faq-answer">
+        <p>A code review checklist is a structured list of items a reviewer verifies before approving a pull request. It covers seven layers: purpose and scope, correctness and logic, security and data handling, tests and coverage, performance and resource use, readability and maintainability, and release and rollback readiness. A checklist beats an ad-hoc review because it eliminates reliance on memory, catches categories of bugs reviewers habitually miss, and produces consistent quality regardless of who reviews the PR.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How do you write a code review checklist?</summary>
+      <div class="faq-answer">
+        <p>To write a code review checklist, group review items by failure category rather than dumping everything into one list. Start with purpose (does the PR solve the right problem), then logic (does the code do what it claims), security (input validation, auth, injection), tests (do new paths have coverage), performance (N+1 queries, memory, blocking I/O), readability (naming, complexity, comments), and release (feature flags, migrations, rollback). Write each item as a yes/no question so it is verifiable. Aim for 30-50 items total — long enough to be thorough, short enough to actually use on every PR.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How much does a code review checklist or handbook cost?</summary>
+      <div class="faq-answer">
+        <p>A code review checklist costs nothing if you build it yourself from blog posts, but a structured handbook with checklists for general, logic, security, tests, and performance reviews, plus language-specific guidance for 8 languages and a 30-day improvement plan, costs around $14 USD as a one-time purchase. The <a href="https://brangabrew.gumroad.com/l/reabj" target="_blank" rel="noopener">Code Review Handbook</a> at $14 includes 5 ready-to-use checklists, a 50+ phrase comment bank, review smell quick reference, and measurement framework for review health metrics.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the best code review checklist for developers?</summary>
+      <div class="faq-answer">
+        <p>The best code review checklist for developers is the 7-layer framework: purpose, logic, security, tests, performance, readability, and release. Each layer has 5-10 yes/no questions that a reviewer can verify in under 15 minutes on a typical PR. The <a href="https://brangabrew.gumroad.com/l/reabj" target="_blank" rel="noopener">Code Review Handbook</a> expands this into 5 detailed checklists (general, logic, security, tests, performance) with language-specific sections for Python, JavaScript, TypeScript, Java, Go, Rust, C#, Ruby, and C/C++.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What should I look for when reviewing a pull request?</summary>
+      <div class="faq-answer">
+        <p>When reviewing a pull request, look for seven things in order: does the PR solve the stated problem without scope creep, is the logic correct including edge cases, are inputs validated and outputs sanitised, do new code paths have tests and do existing tests still pass, are there performance issues like N+1 queries or blocking calls, is the code readable and maintainable, and is the change safe to deploy with a rollback plan. Working through a checklist in this order prevents the common failure of focusing only on style and missing logic or security bugs.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How long should a code review take?</summary>
+      <div class="faq-answer">
+        <p>A code review should take 15-30 minutes for a typical PR under 400 lines of diff. Reviews of more than 400 lines should be split or reviewed in batches because reviewer effectiveness drops sharply beyond that threshold — a SmartBear study found defect detection rates fall by over 50% when reviewers inspect more than 500 lines of code at once. If a review is taking longer than an hour, the PR is too large and should be broken up.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Code review vs. static analysis — do you need both?</summary>
+      <div class="faq-answer">
+        <p>Yes, you need both. Static analysis tools (linters, SAST, type checkers) catch mechanical defects — style violations, type errors, known vulnerability patterns, unused imports. Human code review catches what tools cannot: logic errors, misnamed variables, missing edge cases, architectural problems, unclear intent, and whether the code actually solves the user's problem. The code review checklist should assume static analysis has already run and focus the reviewer's attention on the categories humans do better.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+
+  <h2 id="layers">The 7-Layer Code Review Checklist</h2>
+  <p>The checklist below is organised by failure category, not by file or by importance. You work through the layers in order on every PR. Each layer has a small number of yes/no questions — if you can't answer "yes" to all of them, the PR is not ready to merge.</p>
+
+  <h3 id="layer-1">Layer 1 — Purpose and Scope</h3>
+  <p>Before reading a single line of code, confirm the PR solves the right problem. This is the layer most reviewers skip, and it's the one where a catch saves the most time — a PR that solves the wrong problem is wasted work no matter how clean the code is.</p>
+  <ul>
+    <li>Does the PR link to a ticket or issue that describes the problem being solved?</li>
+    <li>Does the changed code actually solve that problem, or does it solve a related but different one?</li>
+    <li>Is there scope creep — changes unrelated to the stated goal (refactors, dependency bumps, formatting fixes mixed in)?</li>
+    <li>Could this change be split into two smaller PRs that are independently revertable?</li>
+    <li>Does the PR description explain <em>why</em> the change is needed, not just <em>what</em> changed?</li>
+  </ul>
+  <p>If a PR has no description and no linked ticket, request both before reviewing further. You cannot evaluate correctness if you don't know what "correct" means.</p>
+
+  <h3 id="layer-2">Layer 2 — Correctness and Logic</h3>
+  <p>This is the core of the review. Read the diff as if you were the compiler and the runtime at once. Look for the logic that is wrong but won't throw an error.</p>
+  <ul>
+    <li>Does each new function do what its name claims? Read the implementation, not just the signature.</li>
+    <li>Are all branch conditions reachable? Look for dead branches and impossible combinations of flags.</li>
+    <li>Are edge cases handled: empty collections, null/None/undefined, zero, negative numbers, very large inputs, unicode, timezones?</li>
+    <li>For loops: what happens with an empty input, a single element, and the maximum expected size?</li>
+    <li>Are comparisons using the right operator (<code>==</code> vs <code>===</code> in JS, <code>==</code> vs <code>.equals()</code> in Java, <code>is</code> vs <code>==</code> in Python)?</li>
+    <li>For anything async: are errors in promises/futures/goroutines caught, or do they silently disappear?</li>
+    <li>For anything with state: are there race conditions if two requests run at once?</li>
+  </ul>
+  <p>The highest-value question in this layer is the race-condition one. Concurrency bugs don't show up in tests because tests usually run sequentially. Ask: "If this endpoint is hit by two users at the exact same millisecond, what happens?" If the answer involves a shared mutable variable without a lock, that's a bug.</p>
+
+  <h3 id="layer-3">Layer 3 — Security and Data Handling</h3>
+  <p>Security review is where checklists pay for themselves. Reviewers miss security issues because they assume the framework handles them — and it usually does, until it doesn't. The checklist forces you to verify, not assume.</p>
+  <ul>
+    <li>Are all external inputs validated (length, type, format, range) before use?</li>
+    <li>Are all outputs that include user data escaped for the correct context (HTML, JS, URL, SQL)?</li>
+    <li>Are SQL queries parameterised, or is there any string concatenation building a query?</li>
+    <li>Is authentication checked on every new endpoint or route, including internal/API routes?</li>
+    <li>Is authorisation checked at the resource level (can user A access user B's data via ID in the URL)?</li>
+    <li>Are secrets, tokens, and passwords kept out of logs, error messages, and URLs?</li>
+    <li>For file uploads: is the file type validated, size limited, and stored outside the web root?</li>
+    <li>Are new dependencies from a trusted source, and is the version pinned?</li>
+  </ul>
+  <p>The authorisation question is the one that matters most. Most data breaches come from <em>horizontal</em> privilege escalation — user A can access user B's record by changing an ID in the URL — not from breaking authentication. Check that every new route that takes a resource ID also verifies the caller owns that resource.</p>
+
+  <h3 id="layer-4">Layer 4 — Tests and Coverage</h3>
+  <p>A PR that adds code without tests is a PR that will break in a way no one notices for months. This layer ensures new behaviour is locked in.</p>
+  <ul>
+    <li>Does every new function with branching logic have at least one test per branch?</li>
+    <li>Are edge cases tested (empty, single, max, invalid input)?</li>
+    <li>Do the tests assert on behaviour (outputs, state) rather than implementation (mock call counts)?</li>
+    <li>Do existing tests still pass, and has the author run them locally before requesting review?</li>
+    <li>If the PR fixes a bug, is there a regression test that fails before the fix and passes after?</li>
+    <li>Are test names descriptive enough that a failure message explains what broke?</li>
+    <li>Is the test data realistic, or is it full of <code>"test"</code>, <code>123</code>, and <code>foo</code> that would mask real bugs?</li>
+  </ul>
+  <blockquote>
+    <p>If a PR fixes a bug but adds no test that reproduces it, the bug will come back. Require a regression test for every bug fix — no exceptions.</p>
+  </blockquote>
+
+  <h3 id="layer-5">Layer 5 — Performance and Resource Use</h3>
+  <p>Performance review is about catching the obvious problems, not micro-optimising. A reviewer's job is to flag things that will fall over at scale, not to debate whether a loop could be 2% faster.</p>
+  <ul>
+    <li>Are there N+1 queries — a query inside a loop that runs once per row instead of a single join?</li>
+    <li>Are large collections loaded fully into memory when they could be streamed or paginated?</li>
+    <li>Is any blocking I/O (file, network, DB) happening inside a hot path or a request handler that should be async?</li>
+    <li>Are there unbounded loops or recursive calls without a depth limit?</li>
+    <li>Are caches invalidated or expired when the underlying data changes?</li>
+    <li>For API changes: does the response size grow linearly with data the user can control?</li>
+    <li>Are new allocations in a loop that runs thousands of times per request?</li>
+  </ul>
+  <p>The N+1 query is the single most common performance defect in code review, and it's invisible in local testing because local data sets are small. Look for any database call inside a <code>for</code> loop or a <code>.map()</code> callback. If you find one, it should almost always be a single query with a join or a batch load.</p>
+
+  <h3 id="layer-6">Layer 6 — Readability and Maintainability</h3>
+  <p>This layer is where most reviews spend all their time and where they should spend the least. Style and naming matter, but only after the code is correct, secure, and tested. Don't let this layer crowd out the others.</p>
+  <ul>
+    <li>Do names (variables, functions, types) describe what they are, not how they're implemented?</li>
+    <li>Is there a comment explaining <em>why</em> non-obvious code exists, not <em>what</em> it does?</li>
+    <li>Is cyclomatic complexity reasonable — can you trace the logic without losing your place?</li>
+    <li>Are functions doing one thing, or have several responsibilities accumulated in one body?</li>
+    <li>Is dead code removed rather than commented out?</li>
+    <li>Would a new team member understand this code without a walkthrough?</li>
+  </ul>
+  <p>The test for naming: read the function name aloud and ask whether you could guess what it returns. If <code>processData()</code> could mean three different things, the name is wrong. Specific names — <code>validateUserInput</code>, <code>filterActiveSubscriptions</code> — are a form of documentation that never goes stale.</p>
+
+  <h3 id="layer-7">Layer 7 — Release and Rollback Readiness</h3>
+  <p>The final layer asks: if we merge this and something goes wrong at 2am, what happens? A PR is only ready when it's safe to deploy and safe to undo.</p>
+  <ul>
+    <li>Is the change behind a feature flag, or does it deploy in one shot?</li>
+    <li>Are database migrations backwards-compatible — can the old code still read the new schema, and vice versa?</li>
+    <li>Is there a rollback path, and is it documented in the PR?</li>
+    <li>Are there logging or metrics that will confirm the change is working in production?</li>
+    <li>Does the PR author know how to revert if needed (revert button, migration down script)?</li>
+    <li>For breaking changes: are downstream consumers notified and updated?</li>
+  </ul>
+  <p>The migration question is the one that causes 2am pages. A migration that drops a column the old code still reads will take the service down the moment it deploys. Every schema change should be reviewed as a two-step deploy: ship code that tolerates the new schema, then ship the schema change, then ship code that uses it. If the PR combines all three steps, flag it.</p>
+
+  <h2 id="comparison">Code Review Checklist vs. Other Approaches</h2>
+  <p>Teams choose between several review methods. Here's how a structured checklist compares to the alternatives.</p>
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Approach</th>
+        <th>What it catches</th>
+        <th>What it misses</th>
+        <th>Consistency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ad-hoc review ("looks good")</td>
+        <td>Obvious style issues, things the reviewer personally cares about</td>
+        <td>Logic, security, edge cases, missing tests — anything not visually obvious</td>
+        <td>Low — varies completely by reviewer and how busy they are</td>
+      </tr>
+      <tr>
+        <td>Static analysis only (linters, SAST)</td>
+        <td>Mechanical defects: style, types, known vulnerability patterns, unused code</td>
+        <td>Logic errors, intent, architecture, missing tests, edge cases</td>
+        <td>High — but only for the categories it covers</td>
+      </tr>
+      <tr>
+        <td>Pair programming</td>
+        <td>Logic and intent errors in real time, before they're written</td>
+        <td>Nothing per se, but it doesn't scale and leaves no audit trail</td>
+        <td>High while pairing, but no record for later</td>
+      </tr>
+      <tr>
+        <td><strong>7-layer checklist</strong></td>
+        <td>All seven defect categories, consistently, regardless of who reviews</td>
+        <td>Still misses novel bugs outside the categories — but covers the known ones</td>
+        <td>High — every reviewer checks the same items in the same order</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The right answer is almost always static analysis <em>plus</em> a checklist-driven human review. Let the tools catch the mechanical stuff so the human can spend their limited attention on the logic, security, and intent questions that tools can't touch.</p>
+
+  <h2 id="language-specific">What Changes When You Review by Language</h2>
+  <p>The 7 layers apply to every language, but the specific things you look for in each layer shift. A reviewer who applies the same mental model to Python and Rust will miss language-specific footguns. Here's what to add per language.</p>
+
+  <h3>Python</h3>
+  <ul>
+    <li>Mutable default arguments (<code>def f(x=[])</code>) — a classic bug source.</li>
+    <li>Bare <code>except:</code> clauses that swallow <code>KeyboardInterrupt</code> and <code>SystemExit</code>.</li>
+    <li>Use of <code>is</code> for value comparison instead of <code>==</code> (works for <code>None</code>, fails for integers and strings).</li>
+    <li>List comprehensions that leak the loop variable in Python 2-style code.</li>
+    <li>Missing <code>self</code>, or static methods that should be instance methods.</li>
+  </ul>
+
+  <h3>JavaScript / TypeScript</h3>
+  <ul>
+    <li><code>==</code> vs <code>===</code> — loose equality is almost always a bug.</li>
+    <li>Async functions without <code>await</code>, or <code>await</code> on non-promises.</li>
+    <li><code>let</code> used where <code>const</code> would do — and <code>var</code> anywhere.</li>
+    <li>Unhandled promise rejections (no <code>.catch()</code>, no <code>try/catch</code>).</li>
+    <li>In TypeScript: <code>any</code> types that defeat the type system, and non-null assertions (<code>!</code>) used to silence the compiler.</li>
+  </ul>
+
+  <h3>Java</h3>
+  <ul>
+    <li>Use of <code>==</code> for object comparison instead of <code>.equals()</code> (especially strings).</li>
+    <li>Autoboxing edge cases (<code>Integer</code> cache, <code>null</code> unboxing to NPE).</li>
+    <li>Synchronization on non-final fields or on string literals (interning issues).</li>
+    <li>Resource leaks — files/streams not in try-with-resources.</li>
+    <li><code>hashCode</code>/<code>equals</code> contract violations when one is overridden without the other.</li>
+  </ul>
+
+  <h3>Go</h3>
+  <ul>
+    <li>Ignored errors (<code>_ = err</code> or just not checking the return).</li>
+    <li>Goroutine leaks — goroutines started with no cancellation mechanism.</li>
+    <li>Unbounded channel sends that can block forever.</li>
+    <li>Mutex copies (passing a <code>sync.Mutex</code> by value instead of pointer).</li>
+    <li>Defer in a loop causing resource buildup.</li>
+  </ul>
+
+  <h3>Rust</h3>
+  <ul>
+    <li><code>unwrap()</code> and <code>expect()</code> on values that could be <code>None</code> or <code>Err</code> in production paths.</li>
+    <li><code>clone()</code> used to fight the borrow checker when a reference would do.</li>
+    <li><code>unsafe</code> blocks without a safety comment explaining the invariant.</li>
+    <li>Blocking I/O inside async contexts.</li>
+    <li>Panic paths in library code that should return <code>Result</code>.</li>
+  </ul>
+
+  <h3>C#</h3>
+  <ul>
+    <li><code>async void</code> methods (exceptions can't be caught, crashes the process).</li>
+    <li>.Result or .Wait() on async tasks — deadlock risk in sync contexts.</li>
+    <li>Missing <code>CancellationToken</code> propagation in async chains.</li>
+    <li>Struct mutations from readonly fields (defensive copy surprises).</li>
+    <li>String concatenation in hot loops instead of <code>StringBuilder</code>.</li>
+  </ul>
+
+  <h3>Ruby</h3>
+  <ul>
+    <li><code>nil</code> propagation without <code>&amp;.</code> safe navigation.</li>
+    <li>Mutation of method arguments (especially default options hashes).</li>
+    <li><code>rescue Exception</code> catching everything including <code>SystemExit</code>.</li>
+    <li>SQL built with string interpolation instead of parameterised queries.</li>
+    <li>Class variables (<code>@@</code>) shared across inheritance hierarchies.</li>
+  </ul>
+
+  <h3>C / C++</h3>
+  <ul>
+    <li>Buffer overflows and off-by-one in manual array indexing.</li>
+    <li>Use-after-free and double-free (ownership unclear from the API).</li>
+    <li>Missing null checks before dereference.</li>
+    <li>Integer overflow in size calculations before allocation.</li>
+    <li>Format string bugs — user-controlled data passed as the format string.</li>
+    <li>Missing initialisation of stack-allocated structs.</li>
+  </ul>
+
+  <p>These lists aren't exhaustive, but they cover the defects that show up repeatedly in each language's code review. The <a href="https://brangabrew.gumroad.com/l/reabj" target="_blank" rel="noopener">Code Review Handbook</a> has a full section per language with more items and examples.</p>
+
+  <h2 id="commenting">How to Leave Review Comments That Get Fixed</h2>
+  <p>A checklist tells you <em>what</em> to check. How you raise what you find determines whether the author fixes it or argues about it. Three principles make review comments land:</p>
+  <ol>
+    <li><strong>Ask, don't tell.</strong> "Could this loop run with an empty list?" is more effective than "This will crash on empty input." It lets the author save face and often surfaces context you didn't have.</li>
+    <li><strong>Explain the failure, not the fix.</strong> "A user with an expired token will see a 500 here" beats "Add a try/catch." The author knows their code better than you do — tell them the problem and let them pick the solution.</li>
+    <li><strong>Distinguish blocking from optional.</strong> Prefix comments with "Blocking:" for must-fix issues and "Nit:" for stylistic preferences. This saves the author from treating every comment as equal and lets them focus on the ones that matter.</li>
+  </ol>
+  <p>A phrase bank helps here. Instead of rewriting "this variable name is unclear" for the hundredth time, a reviewer can draw from a set of pre-written, neutral phrasings. The Handbook includes 50+ such phrases for common review situations — all calibrated to be specific without being personal.</p>
+
+  <h2 id="measuring">Measuring Whether Your Reviews Are Working</h2>
+  <p>A checklist is only useful if it's actually improving quality. Track these six metrics to know whether your review process is healthy:</p>
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Healthy range</th>
+        <th>What it tells you</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Review turnaround time</td>
+        <td>Under 4 hours</td>
+        <td>Slow reviews block the whole team and encourage large PRs</td>
+      </tr>
+      <tr>
+        <td>PR size (lines changed)</td>
+        <td>Under 400</td>
+        <td>Larger PRs get shallower reviews and more defects slip through</td>
+      </tr>
+      <tr>
+        <td>Defects caught in review</td>
+        <td>Rising over time</td>
+        <td>If this falls, either quality improved or reviewers stopped looking hard</td>
+      </tr>
+      <tr>
+        <td>Post-merge defect rate</td>
+        <td>Falling over time</td>
+        <td>The ultimate measure — bugs that escaped review</td>
+      </tr>
+      <tr>
+        <td>Comment quality (blocking vs nit ratio)</td>
+        <td>Mostly blocking</td>
+        <td>Too many nits means reviewers are focused on style over substance</td>
+      </tr>
+      <tr>
+        <td>Re-review cycles per PR</td>
+        <td>1-2 rounds</td>
+        <td>More rounds suggests unclear requirements or scope creep</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p>If your post-merge defect rate isn't falling after you adopt a checklist, the most likely cause is that reviewers are ticking boxes without actually checking — going through the motions. Spot-check by reading a sample of approved PRs and seeing whether the checklist items were genuinely verified.</p>
+
+  <h2 id="30-day">A 30-Day Plan to Build Review Culture</h2>
+  <p>Adopting a checklist is a behaviour change, not a document. The checklist fails if it lives in a wiki no one opens. Here's a 30-day plan to make it stick:</p>
+  <ul>
+    <li><strong>Days 1-7:</strong> Paste the 7-layer checklist into your PR template so it appears automatically on every new PR. Don't enforce it yet — just let reviewers see it.</li>
+    <li><strong>Days 8-14:</strong> Start using it yourself on every review you do. Note which items you skip and why — some may not apply to your codebase and can be pruned.</li>
+    <li><strong>Days 15-21:</strong> In a team retro, share what you've found. Get agreement on which layers are mandatory-blocking and which are advisory.</li>
+    <li><strong>Days 22-30:</strong> Add the language-specific items for your stack. Start tracking the six metrics above to establish a baseline.</li>
+  </ul>
+  <p>After 30 days, the checklist should feel like a habit, not a formality. If reviewers are still skipping it, the problem is usually that the list is too long — prune anything that hasn't caught a real defect in the first month.</p>
+
+  <h2 id="takeaway">Putting It All Together</h2>
+  <p>A code review checklist works because it replaces random attention with systematic attention. The seven layers — purpose, logic, security, tests, performance, readability, and release — cover the categories of defects that reach production. The language-specific additions catch the footguns unique to your stack. The comment principles make what you find actually get fixed. And the metrics tell you whether the whole system is working.</p>
+  <p>If your team's reviews currently consist of "looks good to me" and a thumbs-up, you are catching a fraction of the bugs you could. A checklist takes 15 minutes to apply and catches the rest. Start with the 7 layers above on your next PR.</p>
+
+  <div class="cta-box">
+    <h3>The Code Review Handbook — 18-Page Guide with 5 Ready-to-Use Checklists</h3>
+    <p>The full 7-layer framework, 5 detailed checklists (general, logic, security, tests, performance), language-specific guidance for Python, JavaScript, TypeScript, Java, Go, Rust, C#, Ruby, and C/C++, a 50+ phrase comment bank, review smell quick reference, and a 30-day improvement plan. One-time purchase, no subscription.</p>
+    <a href="https://brangabrew.gumroad.com/l/reabj" target="_blank" rel="noopener" class="cta-button">Get the Code Review Handbook — $14</a>
+  </div>
+
+  <div class="internal-links">
+    <h4>Related guides from Kowhai Goods</h4>
+    <ul>
+      <li><a href="freelance-rate-calculator.html">Freelance Rate Calculator: How to Price Your Services</a></li>
+      <li><a href="free-excel-templates-for-freelancers.html">Free Excel Templates for Freelancers</a></li>
+      <li><a href="personal-finance-for-beginners.html">A Beginner's Guide to Personal Finance</a></li>
+      <li><a href="tax-deductions-for-freelancers.html">Tax Deductions for Freelancers: The Complete Guide</a></li>
+      <li><a href="crm-excel-template.html">CRM Excel Template: Track Your Sales Pipeline Without Subscriptions</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Kowhai Goods · kowhaigoods.com · Code review checklist guide for developers, tech leads, and engineering managers.</p>
+  </footer>
+</body>
+</html>
