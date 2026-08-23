@@ -3,458 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KowhaiGoods — Practical Templates, Tools & Guides for Freelancers</title>
-  <meta name="description" content="Download practical Excel templates, PDF guides, and HTML tools for freelancers, personal finance, content creators, and productivity. One-time purchase. No subscriptions.">
-  <meta name="keywords" content="excel templates, freelance tracker, personal finance dashboard, content calendar, habit tracker, meeting notes template, project management template, copywriting, email templates, side hustle">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <title>Kowhai API Hub — Developer Tools APIs</title>
+  <meta name="description" content="Fast, reliable developer tool APIs: AI Prompt Optimizer, JSON Schema Validator, and Text Readability & SEO Analyzer. Free tier available. No signup required.">
+  <meta name="keywords" content="developer API, AI prompt optimizer, JSON validator, text readability API, SEO analyzer API, RapidAPI">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.6; }
-    
-    /* Hero */
-    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 80px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; font-weight: 700; letter-spacing: -0.5px; }
-    .hero .tagline { font-size: 1.15rem; max-width: 580px; margin: 0 auto 28px; opacity: 0.88; }
-    .hero .stats { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
-    .hero .stat { text-align: center; }
-    .hero .stat-num { font-size: 2rem; font-weight: 700; color: #53d769; }
-    .hero .stat-label { font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
-    .hero .cta { display: inline-block; background: #53d769; color: #1a1a2e; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; }
-    .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(83,215,105,0.3); }
-    
-    /* Trust bar */
-    .trust { background: #fff; padding: 20px; text-align: center; font-size: 0.9rem; color: #555; border-bottom: 1px solid #eee; }
-    .trust span { margin: 0 16px; }
-    .trust span::before { content: "✓ "; color: #53d769; font-weight: 700; }
-    
-    /* Filters */
-    .filters { max-width: 1200px; margin: 40px auto 0; padding: 0 20px; text-align: center; }
-    .chips { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-    .chip { background: #fff; border: 2px solid #e2e8f0; color: #475569; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-    .chip:hover { border-color: #0f3460; color: #0f3460; }
-    .chip.active { background: #0f3460; border-color: #0f3460; color: white; }
-    
-    /* Product grid */
-    .products { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-    .product { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
-    .product:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-    .product-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-    .cat-badge { display: inline-block; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; margin-bottom: 12px; align-self: flex-start; }
-    .product-body h3 { font-size: 1.05rem; margin-bottom: 8px; color: #1a1a2e; line-height: 1.35; }
-    .product-body p { font-size: 0.85rem; color: #64748b; margin-bottom: 16px; flex: 1; }
-    .price-row { display: flex; align-items: center; justify-content: space-between; }
-    .price { font-size: 1.4rem; font-weight: 700; color: #1a1a2e; }
-    .buy { display: inline-block; background: #0f3460; color: white; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
-    .buy:hover { background: #16213e; }
-    .buy.soon { background: #cbd5e1; color: #64748b; cursor: default; }
-    
-    /* Resources section */
-    .resources { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-    .resources h2 { font-size: 1.6rem; margin-bottom: 8px; color: #1a1a2e; }
-    .resources .sub { color: #64748b; margin-bottom: 24px; font-size: 0.9rem; }
-    .resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px 32px; }
-    .resource-grid li { list-style: none; padding: 6px 0; }
-    .resource-grid a { color: #0f3460; text-decoration: none; font-size: 0.9rem; }
-    .resource-grid a:hover { text-decoration: underline; }
-    .resource-grid a::before { content: "→ "; color: #cbd5e1; }
-    
-    /* Footer */
-    footer { background: #1a1a2e; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
-    footer a { color: #53d769; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    footer .footer-links { margin-bottom: 16px; }
-    footer .footer-links a { margin: 0 12px; font-size: 0.9rem; }
-    footer p { font-size: 0.85rem; opacity: 0.6; }
-    
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+
+    .hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a1a2e 100%); padding: 80px 20px 60px; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; font-weight: 700; color: #58a6ff; letter-spacing: -0.5px; }
+    .hero .tagline { font-size: 1.15rem; max-width: 600px; margin: 0 auto 28px; color: #8b949e; }
+    .hero .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .badge { background: #161b22; border: 1px solid #30363d; color: #8b949e; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+    .badge::before { content: "✓ "; color: #3fb950; }
+    .hero .cta { display: inline-block; background: #238636; color: white; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(35,134,54,0.4); }
+    .hero .cta.secondary { background: #21262d; border: 1px solid #30363d; margin-left: 12px; }
+    .hero .cta.secondary:hover { box-shadow: 0 6px 20px rgba(48,54,61,0.4); }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+
+    .section-title { font-size: 1.8rem; margin-bottom: 8px; color: #58a6ff; }
+    .section-sub { color: #8b949e; margin-bottom: 32px; font-size: 0.95rem; }
+
+    .api-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .api-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 28px; transition: border-color 0.2s, transform 0.2s; }
+    .api-card:hover { border-color: #58a6ff; transform: translateY(-2px); }
+    .api-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .api-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: #f0f6fc; }
+    .api-card p { font-size: 0.9rem; color: #8b949e; margin-bottom: 16px; }
+    .api-card .endpoints { background: #0d1117; border-radius: 6px; padding: 10px 14px; margin-bottom: 16px; }
+    .api-card .endpoints code { color: #79c0ff; font-size: 0.82rem; font-family: 'SF Mono', Consolas, monospace; }
+    .api-card .endpoints .method { color: #3fb950; font-weight: 700; margin-right: 8px; }
+    .api-card .price { font-size: 0.85rem; color: #3fb950; font-weight: 600; }
+
+    .code-block { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+    .code-block pre { font-family: 'SF Mono', Consolas, monospace; font-size: 0.85rem; line-height: 1.5; }
+    .code-block .comment { color: #8b949e; }
+    .code-block .key { color: #79c0ff; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .kw { color: #ff7b72; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; margin-top: 20px; }
+    .feature { padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+    .feature h4 { color: #58a6ff; margin-bottom: 8px; font-size: 1rem; }
+    .feature p { font-size: 0.88rem; color: #8b949e; }
+
+    footer { background: #161b22; border-top: 1px solid #30363d; text-align: center; padding: 40px 20px; margin-top: 60px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer p { font-size: 0.85rem; color: #8b949e; }
+
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.8rem; }
-      .hero .stats { gap: 20px; }
-      .products { grid-template-columns: 1fr; }
-      .resource-grid { grid-template-columns: 1fr; }
+      .hero .cta { display: block; margin: 8px auto; }
+      .hero .cta.secondary { margin-left: auto; }
+      .api-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="hero">
-    <h1>🌿 KowhaiGoods</h1>
-    <p class="tagline">Practical templates, tools & guides for freelancers, creators, and small business owners. One-time purchase. No subscriptions. Instant download.</p>
-    <div class="stats">
-      <div class="stat"><div class="stat-num">36</div><div class="stat-label">Products</div></div>
-      <div class="stat"><div class="stat-num">30</div><div class="stat-label">Available Now</div></div>
-      <div class="stat"><div class="stat-num">$4–$15</div><div class="stat-label">Price Range</div></div>
+    <h1>⚡ Kowhai API Hub</h1>
+    <p class="tagline">Fast, reliable developer tool APIs. AI prompt optimization, JSON validation, and text analysis — built for production use.</p>
+    <div class="badges">
+      <span class="badge">99.9% Uptime</span>
+      <span class="badge">Sub-50ms Response</span>
+      <span class="badge">Free Tier Available</span>
+      <span class="badge">No Signup Required</span>
     </div>
-    <a href="https://brangabrew.gumroad.com" class="cta" target="_blank" rel="noopener">Browse All on Gumroad →</a>
+    <a href="https://rapidapi.com/user/kowhai-api" class="cta" target="_blank" rel="noopener">Get API Key →</a>
+    <a href="/docs" class="cta secondary">View Docs</a>
   </div>
 
-  <div class="trust">
-    <span>Instant download</span>
-    <span>No subscriptions</span>
-    <span>Works in Excel & Google Sheets</span>
-    <span>Free updates</span>
-  </div>
+  <div class="container">
+    <h2 class="section-title">APIs</h2>
+    <p class="section-sub">Three production-ready APIs, each with a free tier. Available on RapidAPI.</p>
 
-  <div class="filters">
-    <div class="chips">
-      <button class="chip" data-filter="All">All</button>
-      <button class="chip" data-filter="Excel Template">Excel Template</button>
-      <button class="chip" data-filter="PDF Guide">PDF Guide</button>
-      <button class="chip" data-filter="HTML Templates">HTML Templates</button>
-      <button class="chip" data-filter="HTML App">HTML App</button>
-      <button class="chip" data-filter="Digital Download">Digital Download</button>
+    <div class="api-grid">
+      <div class="api-card">
+        <div class="icon">🤖</div>
+        <h3>AI Prompt Optimizer</h3>
+        <p>Takes a raw AI prompt and returns an optimized version with expert role definition, structured constraints, and output format guidance. Improves AI response quality by 40-60%.</p>
+        <div class="endpoints">
+          <code><span class="method">POST</span>/prompt-optimizer/optimize</code><br>
+          <code><span class="method">GET</span>/prompt-optimizer/health</code>
+        </div>
+        <span class="price">Free: 100 req/mo • Pro: $9/mo (1K) • Business: $29/mo (10K)</span>
+      </div>
+
+      <div class="api-card">
+        <div class="icon">📋</div>
+        <h3>JSON Schema Validator</h3>
+        <p>Validate JSON against schemas, format/prettify, and convert between JSON, CSV, and YAML. Returns all validation errors with field paths, not just the first.</p>
+        <div class="endpoints">
+          <code><span class="method">POST</span>/json-tools/validate</code><br>
+          <code><span class="method">POST</span>/json-tools/format</code><br>
+          <code><span class="method">POST</span>/json-tools/convert</code>
+        </div>
+        <span class="price">Free: 500 req/mo • Pro: $5/mo (5K) • Business: $19/mo (50K)</span>
+      </div>
+
+      <div class="api-card">
+        <div class="icon">📝</div>
+        <h3>Text Readability & SEO Analyzer</h3>
+        <p>Analyze text or HTML for readability scores (Flesch-Kincaid, Gunning Fog, SMOG), keyword density, heading structure, meta tags, image alt coverage, and get actionable SEO suggestions.</p>
+        <div class="endpoints">
+          <code><span class="method">POST</span>/text-analyzer/analyze</code><br>
+          <code><span class="method">GET</span>/text-analyzer/health</code>
+        </div>
+        <span class="price">Free: 100 req/mo • Pro: $9/mo (1K) • Business: $29/mo (10K)</span>
+      </div>
     </div>
-  </div>
 
-  <div class="products">
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Freelance Business Tracker</h3>
-            <p>Projects, invoices, time tracking & expenses in one workbook with a dashboard.</p>
-            <div class="price-row"><span class="price">$9</span><a href="https://brangabrew.gumroad.com/l/hqpbf" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Personal Finance Dashboard</h3>
-            <p>Income, expenses, budget vs actual, savings goals & debt payoff tracker.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/dofyn" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Content Calendar & Social Media Planner</h3>
-            <p>Plan across 9 platforms with content ideas, analytics tracker & hashtag library.</p>
-            <div class="price-row"><span class="price">$7</span><a href="https://brangabrew.gumroad.com/l/qnktn" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>90-Day Habit Tracker</h3>
-            <p>Daily habit grid, weekly reflection & monthly goals across 6 life categories.</p>
-            <div class="price-row"><span class="price">$5</span><a href="https://brangabrew.gumroad.com/l/gbvcxg" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Meeting Notes & Action Items</h3>
-            <p>Meeting log, action items, decisions log & parking lot in one workbook.</p>
-            <div class="price-row"><span class="price">$4</span><a href="https://brangabrew.gumroad.com/l/qqrtta" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Digital Download">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#2e86c1">⬇️ Digital Download</div>
-            <h3>AI Prompt Pack for Content Creators</h3>
-            <p>50+ ready-to-use AI prompts for blog, social media, email, video & SEO.</p>
-            <div class="price-row"><span class="price">$7</span><span class="buy soon">Coming Soon</span></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Job Search Tracker</h3>
-            <p>Track applications, interviews, salary ranges, follow-ups & contacts.</p>
-            <div class="price-row"><span class="price">$9</span><span class="buy soon">Coming Soon</span></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Project Management Dashboard</h3>
-            <p>Projects, tasks, milestones, risk log & timeline view for PMs and teams.</p>
-            <div class="price-row"><span class="price">$15</span><span class="buy soon">Coming Soon</span></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>30-Day Productivity Reset</h3>
-            <p>Day-by-day PDF guide: audit, build systems, optimise & sustain. 30+ pages.</p>
-            <div class="price-row"><span class="price">$12</span><span class="buy soon">Coming Soon</span></div>
-          </div>
-        </div>
-        <div class="product" data-cat="HTML Templates">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#b9770e">🎨 HTML Templates</div>
-            <h3>Resume/CV Template Pack</h3>
-            <p>3 professional resume templates in HTML — ATS-friendly, print to PDF.</p>
-            <div class="price-row"><span class="price">$9</span><span class="buy soon">Coming Soon</span></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Complete Home Workout System</h3>
-            <p>12-week progressive training program with 36 sessions across 3 phases.</p>
-            <div class="price-row"><span class="price">$11</span><a href="https://brangabrew.gumroad.com/l/dcdhac" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="HTML Templates">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#b9770e">🎨 HTML Templates</div>
-            <h3>Developer Portfolio Template Pack</h3>
-            <p>3 complete HTML/CSS portfolio templates: Terminal Dark, Clean Minimal, Creative.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/fuvtcv" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Ultimate Copywriting Swipe File</h3>
-            <p>101 proven headlines, subject lines, CTAs + 12 master formulas & 200+ power words.</p>
-            <div class="price-row"><span class="price">$9</span><a href="https://brangabrew.gumroad.com/l/ppdraz" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Meal Prep & Macro Tracker</h3>
-            <p>7-day meal planner with 100+ food database, auto-calculating macros & grocery lists.</p>
-            <div class="price-row"><span class="price">$9</span><a href="https://brangabrew.gumroad.com/l/cskepz" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Deep Work Protocol</h3>
-            <p>21-day science-backed focus-building program with daily actions & toolkit.</p>
-            <div class="price-row"><span class="price">$11</span><a href="https://brangabrew.gumroad.com/l/pzaex" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Small Business KPI Dashboard</h3>
-            <p>7-tab template with 8 auto-updating charts: revenue, customers, pipeline & goals.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/icdxal" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Code Review Handbook</h3>
-            <p>Comprehensive code review guide: 7-layer framework, 8 languages, checklists.</p>
-            <div class="price-row"><span class="price">$14</span><a href="https://brangabrew.gumroad.com/l/reabj" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Indie Author's Launch Blueprint</h3>
-            <p>Complete system for first-time authors: write, publish & market your book.</p>
-            <div class="price-row"><span class="price">$14</span><a href="https://brangabrew.gumroad.com/l/zsqnkr" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="HTML Templates">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#b9770e">🎨 HTML Templates</div>
-            <h3>Startup Landing Page Template Pack</h3>
-            <p>3 conversion-optimised HTML/CSS templates: SaaS, Mobile App, Online Course.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/etppgs" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Investment Portfolio Tracker</h3>
-            <p>6-tab template with holdings, transactions, dividends, watchlist & allocation charts.</p>
-            <div class="price-row"><span class="price">$9</span><a href="https://brangabrew.gumroad.com/l/zqdjme" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Freelancer's Rate & Pricing Calculator</h3>
-            <p>Complete system to calculate, negotiate & defend your freelance rates.</p>
-            <div class="price-row"><span class="price">$11</span><a href="https://brangabrew.gumroad.com/l/mavpii" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="HTML App">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#117a65">⚡ HTML App</div>
-            <h3>Bodyweight Workout Tracker</h3>
-            <p>Offline HTML app with 50+ exercise library, workout builder & progress charts.</p>
-            <div class="price-row"><span class="price">$9</span><a href="https://brangabrew.gumroad.com/l/twqhww" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Email Template Playbook</h3>
-            <p>75 copy-paste email templates across 10 professional categories + 25 subject lines.</p>
-            <div class="price-row"><span class="price">$11</span><a href="https://brangabrew.gumroad.com/l/ldxozh" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Podcast Planner & Launch System</h3>
-            <p>8-tab template: episodes, guests, content calendar, sponsorships & budget.</p>
-            <div class="price-row"><span class="price">$11</span><span class="buy soon">Coming Soon</span></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Cash Flow Forecast & Break-Even Calculator</h3>
-            <p>8-tab template with revenue/expense forecast, break-even, runway & scenarios.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/bbkewa" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Newsletter Launch Playbook</h3>
-            <p>Start, grow & monetize your newsletter in 30 days with proven growth tactics.</p>
-            <div class="price-row"><span class="price">$14</span><a href="https://brangabrew.gumroad.com/l/upxnu" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Side Hustle Playbook</h3>
-            <p>25 profitable side hustles with startup costs, earning potential & 5 launch plans.</p>
-            <div class="price-row"><span class="price">$13</span><a href="https://brangabrew.gumroad.com/l/jszyca" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Invoice Generator & Tracker</h3>
-            <p>7-tab template with invoice builder, auto-calculating totals & payment tracker.</p>
-            <div class="price-row"><span class="price">$9</span><a href="https://brangabrew.gumroad.com/l/kzfwu" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Blog Monetization Playbook</h3>
-            <p>12 proven revenue streams to turn your blog into a revenue engine.</p>
-            <div class="price-row"><span class="price">$13</span><a href="https://brangabrew.gumroad.com/l/njkukh" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Rental Property Portfolio Tracker</h3>
-            <p>8-tab template for real estate investors: ROI, mortgage, cash flow & portfolio.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/pvptzim" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Small Business Tax Guide</h3>
-            <p>50+ page tax guide: entities, deductions, quarterly taxes, audit-proofing & strategy.</p>
-            <div class="price-row"><span class="price">$14</span><a href="https://brangabrew.gumroad.com/l/qvnejv" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>Inventory Tracker & Stock Management</h3>
-            <p>8-tab template with ABC classification, reorder alerts, POs & stock valuation.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/gltvy" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Beginner's Guide to Personal Finance</h3>
-            <p>30-day path from money stress to financial clarity: budget, debt, invest & grow.</p>
-            <div class="price-row"><span class="price">$11</span><a href="https://brangabrew.gumroad.com/l/ssaacw" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Copywriting Frameworks Playbook</h3>
-            <p>15 proven copywriting frameworks with psychology, examples & fill-in templates.</p>
-            <div class="price-row"><span class="price">$13</span><a href="https://brangabrew.gumroad.com/l/mrhml" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="Excel Template">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#1a5276">📊 Excel Template</div>
-            <h3>CRM Template & Sales Pipeline Manager</h3>
-            <p>8-tab CRM: contacts, deals, activities, pipeline funnel, lead sources & forecast.</p>
-            <div class="price-row"><span class="price">$12</span><a href="https://brangabrew.gumroad.com/l/yibqu" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-        <div class="product" data-cat="PDF Guide">
-          <div class="product-body">
-            <div class="cat-badge" style="background:#7d3c98">📄 PDF Guide</div>
-            <h3>The Video Script Template Playbook</h3>
-            <p>30+ fill-in script templates for YouTube, Shorts, TikTok, VSLs, ads & courses.</p>
-            <div class="price-row"><span class="price">$13</span><a href="https://brangabrew.gumroad.com/l/culesk" class="buy" target="_blank" rel="noopener">Get it →</a></div>
-          </div>
-        </div>
-  </div>
+    <h2 class="section-title" style="margin-top: 60px;">Quick Start</h2>
+    <p class="section-sub">Test any API in under 30 seconds.</p>
 
-  <div class="resources">
-    <h2>📚 Free Guides & Articles</h2>
-    <p class="sub">In-depth tutorials and how-to guides — completely free to read.</p>
-    <ul class="resource-grid">
-      <li><a href="30-day-productivity-reset.html">30-Day Productivity Reset Guide</a></li>
-      <li><a href="ai-prompts-for-content-creation.html">AI Prompts for Content Creation</a></li>
-      <li><a href="ats-friendly-resume-template.html">ATS-Friendly Resume Template Guide</a></li>
-      <li><a href="cash-flow-forecast-excel-template.html">Cash Flow Forecast Excel Template Guide</a></li>
-      <li><a href="content-calendar-template-excel.html">Content Calendar Template Excel Guide</a></li>
-      <li><a href="crm-excel-template.html">CRM Excel Template Guide</a></li>
-      <li><a href="freelance-invoice-template-excel.html">Freelance Invoice Template Excel Guide</a></li>
-      <li><a href="freelance-rate-calculator.html">Freelance Rate Calculator Guide</a></li>
-      <li><a href="freelance-writing-pitch.html">Freelance Writing Pitch Guide</a></li>
-      <li><a href="ghostwriting-services.html">Professional Ghostwriting Services</a></li>
-      <li><a href="habit-tracker-excel-template.html">Habit Tracker Excel Template Guide</a></li>
-      <li><a href="how-to-monetize-a-blog.html">How to Monetize a Blog</a></li>
-      <li><a href="how-to-start-a-newsletter.html">How to Start a Newsletter</a></li>
-      <li><a href="how-to-start-a-podcast.html">How to Start a Podcast</a></li>
-      <li><a href="inventory-tracker-excel-template.html">Inventory Tracker Excel Template Guide</a></li>
-      <li><a href="investment-portfolio-tracker-excel.html">Investment Portfolio Tracker Excel Guide</a></li>
-      <li><a href="job-application-tracker-excel.html">Job Application Tracker Excel Guide</a></li>
-      <li><a href="meeting-notes-template-excel.html">Meeting Notes Template Excel Guide</a></li>
-      <li><a href="personal-finance-dashboard-excel-template.html">Personal Finance Dashboard Excel Guide</a></li>
-      <li><a href="personal-finance-for-beginners.html">Personal Finance for Beginners Guide</a></li>
-      <li><a href="professional-email-templates.html">Professional Email Templates Guide</a></li>
-      <li><a href="project-management-dashboard-excel.html">Project Management Dashboard Excel Guide</a></li>
-      <li><a href="rental-property-tracker-excel-template.html">Rental Property Tracker Excel Guide</a></li>
-      <li><a href="side-hustle-ideas.html">Side Hustle Ideas: 25 Profitable Options</a></li>
-      <li><a href="tax-deductions-for-freelancers.html">Tax Deductions for Freelancers Guide</a></li>
-    </ul>
+    <div class="code-block">
+<pre><span class="comment"># AI Prompt Optimizer</span>
+curl -X POST https://api.kowhaigoods.com/prompt-optimizer/optimize \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{
+    "prompt": "write code to sort a list",
+    "goal": "write a Python function",
+    "format": "structured"
+  }'</span>
+
+<span class="comment"># JSON Schema Validator</span>
+curl -X POST https://api.kowhaigoods.com/json-tools/validate \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{
+    "data": {"name": "test", "age": 25},
+    "schema": {"type": "object", "required": ["name"]}
+  }'</span>
+
+<span class="comment"># Text Readability & SEO Analyzer</span>
+curl -X POST https://api.kowhaigoods.com/text-analyzer/analyze \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{
+    "text": "Your content here...",
+    "is_html": false,
+    "target_keywords": ["your", "keywords"]
+  }'</span></pre>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 60px;">Why Kowhai API Hub?</h2>
+    <div class="features">
+      <div class="feature">
+        <h4>⚡ Fast</h4>
+        <p>Sub-50ms response times. All processing happens on dedicated infrastructure — no cold starts, no queuing.</p>
+      </div>
+      <div class="feature">
+        <h4>🔒 Secure</h4>
+        <p>No data is stored. All requests are processed in-memory and discarded. No external URL fetching — zero SSRF risk.</p>
+      </div>
+      <div class="feature">
+        <h4>📦 Simple Pricing</h4>
+        <p>Free tier for testing. Pro plans start at $5/mo. No hidden fees, no per-request charges beyond your plan.</p>
+      </div>
+      <div class="feature">
+        <h4>📚 Well-Documented</h4>
+        <p>Interactive Swagger/OpenAPI docs at /docs. Every endpoint has request/response examples and error codes.</p>
+      </div>
+      <div class="feature">
+        <h4>🔄 Rate Limited</h4>
+        <p>Built-in rate limiting protects your quota. RapidAPI handles authentication and billing automatically.</p>
+      </div>
+      <div class="feature">
+        <h4>🌐 Global CDN</h4>
+        <p>Served via Cloudflare's global edge network. Low latency from anywhere in the world.</p>
+      </div>
+    </div>
   </div>
 
   <footer>
-    <div class="footer-links">
-      <a href="https://brangabrew.gumroad.com">Gumroad Store</a>
-      <a href="kowhaigoods-privacy-policy.html">Privacy Policy</a>
-    </div>
-    <p>KowhaiGoods — Built with care in New Zealand 🇳🇿</p>
+    <p>Kowhai API Hub — Developer Tools APIs • Built in New Zealand 🇳🇿</p>
+    <p style="margin-top: 8px;"><a href="/docs">API Docs</a> • <a href="https://rapidapi.com/user/kowhai-api">RapidAPI Profile</a> • <a href="kowhaigoods-privacy-policy.html">Privacy Policy</a></p>
   </footer>
-
-  <script>
-    // Category filter
-    const chips = document.querySelectorAll('.chip');
-    const products = document.querySelectorAll('.product');
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const filter = chip.dataset.filter;
-        products.forEach(p => {
-          if (filter === 'All' || p.dataset.cat === filter) {
-            p.style.display = '';
-          } else {
-            p.style.display = 'none';
-          }
-        });
-      });
-    });
-    // Activate "All" by default
-    chips[0].classList.add('active');
-  </script>
 </body>
 </html>
