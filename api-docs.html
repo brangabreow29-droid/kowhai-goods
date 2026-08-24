@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kowhai API Docs — Developer Reference</title>
+  <meta name="description" content="Complete developer API reference for Kowhai Text Utilities. Optimize prompts, validate JSON, convert formats, and analyze text via REST.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 20px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #f0f6fc; font-weight: 700; font-size: 1.15rem; }
+    .logo-icon { font-size: 1.4rem; }
+    .nav a { color: #58a6ff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+
+    .hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a1a2e 100%); padding: 60px 20px 50px; text-align: center; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 12px; color: #58a6ff; letter-spacing: -0.5px; }
+    .hero p { max-width: 650px; margin: 0 auto; color: #8b949e; font-size: 1.05rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+
+    .section-title { font-size: 1.6rem; color: #58a6ff; margin-bottom: 8px; }
+    .section-sub { color: #8b949e; margin-bottom: 28px; font-size: 0.95rem; }
+
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 28px; margin-bottom: 28px; }
+    .card:hover { border-color: #58a6ff; }
+
+    .endpoint-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    .method { background: #238636; color: #fff; font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-family: 'SF Mono', Consolas, monospace; }
+    .path { color: #79c0ff; font-family: 'SF Mono', Consolas, monospace; font-size: 1rem; font-weight: 600; }
+
+    .param-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+    .param-table th, .param-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #30363d; }
+    .param-table th { color: #f0f6fc; background: #0d1117; }
+    .param-table td { color: #c9d1d9; }
+    .param-table code { font-family: 'SF Mono', Consolas, monospace; color: #79c0ff; }
+    .required { color: #3fb950; font-weight: 600; }
+
+    .code-block { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; margin: 16px 0; }
+    .code-header { display: flex; justify-content: space-between; align-items: center; background: #21262d; padding: 8px 14px; border-bottom: 1px solid #30363d; }
+    .code-label { color: #8b949e; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+    .copy-btn { background: #30363d; border: none; color: #c9d1d9; padding: 4px 10px; border-radius: 5px; font-size: 0.75rem; cursor: pointer; }
+    .copy-btn:hover { background: #58a6ff; color: #0d1117; }
+    .code-block pre { padding: 16px; overflow-x: auto; font-family: 'SF Mono', Consolas, monospace; font-size: 0.85rem; line-height: 1.5; color: #c9d1d9; }
+    .code-block .comment { color: #8b949e; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .kw { color: #ff7b72; }
+    .code-block .num { color: #79c0ff; }
+    .code-block .key { color: #7ee787; }
+
+    .tabs { display: flex; gap: 4px; margin-bottom: 0; border-bottom: 1px solid #30363d; }
+    .tab { background: transparent; border: none; color: #8b949e; padding: 10px 16px; cursor: pointer; font-size: 0.85rem; font-weight: 600; border-bottom: 2px solid transparent; }
+    .tab.active { color: #58a6ff; border-bottom-color: #58a6ff; }
+    .tab:hover { color: #f0f6fc; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .pricing { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .pricing-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; text-align: center; }
+    .pricing-card.featured { border-color: #58a6ff; }
+    .pricing-card h3 { color: #f0f6fc; font-size: 1.2rem; margin-bottom: 8px; }
+    .price { font-size: 2rem; color: #58a6ff; font-weight: 700; margin-bottom: 16px; }
+    .price span { font-size: 0.9rem; color: #8b949e; font-weight: 400; }
+    .pricing-card ul { list-style: none; text-align: left; font-size: 0.9rem; color: #c9d1d9; }
+    .pricing-card li { padding: 6px 0; border-bottom: 1px solid #21262d; }
+    .pricing-card li::before { content: "✓ "; color: #3fb950; font-weight: 700; }
+
+    .try-form label { display: block; margin: 12px 0 6px; font-size: 0.9rem; font-weight: 600; color: #8b949e; }
+    .try-form input, .try-form select, .try-form textarea { width: 100%; background: #0d1117; border: 1px solid #30363d; color: #c9d1d9; padding: 10px 12px; border-radius: 8px; font-family: 'SF Mono', Consolas, monospace; font-size: 0.9rem; }
+    .try-form input:focus, .try-form select:focus, .try-form textarea:focus { outline: none; border-color: #58a6ff; }
+    .try-form textarea { min-height: 120px; resize: vertical; }
+    .try-form .btn { margin-top: 16px; display: inline-block; background: #238636; color: #fff; padding: 12px 24px; border-radius: 8px; border: none; font-weight: 700; cursor: pointer; }
+    .try-form .btn:hover { background: #2ea043; }
+    .try-output { margin-top: 20px; }
+
+    .error-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+    .error-table th, .error-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #30363d; }
+    .error-table th { color: #f0f6fc; background: #0d1117; }
+    .status { font-family: 'SF Mono', Consolas, monospace; font-weight: 700; }
+    .status-ok { color: #3fb950; }
+    .status-warn { color: #d29922; }
+    .status-err { color: #f85149; }
+
+    .quick-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+    .quick-links a { color: #58a6ff; text-decoration: none; font-size: 0.9rem; }
+
+    footer { background: #161b22; border-top: 1px solid #30363d; text-align: center; padding: 40px 20px; margin-top: 60px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer p { font-size: 0.85rem; color: #8b949e; }
+
+    @media (max-width: 700px) {
+      .header-inner { flex-direction: column; gap: 10px; align-items: flex-start; }
+      .hero h1 { font-size: 1.7rem; }
+      .endpoint-header { flex-direction: column; gap: 6px; }
+      .tabs { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo"><span class="logo-icon">⚡</span> Kowhai API Hub</a>
+      <nav class="nav">
+        <a href="/">← Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Developer API Reference</h1>
+    <p>Complete reference for the Kowhai Text Utilities API. Build faster with AI prompt optimization, JSON tooling, and text analysis.</p>
+  </section>
+
+  <main class="container">
+    <section id="auth">
+      <h2 class="section-title">Authentication</h2>
+      <p class="section-sub">All requests require a RapidAPI key in the <code style="color:#79c0ff">X-RapidAPI-Key</code> header. Subscribe to any plan (including the free BASIC tier) to get your key.</p>
+      <div class="card">
+        <div class="code-block">
+          <div class="code-header"><span class="code-label">Required headers</span><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+          <pre>X-RapidAPI-Key: YOUR_RAPIDAPI_KEY
+X-RapidAPI-Host: api.kowhaigoods.com
+Content-Type: application/json</pre>
+        </div>
+        <p style="margin-top:12px; font-size:0.9rem; color:#8b949e;">Base URL: <code style="color:#79c0ff">https://api.kowhaigoods.com</code></p>
+      </div>
+    </section>
+
+    <section id="endpoints">
+      <h2 class="section-title">Endpoints</h2>
+      <p class="section-sub">Five production-ready endpoints. All accept JSON and return JSON.</p>
+
+      <!-- Endpoint 1: Prompt Optimizer -->
+      <article class="card" id="prompt-optimizer">
+        <div class="endpoint-header"><span class="method">POST</span><span class="path">/prompt-optimizer/optimize</span></div>
+        <p>Optimize AI prompts for clarity, specificity, conciseness, or creativity.</p>
+        <table class="param-table">
+          <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>prompt</code></td><td>string</td><td class="required">Yes</td><td>The prompt text to optimize</td></tr>
+            <tr><td><code>goal</code></td><td>string</td><td>No</td><td><code>clarity</code>, <code>conciseness</code>, <code>specificity</code>, <code>creativity</code> (default: clarity)</td></tr>
+            <tr><td><code>context</code></td><td>string</td><td>No</td><td>Additional context for the optimization</td></tr>
+            <tr><td><code>format</code></td><td>string</td><td>No</td><td>Output format hint: <code>markdown</code>, <code>json</code>, <code>plain</code></td></tr>
+          </tbody>
+        </table>
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('prompt-optimizer','request')">Request</button>
+          <button class="tab" onclick="showTab('prompt-optimizer','response')">Response</button>
+          <button class="tab" onclick="showTab('prompt-optimizer','python')">Python</button>
+          <button class="tab" onclick="showTab('prompt-optimizer','js')">JS</button>
+          <button class="tab" onclick="showTab('prompt-optimizer','curl')">curl</button>
+        </div>
+        <div id="prompt-optimizer-request" class="tab-panel active">
+          <div class="code-block"><div class="code-header"><span class="code-label">JSON request body</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "prompt": "write a blog post about climate change",
+  "goal": "clarity",
+  "context": "for a tech audience",
+  "format": "markdown"
+}</pre></div>
+        </div>
+        <div id="prompt-optimizer-response" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">200 OK response</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "optimized_prompt": "Write a comprehensive blog post about climate change for a technical audience...",
+  "improvements": [
+    "Added specific structure requirements",
+    "Included audience targeting",
+    "Specified output format"
+  ],
+  "original_length": 38,
+  "optimized_length": 285
+}</pre></div>
+        </div>
+        <div id="prompt-optimizer-python" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">Python</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">import</span> requests
+
+url = <span class="str">"https://api.kowhaigoods.com/prompt-optimizer/optimize"</span>
+headers = {
+    <span class="str">"X-RapidAPI-Key"</span>: <span class="str">"YOUR_RAPIDAPI_KEY"</span>,
+    <span class="str">"X-RapidAPI-Host"</span>: <span class="str">"api.kowhaigoods.com"</span>,
+    <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
+}
+payload = {
+    <span class="str">"prompt"</span>: <span class="str">"write a blog post about climate change"</span>,
+    <span class="str">"goal"</span>: <span class="str">"clarity"</span>
+}
+response = requests.post(url, json=payload, headers=headers)
+<span class="kw">print</span>(response.json())</pre></div>
+        </div>
+        <div id="prompt-optimizer-js" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">JavaScript / fetch</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">const</span> options = {
+  method: <span class="str">'POST'</span>,
+  headers: {
+    <span class="str">'X-RapidAPI-Key'</span>: <span class="str">'YOUR_RAPIDAPI_KEY'</span>,
+    <span class="str">'X-RapidAPI-Host'</span>: <span class="str">'api.kowhaigoods.com'</span>,
+    <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
+  },
+  body: JSON.stringify({
+    prompt: <span class="str">'write a blog post about climate change'</span>,
+    goal: <span class="str">'clarity'</span>
+  })
+};
+
+fetch(<span class="str">'https://api.kowhaigoods.com/prompt-optimizer/optimize'</span>, options)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));</pre></div>
+        </div>
+        <div id="prompt-optimizer-curl" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">cURL</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>curl -X POST https://api.kowhaigoods.com/prompt-optimizer/optimize \
+  -H <span class="str">"X-RapidAPI-Key: YOUR_RAPIDAPI_KEY"</span> \
+  -H <span class="str">"X-RapidAPI-Host: api.kowhaigoods.com"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"prompt":"write a blog post about climate change","goal":"clarity"}'</span></pre></div>
+        </div>
+      </article>
+
+      <!-- Endpoint 2: JSON Validate -->
+      <article class="card" id="json-validate">
+        <div class="endpoint-header"><span class="method">POST</span><span class="path">/json-tools/validate</span></div>
+        <p>Validate JSON strings against a JSON Schema. Returns detailed error messages if validation fails.</p>
+        <table class="param-table">
+          <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>json</code></td><td>string</td><td class="required">Yes</td><td>The JSON string to validate</td></tr>
+            <tr><td><code>schema</code></td><td>object</td><td>No</td><td>JSON Schema to validate against</td></tr>
+          </tbody>
+        </table>
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('json-validate','request')">Request</button>
+          <button class="tab" onclick="showTab('json-validate','response')">Response</button>
+          <button class="tab" onclick="showTab('json-validate','python')">Python</button>
+          <button class="tab" onclick="showTab('json-validate','js')">JS</button>
+          <button class="tab" onclick="showTab('json-validate','curl')">curl</button>
+        </div>
+        <div id="json-validate-request" class="tab-panel active">
+          <div class="code-block"><div class="code-header"><span class="code-label">JSON request body</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "json": "{\"name\":\"John\",\"age\":30}",
+  "schema": {
+    "type": "object",
+    "required": ["name", "age"],
+    "properties": {
+      "name": {"type": "string"},
+      "age": {"type": "integer", "minimum": 0}
+    }
+  }
+}</pre></div>
+        </div>
+        <div id="json-validate-response" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">200 OK response</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "valid": true,
+  "errors": [],
+  "parsed": {
+    "name": "John",
+    "age": 30
+  }
+}</pre></div>
+        </div>
+        <div id="json-validate-python" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">Python</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">import</span> requests
+
+url = <span class="str">"https://api.kowhaigoods.com/json-tools/validate"</span>
+headers = {
+    <span class="str">"X-RapidAPI-Key"</span>: <span class="str">"YOUR_RAPIDAPI_KEY"</span>,
+    <span class="str">"X-RapidAPI-Host"</span>: <span class="str">"api.kowhaigoods.com"</span>,
+    <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
+}
+payload = {
+    <span class="str">"json"</span>: <span class="str">'{"name":"John","age":30}'</span>,
+    <span class="str">"schema"</span>: {
+        <span class="str">"type"</span>: <span class="str">"object"</span>,
+        <span class="str">"required"</span>: [<span class="str">"name"</span>, <span class="str">"age"</span>],
+        <span class="str">"properties"</span>: {
+            <span class="str">"name"</span>: {<span class="str">"type"</span>: <span class="str">"string"</span>},
+            <span class="str">"age"</span>: {<span class="str">"type"</span>: <span class="str">"integer"</span>, <span class="str">"minimum"</span>: <span class="num">0</span>}
+        }
+    }
+}
+response = requests.post(url, json=payload, headers=headers)
+<span class="kw">print</span>(response.json())</pre></div>
+        </div>
+        <div id="json-validate-js" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">JavaScript / fetch</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">const</span> options = {
+  method: <span class="str">'POST'</span>,
+  headers: {
+    <span class="str">'X-RapidAPI-Key'</span>: <span class="str">'YOUR_RAPIDAPI_KEY'</span>,
+    <span class="str">'X-RapidAPI-Host'</span>: <span class="str">'api.kowhaigoods.com'</span>,
+    <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
+  },
+  body: JSON.stringify({
+    json: <span class="str">'{"name":"John","age":30}'</span>,
+    schema: { type: <span class="str">'object'</span>, required: [<span class="str">'name'</span>, <span class="str">'age'</span>] }
+  })
+};
+
+fetch(<span class="str">'https://api.kowhaigoods.com/json-tools/validate'</span>, options)
+  .then(res => res.json())
+  .then(data => console.log(data));</pre></div>
+        </div>
+        <div id="json-validate-curl" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">cURL</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>curl -X POST https://api.kowhaigoods.com/json-tools/validate \
+  -H <span class="str">"X-RapidAPI-Key: YOUR_RAPIDAPI_KEY"</span> \
+  -H <span class="str">"X-RapidAPI-Host: api.kowhaigoods.com"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"json":"{\"name\":\"John\",\"age\":30}","schema":{"type":"object","required":["name","age"]}}'</span></pre></div>
+        </div>
+      </article>
+
+      <!-- Endpoint 3: JSON Format -->
+      <article class="card" id="json-format">
+        <div class="endpoint-header"><span class="method">POST</span><span class="path">/json-tools/format</span></div>
+        <p>Format and prettify JSON strings. Supports custom indentation or minified output.</p>
+        <table class="param-table">
+          <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>json</code></td><td>string</td><td class="required">Yes</td><td>The JSON string to format</td></tr>
+            <tr><td><code>indent</code></td><td>integer</td><td>No</td><td>Spaces per indentation level (default: 2)</td></tr>
+            <tr><td><code>minify</code></td><td>boolean</td><td>No</td><td>If true, output minified JSON (default: false)</td></tr>
+          </tbody>
+        </table>
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('json-format','request')">Request</button>
+          <button class="tab" onclick="showTab('json-format','response')">Response</button>
+          <button class="tab" onclick="showTab('json-format','python')">Python</button>
+          <button class="tab" onclick="showTab('json-format','js')">JS</button>
+          <button class="tab" onclick="showTab('json-format','curl')">curl</button>
+        </div>
+        <div id="json-format-request" class="tab-panel active">
+          <div class="code-block"><div class="code-header"><span class="code-label">JSON request body</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "json": "{\"name\":\"John\",\"age\":30,\"hobbies\":[\"reading\",\"coding\"]}",
+  "indent": 2,
+  "minify": false
+}</pre></div>
+        </div>
+        <div id="json-format-response" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">200 OK response</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "formatted": "{\n  \"name\": \"John\",\n  \"age\": 30,\n  \"hobbies\": [\n    \"reading\",\n    \"coding\"\n  ]\n}",
+  "size": 72,
+  "valid": true
+}</pre></div>
+        </div>
+        <div id="json-format-python" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">Python</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">import</span> requests
+
+url = <span class="str">"https://api.kowhaigoods.com/json-tools/format"</span>
+headers = {
+    <span class="str">"X-RapidAPI-Key"</span>: <span class="str">"YOUR_RAPIDAPI_KEY"</span>,
+    <span class="str">"X-RapidAPI-Host"</span>: <span class="str">"api.kowhaigoods.com"</span>,
+    <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
+}
+payload = {
+    <span class="str">"json"</span>: <span class="str">'{"name":"John","age":30,"hobbies":["reading","coding"]}'</span>,
+    <span class="str">"indent"</span>: <span class="num">2</span>,
+    <span class="str">"minify"</span>: <span class="kw">False</span>
+}
+response = requests.post(url, json=payload, headers=headers)
+<span class="kw">print</span>(response.json())</pre></div>
+        </div>
+        <div id="json-format-js" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">JavaScript / fetch</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">const</span> options = {
+  method: <span class="str">'POST'</span>,
+  headers: {
+    <span class="str">'X-RapidAPI-Key'</span>: <span class="str">'YOUR_RAPIDAPI_KEY'</span>,
+    <span class="str">'X-RapidAPI-Host'</span>: <span class="str">'api.kowhaigoods.com'</span>,
+    <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
+  },
+  body: JSON.stringify({
+    json: <span class="str">'{"name":"John","age":30,"hobbies":["reading","coding"]}'</span>,
+    indent: <span class="num">2</span>,
+    minify: <span class="kw">false</span>
+  })
+};
+
+fetch(<span class="str">'https://api.kowhaigoods.com/json-tools/format'</span>, options)
+  .then(res => res.json())
+  .then(data => console.log(data));</pre></div>
+        </div>
+        <div id="json-format-curl" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">cURL</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>curl -X POST https://api.kowhaigoods.com/json-tools/format \
+  -H <span class="str">"X-RapidAPI-Key: YOUR_RAPIDAPI_KEY"</span> \
+  -H <span class="str">"X-RapidAPI-Host: api.kowhaigoods.com"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"json":"{\"name\":\"John\",\"age\":30,\"hobbies\":[\"reading\",\"coding\"]}","indent":2,"minify":false}'</span></pre></div>
+        </div>
+      </article>
+
+      <!-- Endpoint 4: JSON Convert -->
+      <article class="card" id="json-convert">
+        <div class="endpoint-header"><span class="method">POST</span><span class="path">/json-tools/convert</span></div>
+        <p>Convert JSON to CSV, YAML, or reformatted JSON for data pipelines.</p>
+        <table class="param-table">
+          <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>json</code></td><td>string</td><td class="required">Yes</td><td>The JSON string to convert</td></tr>
+            <tr><td><code>target_format</code></td><td>string</td><td class="required">Yes</td><td>Target format: <code>csv</code>, <code>yaml</code>, or <code>json</code></td></tr>
+          </tbody>
+        </table>
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('json-convert','request')">Request</button>
+          <button class="tab" onclick="showTab('json-convert','response')">Response</button>
+          <button class="tab" onclick="showTab('json-convert','python')">Python</button>
+          <button class="tab" onclick="showTab('json-convert','js')">JS</button>
+          <button class="tab" onclick="showTab('json-convert','curl')">curl</button>
+        </div>
+        <div id="json-convert-request" class="tab-panel active">
+          <div class="code-block"><div class="code-header"><span class="code-label">JSON request body</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "json": "[{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]",
+  "target_format": "csv"
+}</pre></div>
+        </div>
+        <div id="json-convert-response" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">200 OK response</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "converted": "name,age\nJohn,30\nJane,25\n",
+  "source_format": "json",
+  "target_format": "csv",
+  "rows": 2
+}</pre></div>
+        </div>
+        <div id="json-convert-python" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">Python</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">import</span> requests
+
+url = <span class="str">"https://api.kowhaigoods.com/json-tools/convert"</span>
+headers = {
+    <span class="str">"X-RapidAPI-Key"</span>: <span class="str">"YOUR_RAPIDAPI_KEY"</span>,
+    <span class="str">"X-RapidAPI-Host"</span>: <span class="str">"api.kowhaigoods.com"</span>,
+    <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
+}
+payload = {
+    <span class="str">"json"</span>: <span class="str">'[{"name":"John","age":30},{"name":"Jane","age":25}]'</span>,
+    <span class="str">"target_format"</span>: <span class="str">"csv"</span>
+}
+response = requests.post(url, json=payload, headers=headers)
+<span class="kw">print</span>(response.json())</pre></div>
+        </div>
+        <div id="json-convert-js" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">JavaScript / fetch</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">const</span> options = {
+  method: <span class="str">'POST'</span>,
+  headers: {
+    <span class="str">'X-RapidAPI-Key'</span>: <span class="str">'YOUR_RAPIDAPI_KEY'</span>,
+    <span class="str">'X-RapidAPI-Host'</span>: <span class="str">'api.kowhaigoods.com'</span>,
+    <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
+  },
+  body: JSON.stringify({
+    json: <span class="str">'[{"name":"John","age":30},{"name":"Jane","age":25}]'</span>,
+    target_format: <span class="str">'csv'</span>
+  })
+};
+
+fetch(<span class="str">'https://api.kowhaigoods.com/json-tools/convert'</span>, options)
+  .then(res => res.json())
+  .then(data => console.log(data));</pre></div>
+        </div>
+        <div id="json-convert-curl" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">cURL</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>curl -X POST https://api.kowhaigoods.com/json-tools/convert \
+  -H <span class="str">"X-RapidAPI-Key: YOUR_RAPIDAPI_KEY"</span> \
+  -H <span class="str">"X-RapidAPI-Host: api.kowhaigoods.com"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"json":"[{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]","target_format":"csv"}'</span></pre></div>
+        </div>
+      </article>
+
+      <!-- Endpoint 5: Text Analyzer -->
+      <article class="card" id="text-analyzer">
+        <div class="endpoint-header"><span class="method">POST</span><span class="path">/text-analyzer/analyze</span></div>
+        <p>Analyze text for readability metrics, SEO quality, and content statistics.</p>
+        <table class="param-table">
+          <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>text</code></td><td>string</td><td class="required">Yes</td><td>The text to analyze</td></tr>
+            <tr><td><code>include_seo</code></td><td>boolean</td><td>No</td><td>Include SEO analysis (default: false)</td></tr>
+            <tr><td><code>strip_html</code></td><td>boolean</td><td>No</td><td>Strip HTML tags before analysis (default: false)</td></tr>
+          </tbody>
+        </table>
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('text-analyzer','request')">Request</button>
+          <button class="tab" onclick="showTab('text-analyzer','response')">Response</button>
+          <button class="tab" onclick="showTab('text-analyzer','python')">Python</button>
+          <button class="tab" onclick="showTab('text-analyzer','js')">JS</button>
+          <button class="tab" onclick="showTab('text-analyzer','curl')">curl</button>
+        </div>
+        <div id="text-analyzer-request" class="tab-panel active">
+          <div class="code-block"><div class="code-header"><span class="code-label">JSON request body</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "text": "The quick brown fox jumps over the lazy dog. This is a sample text for analysis.",
+  "include_seo": true,
+  "strip_html": false
+}</pre></div>
+        </div>
+        <div id="text-analyzer-response" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">200 OK response</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>{
+  "word_count": 16,
+  "sentence_count": 2,
+  "character_count": 79,
+  "reading_time_seconds": 7,
+  "complexity_score": 3.2,
+  "readability": "easy",
+  "seo": {
+    "keyword_density": {
+      "the": 3.1,
+      "text": 6.2,
+      "sample": 6.2
+    },
+    "meta_description_length": 0,
+    "title_length": 0,
+    "recommendations": [
+      "Add a meta description of at least 120 characters",
+      "Consider adding more relevant keywords"
+    ]
+  }
+}</pre></div>
+        </div>
+        <div id="text-analyzer-python" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">Python</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">import</span> requests
+
+url = <span class="str">"https://api.kowhaigoods.com/text-analyzer/analyze"</span>
+headers = {
+    <span class="str">"X-RapidAPI-Key"</span>: <span class="str">"YOUR_RAPIDAPI_KEY"</span>,
+    <span class="str">"X-RapidAPI-Host"</span>: <span class="str">"api.kowhaigoods.com"</span>,
+    <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
+}
+payload = {
+    <span class="str">"text"</span>: <span class="str">"The quick brown fox jumps over the lazy dog. This is a sample text for analysis."</span>,
+    <span class="str">"include_seo"</span>: <span class="kw">True</span>,
+    <span class="str">"strip_html"</span>: <span class="kw">False</span>
+}
+response = requests.post(url, json=payload, headers=headers)
+<span class="kw">print</span>(response.json())</pre></div>
+        </div>
+        <div id="text-analyzer-js" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">JavaScript / fetch</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre><span class="kw">const</span> options = {
+  method: <span class="str">'POST'</span>,
+  headers: {
+    <span class="str">'X-RapidAPI-Key'</span>: <span class="str">'YOUR_RAPIDAPI_KEY'</span>,
+    <span class="str">'X-RapidAPI-Host'</span>: <span class="str">'api.kowhaigoods.com'</span>,
+    <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
+  },
+  body: JSON.stringify({
+    text: <span class="str">'The quick brown fox jumps over the lazy dog. This is a sample text for analysis.'</span>,
+    include_seo: <span class="kw">true</span>,
+    strip_html: <span class="kw">false</span>
+  })
+};
+
+fetch(<span class="str">'https://api.kowhaigoods.com/text-analyzer/analyze'</span>, options)
+  .then(res => res.json())
+  .then(data => console.log(data));</pre></div>
+        </div>
+        <div id="text-analyzer-curl" class="tab-panel">
+          <div class="code-block"><div class="code-header"><span class="code-label">cURL</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>curl -X POST https://api.kowhaigoods.com/text-analyzer/analyze \
+  -H <span class="str">"X-RapidAPI-Key: YOUR_RAPIDAPI_KEY"</span> \
+  -H <span class="str">"X-RapidAPI-Host: api.kowhaigoods.com"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"text":"The quick brown fox jumps over the lazy dog. This is a sample text for analysis.","include_seo":true,"strip_html":false}'</span></pre></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="pricing">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-sub">Choose a plan that fits your volume. All paid plans include 10,240 MB/month bandwidth.</p>
+      <div class="pricing">
+        <div class="pricing-card">
+          <h3>Free</h3>
+          <div class="price">$0<span>/mo</span></div>
+          <ul>
+            <li>500 requests/day</li>
+            <li>Hard quota limit</li>
+            <li>All 5 endpoints</li>
+            <li>10,240 MB bandwidth/mo</li>
+          </ul>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Pro</h3>
+          <div class="price">$9.99<span>/mo</span></div>
+          <ul>
+            <li>1,000 requests/hour</li>
+            <li>500,000 requests/month</li>
+            <li>All 5 endpoints</li>
+            <li>10,240 MB bandwidth/mo</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>Ultra</h3>
+          <div class="price">$29.99<span>/mo</span></div>
+          <ul>
+            <li>1,000 requests/hour</li>
+            <li>500,000 requests/month</li>
+            <li>All 5 endpoints</li>
+            <li>10,240 MB bandwidth/mo</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>Mega</h3>
+          <div class="price">$99.99<span>/mo</span></div>
+          <ul>
+            <li>1,000 requests/hour</li>
+            <li>500,000 requests/month</li>
+            <li>All 5 endpoints</li>
+            <li>10,240 MB bandwidth/mo</li>
+            <li>Overage: $0.001/MB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="errors" style="margin-top: 60px;">
+      <h2 class="section-title">Error Handling</h2>
+      <p class="section-sub">Standard HTTP status codes with JSON error bodies.</p>
+      <div class="card">
+        <table class="error-table">
+          <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td class="status status-ok">200 OK</td><td>Request succeeded.</td></tr>
+            <tr><td class="status status-warn">400 Bad Request</td><td>Invalid input — check the error message in the response body.</td></tr>
+            <tr><td class="status status-warn">429 Too Many Requests</td><td>Rate limit exceeded — upgrade your plan or wait for quota reset.</td></tr>
+            <tr><td class="status status-err">500 Internal Server Error</td><td>Server error — retry with exponential backoff.</td></tr>
+          </tbody>
+        </table>
+        <div class="code-block" style="margin-top: 20px;">
+          <div class="code-header"><span class="code-label">Error response format</span><button class="copy-btn" onclick="copy(this)">Copy</button></div>
+          <pre>{
+  "error": "Invalid JSON input",
+  "detail": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="try-it" style="margin-top: 60px;">
+      <h2 class="section-title">Try It</h2>
+      <p class="section-sub">Build a ready-to-run cURL command. Paste your RapidAPI key, pick an endpoint, and edit the request body.</p>
+      <div class="card try-form">
+        <label for="try-key">RapidAPI Key</label>
+        <input type="text" id="try-key" placeholder="YOUR_RAPIDAPI_KEY">
+
+        <label for="try-endpoint">Endpoint</label>
+        <select id="try-endpoint">
+          <option value="prompt-optimizer/optimize" data-body='{"prompt":"write a blog post about climate change","goal":"clarity","context":"for a tech audience","format":"markdown"}'>Prompt Optimizer — /prompt-optimizer/optimize</option>
+          <option value="json-tools/validate" data-body='{"json":"{\"name\":\"John\",\"age\":30}","schema":{"type":"object","required":["name","age"],"properties":{"name":{"type":"string"},"age":{"type":"integer","minimum":0}}}}'>JSON Validate — /json-tools/validate</option>
+          <option value="json-tools/format" data-body='{"json":"{\"name\":\"John\",\"age\":30,\"hobbies\":[\"reading\",\"coding\"]}","indent":2,"minify":false}'>JSON Format — /json-tools/format</option>
+          <option value="json-tools/convert" data-body='{"json":"[{\"name\":\"John\",\"age\":30},{\"name\":\"Jane\",\"age\":25}]","target_format":"csv"}'>JSON Convert — /json-tools/convert</option>
+          <option value="text-analyzer/analyze" data-body='{"text":"The quick brown fox jumps over the lazy dog. This is a sample text for analysis.","include_seo":true,"strip_html":false}'>Text Analyzer — /text-analyzer/analyze</option>
+        </select>
+
+        <label for="try-body">Request Body (JSON)</label>
+        <textarea id="try-body"></textarea>
+
+        <button class="btn" onclick="buildCurl()">Generate cURL Command</button>
+
+        <div class="try-output" id="try-output"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Kowhai API Hub — Developer Tools APIs • Built in New Zealand 🇳🇿</p>
+    <p style="margin-top: 8px;"><a href="/">Home</a> • <a href="/api-docs.html">API Docs</a> • <a href="kowhaigoods-privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    const endpointSelect = document.getElementById('try-endpoint');
+    const bodyField = document.getElementById('try-body');
+
+    function loadBody() {
+      const selected = endpointSelect.options[endpointSelect.selectedIndex];
+      bodyField.value = JSON.stringify(JSON.parse(selected.dataset.body), null, 2);
+    }
+    endpointSelect.addEventListener('change', loadBody);
+    loadBody();
+
+    function showTab(endpointId, panelName) {
+      const card = document.getElementById(endpointId);
+      const panels = card.querySelectorAll('.tab-panel');
+      const tabs = card.querySelectorAll('.tab');
+      panels.forEach(p => p.classList.remove('active'));
+      tabs.forEach(t => t.classList.remove('active'));
+      document.getElementById(endpointId + '-' + panelName).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function buildCurl() {
+      const key = document.getElementById('try-key').value.trim() || 'YOUR_RAPIDAPI_KEY';
+      const path = endpointSelect.value;
+      let body = bodyField.value.trim();
+      body = body.replace(/'/g, "'\\''");
+      const cmd = `curl -X POST https://api.kowhaigoods.com/${path} \\
+  -H "X-RapidAPI-Key: ${key}" \\
+  -H "X-RapidAPI-Host: api.kowhaigoods.com" \\
+  -H "Content-Type: application/json" \\
+  -d '${body}'`;
+      document.getElementById('try-output').innerHTML = '<div class="code-block"><div class="code-header"><span class="code-label">Generated cURL</span><button class="copy-btn" onclick="copy(this)">Copy</button></div><pre>' + escapeHtml(cmd) + '</pre></div>';
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function copy(btn) {
+      const pre = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        const old = btn.innerText;
+        btn.innerText = 'Copied';
+        setTimeout(() => btn.innerText = old, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
