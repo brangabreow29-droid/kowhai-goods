@@ -1,184 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kowhai API Hub — Developer Tools APIs</title>
-  <meta name="description" content="Fast, reliable developer tool APIs: AI Prompt Optimizer, JSON Schema Validator, and Text Readability & SEO Analyzer. Free tier available. No signup required.">
-  <meta name="keywords" content="developer API, AI prompt optimizer, JSON validator, text readability API, SEO analyzer API, RapidAPI">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
-
-    .hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a1a2e 100%); padding: 80px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; font-weight: 700; color: #58a6ff; letter-spacing: -0.5px; }
-    .hero .tagline { font-size: 1.15rem; max-width: 600px; margin: 0 auto 28px; color: #8b949e; }
-    .hero .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
-    .badge { background: #161b22; border: 1px solid #30363d; color: #8b949e; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
-    .badge::before { content: "✓ "; color: #3fb950; }
-    .hero .cta { display: inline-block; background: #238636; color: white; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; }
-    .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(35,134,54,0.4); }
-    .hero .cta.secondary { background: #21262d; border: 1px solid #30363d; margin-left: 12px; }
-    .hero .cta.secondary:hover { box-shadow: 0 6px 20px rgba(48,54,61,0.4); }
-
-    .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
-
-    .section-title { font-size: 1.8rem; margin-bottom: 8px; color: #58a6ff; }
-    .section-sub { color: #8b949e; margin-bottom: 32px; font-size: 0.95rem; }
-
-    .api-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .api-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 28px; transition: border-color 0.2s, transform 0.2s; }
-    .api-card:hover { border-color: #58a6ff; transform: translateY(-2px); }
-    .api-card .icon { font-size: 2rem; margin-bottom: 12px; }
-    .api-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: #f0f6fc; }
-    .api-card p { font-size: 0.9rem; color: #8b949e; margin-bottom: 16px; }
-    .api-card .endpoints { background: #0d1117; border-radius: 6px; padding: 10px 14px; margin-bottom: 16px; }
-    .api-card .endpoints code { color: #79c0ff; font-size: 0.82rem; font-family: 'SF Mono', Consolas, monospace; }
-    .api-card .endpoints .method { color: #3fb950; font-weight: 700; margin-right: 8px; }
-    .api-card .price { font-size: 0.85rem; color: #3fb950; font-weight: 600; }
-
-    .code-block { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
-    .code-block pre { font-family: 'SF Mono', Consolas, monospace; font-size: 0.85rem; line-height: 1.5; }
-    .code-block .comment { color: #8b949e; }
-    .code-block .key { color: #79c0ff; }
-    .code-block .str { color: #a5d6ff; }
-    .code-block .kw { color: #ff7b72; }
-
-    .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; margin-top: 20px; }
-    .feature { padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
-    .feature h4 { color: #58a6ff; margin-bottom: 8px; font-size: 1rem; }
-    .feature p { font-size: 0.88rem; color: #8b949e; }
-
-    footer { background: #161b22; border-top: 1px solid #30363d; text-align: center; padding: 40px 20px; margin-top: 60px; }
-    footer a { color: #58a6ff; text-decoration: none; }
-    footer p { font-size: 0.85rem; color: #8b949e; }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.8rem; }
-      .hero .cta { display: block; margin: 8px auto; }
-      .hero .cta.secondary { margin-left: auto; }
-      .api-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Templates — Excel Tools, Playbooks & Digital Products</title>
+    <meta name="description" content="Practical Excel templates, PDF playbooks and digital tools for freelancers, small business owners and creators. One-time purchase, no subscriptions. Instant download.">
+    <meta name="keywords" content="excel templates, freelance tracker, personal finance dashboard, kpi dashboard, content calendar, habit tracker, copywriting, side hustle, productivity">
+    <!-- Umami Analytics -->
+    <script async defer src="https://umami.kowhaigoods.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #2c3e50; line-height: 1.6; }
+        .hero { background: linear-gradient(135deg, #2c3e50, #1a5276); color: white; padding: 80px 20px 60px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .hero .cta { display: inline-block; background: #e74c3c; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s; }
+        .hero .cta:hover { background: #c0392b; }
+        .hero .cta.secondary { background: transparent; border: 2px solid white; margin-left: 12px; }
+        .hero .cta.secondary:hover { background: rgba(255,255,255,0.1); }
+        .sale-banner { background: #e74c3c; color: white; text-align: center; padding: 14px 20px; font-weight: 600; font-size: 1rem; }
+        .sale-banner a { color: white; text-decoration: underline; }
+        .lead-magnet { background: white; border-bottom: 1px solid #ecf0f1; padding: 40px 20px; text-align: center; }
+        .lead-magnet h2 { font-size: 1.5rem; margin-bottom: 10px; }
+        .lead-magnet p { color: #7f8c8d; max-width: 520px; margin: 0 auto 16px; }
+        .lead-magnet .btn { display: inline-block; background: #27ae60; color: white; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+        .lead-magnet .btn:hover { background: #229954; }
+        .products { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .product { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+        .product:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .product-body { padding: 20px; }
+        .product-body h3 { font-size: 1.1rem; margin-bottom: 10px; color: #2c3e50; }
+        .product-body p { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 15px; }
+        .product-body .price { font-size: 1.3rem; font-weight: 700; color: #27ae60; }
+        .product-body .buy { display: inline-block; background: #2c3e50; color: white; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; margin-top: 10px; }
+        .product-body .buy:hover { background: #1a5276; }
+        .features { background: white; padding: 60px 20px; text-align: center; }
+        .features h2 { font-size: 2rem; margin-bottom: 40px; color: #2c3e50; }
+        .features-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+        .feature { padding: 20px; }
+        .feature .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .feature h3 { font-size: 1.1rem; margin-bottom: 10px; color: #2c3e50; }
+        .feature p { font-size: 0.9rem; color: #7f8c8d; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+        footer a { color: #e74c3c; text-decoration: none; }
+        .tag { display: inline-block; background: #ecf0f1; color: #7f8c8d; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; margin: 2px; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.8rem; } .products { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>⚡ Kowhai API Hub</h1>
-    <p class="tagline">Fast, reliable developer tool APIs. AI prompt optimization, JSON validation, and text analysis — built for production use.</p>
-    <div class="badges">
-      <span class="badge">99.9% Uptime</span>
-      <span class="badge">Sub-50ms Response</span>
-      <span class="badge">Free Tier Available</span>
-      <span class="badge">No Signup Required</span>
+    <div class="sale-banner">
+        🎉 SEPTEMBER LAUNCH SALE — <strong>40% off everything</strong> with code <strong>SEPTEMBER40</strong> at checkout · <a href="https://brangabrew.gumroad.com">Shop now</a>
     </div>
-    <a href="https://rapidapi.com/user/kowhai-api" class="cta" target="_blank" rel="noopener">Get API Key →</a>
-    <a href="/docs" class="cta secondary">View Docs</a>
-  </div>
-
-  <div class="container">
-    <h2 class="section-title">APIs</h2>
-    <p class="section-sub">Three production-ready APIs, each with a free tier. Available on RapidAPI.</p>
-
-    <div class="api-grid">
-      <div class="api-card">
-        <div class="icon">🤖</div>
-        <h3>AI Prompt Optimizer</h3>
-        <p>Takes a raw AI prompt and returns an optimized version with expert role definition, structured constraints, and output format guidance. Improves AI response quality by 40-60%.</p>
-        <div class="endpoints">
-          <code><span class="method">POST</span>/prompt-optimizer/optimize</code><br>
-          <code><span class="method">GET</span>/prompt-optimizer/health</code>
-        </div>
-        <span class="price">Free: 100 req/mo • Pro: $9/mo (1K) • Business: $29/mo (10K)</span>
-      </div>
-
-      <div class="api-card">
-        <div class="icon">📋</div>
-        <h3>JSON Schema Validator</h3>
-        <p>Validate JSON against schemas, format/prettify, and convert between JSON, CSV, and YAML. Returns all validation errors with field paths, not just the first.</p>
-        <div class="endpoints">
-          <code><span class="method">POST</span>/json-tools/validate</code><br>
-          <code><span class="method">POST</span>/json-tools/format</code><br>
-          <code><span class="method">POST</span>/json-tools/convert</code>
-        </div>
-        <span class="price">Free: 500 req/mo • Pro: $5/mo (5K) • Business: $19/mo (50K)</span>
-      </div>
-
-      <div class="api-card">
-        <div class="icon">📝</div>
-        <h3>Text Readability & SEO Analyzer</h3>
-        <p>Analyze text or HTML for readability scores (Flesch-Kincaid, Gunning Fog, SMOG), keyword density, heading structure, meta tags, image alt coverage, and get actionable SEO suggestions.</p>
-        <div class="endpoints">
-          <code><span class="method">POST</span>/text-analyzer/analyze</code><br>
-          <code><span class="method">GET</span>/text-analyzer/health</code>
-        </div>
-        <span class="price">Free: 100 req/mo • Pro: $9/mo (1K) • Business: $29/mo (10K)</span>
-      </div>
+    <div class="hero">
+        <h1>Practical Templates &amp; Playbooks</h1>
+        <p>Professional Excel templates, PDF playbooks and digital tools for freelancers, small business owners and creators. One-time purchase. No subscriptions. Instant download.</p>
+        <a href="https://brangabrew.gumroad.com" class="cta">Browse All Products →</a>
+        <a href="https://brangabrew.gumroad.com/l/nfigy" class="cta secondary">Free Planner Download</a>
     </div>
 
-    <h2 class="section-title" style="margin-top: 60px;">Quick Start</h2>
-    <p class="section-sub">Test any API in under 30 seconds.</p>
-
-    <div class="code-block">
-<pre><span class="comment"># AI Prompt Optimizer</span>
-curl -X POST https://api.kowhaigoods.com/prompt-optimizer/optimize \
-  -H <span class="str">"Content-Type: application/json"</span> \
-  -d <span class="str">'{
-    "prompt": "write code to sort a list",
-    "goal": "write a Python function",
-    "format": "structured"
-  }'</span>
-
-<span class="comment"># JSON Schema Validator</span>
-curl -X POST https://api.kowhaigoods.com/json-tools/validate \
-  -H <span class="str">"Content-Type: application/json"</span> \
-  -d <span class="str">'{
-    "data": {"name": "test", "age": 25},
-    "schema": {"type": "object", "required": ["name"]}
-  }'</span>
-
-<span class="comment"># Text Readability & SEO Analyzer</span>
-curl -X POST https://api.kowhaigoods.com/text-analyzer/analyze \
-  -H <span class="str">"Content-Type: application/json"</span> \
-  -d <span class="str">'{
-    "text": "Your content here...",
-    "is_html": false,
-    "target_keywords": ["your", "keywords"]
-  }'</span></pre>
+    <div class="lead-magnet">
+        <h2>🎁 Free: Weekly Productivity Planner</h2>
+        <p>Start with our most popular free template — plan your week, track habits, and clear your task list. No signup required. Instant download.</p>
+        <a href="https://brangabrew.gumroad.com/l/nfigy" class="btn">Download Free Planner</a>
     </div>
 
-    <h2 class="section-title" style="margin-top: 60px;">Why Kowhai API Hub?</h2>
     <div class="features">
-      <div class="feature">
-        <h4>⚡ Fast</h4>
-        <p>Sub-50ms response times. All processing happens on dedicated infrastructure — no cold starts, no queuing.</p>
-      </div>
-      <div class="feature">
-        <h4>🔒 Secure</h4>
-        <p>No data is stored. All requests are processed in-memory and discarded. No external URL fetching — zero SSRF risk.</p>
-      </div>
-      <div class="feature">
-        <h4>📦 Simple Pricing</h4>
-        <p>Free tier for testing. Pro plans start at $5/mo. No hidden fees, no per-request charges beyond your plan.</p>
-      </div>
-      <div class="feature">
-        <h4>📚 Well-Documented</h4>
-        <p>Interactive Swagger/OpenAPI docs at /docs. Every endpoint has request/response examples and error codes.</p>
-      </div>
-      <div class="feature">
-        <h4>🔄 Rate Limited</h4>
-        <p>Built-in rate limiting protects your quota. RapidAPI handles authentication and billing automatically.</p>
-      </div>
-      <div class="feature">
-        <h4>🌐 Global CDN</h4>
-        <p>Served via Cloudflare's global edge network. Low latency from anywhere in the world.</p>
-      </div>
+        <h2>Why Our Templates?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="icon">📊</div>
+                <h3>Works Everywhere</h3>
+                <p>Microsoft Excel or Google Sheets (free). No macros, no add-ins, no compatibility issues.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">💰</div>
+                <h3>One-Time Purchase</h3>
+                <p>Buy once, own forever. No monthly fees. No subscription. No upsell. Just the file.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">⚡</div>
+                <h3>Instant Download</h3>
+                <p>Immediate access after purchase. Start using your template in the next 5 minutes.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">✅</div>
+                <h3>Actually Useful</h3>
+                <p>Built by someone who uses these daily. Clean formulas, dropdown menus, automatic calculations.</p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <footer>
-    <p>Kowhai API Hub — Developer Tools APIs • Built in New Zealand 🇳🇿</p>
-    <p style="margin-top: 8px;"><a href="/docs">API Docs</a> • <a href="https://rapidapi.com/user/kowhai-api">RapidAPI Profile</a> • <a href="kowhaigoods-privacy-policy.html">Privacy Policy</a></p>
-  </footer>
+    <div class="products">
+        <div class="product">
+            <div class="product-body">
+                <h3>Freelance Business Tracker</h3>
+                <p>Projects, invoices, time tracking, and expenses — all in one workbook with a dashboard.</p>
+                <span class="tag">Excel</span> <span class="tag">Freelance</span> <span class="tag">Invoicing</span>
+                <div class="price">$9</div>
+                <a href="https://brangabrew.gumroad.com/l/hqpbf" class="buy">Get it →</a>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>Personal Finance Dashboard</h3>
+                <p>Budget, track spending, and crush your goals with auto-calculating charts.</p>
+                <span class="tag">Excel</span> <span class="tag">Finance</span> <span class="tag">Budgeting</span>
+                <div class="price">$12</div>
+                <a href="https://brangabrew.gumroad.com/l/dofyn" class="buy">Get it →</a>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>Small Business KPI Dashboard</h3>
+                <p>Revenue, customers, pipeline and marketing metrics in one 7-tab Excel template.</p>
+                <span class="tag">Excel</span> <span class="tag">Business</span> <span class="tag">Analytics</span>
+                <div class="price">$12</div>
+                <a href="https://brangabrew.gumroad.com/l/icdxal" class="buy">Get it →</a>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>The Deep Work Protocol</h3>
+                <p>21-day science-backed focus program. Razor-sharp concentration without apps.</p>
+                <span class="tag">PDF</span> <span class="tag">Productivity</span> <span class="tag">Focus</span>
+                <div class="price">$11</div>
+                <a href="https://brangabrew.gumroad.com/l/pzaex" class="buy">Get it →</a>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>The Code Review Handbook</h3>
+                <p>7-layer review framework, 5 checklists, 50+ comment templates for better code reviews.</p>
+                <span class="tag">PDF</span> <span class="tag">Developers</span> <span class="tag">Career</span>
+                <div class="price">$14</div>
+                <a href="https://brangabrew.gumroad.com/l/reabj" class="buy">Get it →</a>
+                </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>The Side Hustle Playbook</h3>
+                <p>25 profitable side hustles with startup costs, time-to-first-$ and launch plans.</p>
+                <span class="tag">PDF</span> <span class="tag">Entrepreneurship</span> <span class="tag">Income</span>
+                <div class="price">$13</div>
+                <a href="https://brangabrew.gumroad.com/l/jszyca" class="buy">Get it →</a>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>Copywriting Swipe File</h3>
+                <p>101 proven headlines, subject lines and CTAs with formulas for each.</p>
+                <span class="tag">PDF</span> <span class="tag">Marketing</span> <span class="tag">Copywriting</span>
+                <div class="price">$9</div>
+                <a href="https://brangabrew.gumroad.com/l/ppdraz" class="buy">Get it →</a>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-body">
+                <h3>Investment Portfolio Tracker</h3>
+                <p>Track holdings, dividends, and allocation with auto-calculating metrics.</p>
+                <span class="tag">Excel</span> <span class="tag">Investing</span> <span class="tag">Finance</span>
+                <div class="price">$9</div>
+                <a href="https://brangabrew.gumroad.com/l/zqdjme" class="buy">Get it →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="lead-magnet" style="margin-top: 40px;">
+        <h2>For Developers: Kowhai API Hub</h2>
+        <p>Free-tier developer APIs — AI Prompt Optimizer, JSON Schema Validator, Text Readability &amp; SEO Analyzer. No signup required.</p>
+        <a href="https://api.kowhaigoods.com/health" class="btn" style="background:#2c3e50;">Explore the APIs →</a>
+        <p style="margin-top:8px; font-size:0.85rem;"><a href="/api-docs.html" style="color:#2c3e50;">Full API documentation</a></p>
+    </div>
+
+    <footer>
+        <p>KowhaiGoods · <a href="https://brangabrew.gumroad.com">Gumroad Store</a> · <a href="/sitemap.xml">Sitemap</a></p>
+        <p style="margin-top:8px; opacity:0.7;">© 2026 KowhaiGoods. All rights reserved.</p>
+    </footer>
 </body>
 </html>
