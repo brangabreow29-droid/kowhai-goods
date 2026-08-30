@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Prep Tracker Template: Excel Macro Planning</title>
+  <meta name="description" content="A meal prep tracker template in Excel plans your week, auto-calculates macros from a 100-food database, and builds your grocery list automatically.">
+  <link rel="canonical" href="https://kowhaigoods.com/meal-prep-tracker-excel.html">
+  <script async defer src="https://hosting-memorial-yesterday-roses.trycloudflare.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a meal prep tracker template?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A meal prep tracker template is a pre-built spreadsheet that plans your meals for the week, tracks calories and macronutrients automatically, and generates your grocery list. A good Excel version includes a food database with nutrition data per 100g, a 7-day meal planner where you pick foods from dropdowns and enter gram amounts, VLOOKUP formulas that auto-calculate calories, protein, carbs, and fat for every meal, and an auto-generated grocery list. It replaces both scattered recipe notes and subscription macro apps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I track macros in Excel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To track macros in Excel, you need three things: a food database listing calories, protein, carbs, and fat per 100g for each food; a meal planner where you select a food from a dropdown and enter the grams you'll eat; and a VLOOKUP formula that pulls the nutrition data and multiplies it by grams divided by 100. For example, =VLOOKUP(B2,FoodDB,2,FALSE)*C2/100 returns the calories for the gram amount in cell C2. Add SUMIFS per day to total your daily calories and macros, and conditional formatting to flag days that miss your targets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a meal prep tracker template cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A meal prep tracker template costs between $0 and $15. You can build a basic one for free in Excel or Google Sheets, but you'll spend 5-10 hours creating the food database, formulas, and dropdowns yourself. A complete pre-built 7-tab template with a 100+ food database, auto-calculating macros, an auto-generated grocery list, a meal prep schedule, and a progress tracker costs $9 USD as a one-time purchase — less than one month of most macro tracking apps. Subscription apps like MyFitnessPal Premium cost $20-25 per month, which is $240-300 per year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best meal prep tracker template?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best meal prep tracker template for most people is a 7-day Excel planner with a built-in food database, auto-calculating macros, and an auto-generated grocery list — because it combines meal planning, macro tracking, and shopping in one offline file with no subscription. The Meal Prep & Macro Tracker is a complete example: 7 tabs including a 100+ food database, a 7-day meal planner with dropdown food selection, automatic calorie and macro calculation via VLOOKUP, a grocery list that builds itself from your plan, a meal prep schedule, a progress tracker, and a 4-week rotation planner — for a one-time $9."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my macro targets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Calculate your macro targets in three steps. First, estimate calories: multiply your bodyweight in pounds by 14-16 (maintenance) or 12-13 (fat loss) or 16-18 (muscle gain). Second, set protein at 0.7-1 gram per pound of bodyweight (1.6-2.2 g/kg). Third, split the remaining calories between carbs and fat based on preference: endurance training leans carbs (50-55% of calories), low-activity plans lean fat (30-35%). A common starting split for an 80 kg moderately active man: 2,600 calories, 160g protein, 280g carbs, 87g fat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Excel or Google Sheets better for meal prep tracking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google Sheets is better for meal prep tracking if you want to edit your plan from your phone at the grocery store or share it with a partner. Excel is better for offline use, faster conditional formatting, and more reliable dropdown and VLOOKUP behaviour in large files. The practical answer: a well-built template uses only standard formulas (VLOOKUP, SUMIF, data validation, conditional formatting), so it works in both Excel and Google Sheets, as well as LibreOffice Calc and Apple Numbers. Pick the app you already have open daily."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I create a grocery list from a meal plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To create a grocery list from a meal plan automatically, use a SUMIF formula that adds up every occurrence of each food across your weekly meal planner, then compare the total against what you already have. In Excel: list every unique food from your food database on a Grocery List tab, then for each food use =SUMIF(Planner!B:B, A2, Planner!C:C) to total the grams needed for the week. Foods with a total above zero go on the list, sorted by grocery store aisle (produce, protein, dairy, pantry). This turns a 20-minute manual chore into an instant one."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Meal Prep & Macro Tracker — 7-Day Excel Planner with 100+ Food Database",
+    "description": "7-tab Excel template with a 100+ food database, auto-calculating macros via dropdown food selection, an auto-generated grocery list, meal prep schedule, progress tracker, and 4-week rotation. Works in Excel, Google Sheets, LibreOffice Calc, and Apple Numbers.",
+    "category": "Fitness & Health",
+    "brand": "Kowhai Goods",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.00",
+      "priceCurrency": "USD",
+      "url": "https://brangabrew.gumroad.com/l/cskepz",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; max-width: 780px; margin: 0 auto; padding: 1.5rem 1rem; color: #1a1a1a; background: #fafafa; }
+    h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.45rem; margin-top: 2.5rem; margin-bottom: 0.75rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .subtitle { color: #555; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; }
+    .cta-box { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: #fff; border-radius: 0.75rem; padding: 1.5rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; color: #fff; }
+    .cta-box p { margin-bottom: 1rem; color: #e0e7ff; }
+    .cta-button { display: inline-block; background: #fff; color: #1e3a5f; font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-size: 1.05rem; transition: transform 0.15s; }
+    .cta-button:hover { transform: translateY(-2px); }
+    .faq-section { margin: 2rem 0; }
+    .faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-item summary { padding: 1rem; cursor: pointer; font-weight: 600; list-style: none; font-size: 1.02rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before { content: "\25B6 "; color: #2563eb; font-size: 0.8rem; transition: transform 0.2s; display: inline-block; }
+    .faq-item[open] summary::before { transform: rotate(90deg); }
+    .faq-answer { padding: 0 1rem 1rem; color: #334155; }
+    .faq-answer p { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; text-align: left; }
+    th { background: #1e3a5f; color: #fff; font-weight: 600; }
+    tr:nth-child(even) { background: #f1f5f9; }
+    .comparison-wrap { overflow-x: auto; }
+    blockquote { border-left: 4px solid #2563eb; margin: 1.5rem 0; padding: 0.75rem 1.25rem; background: #eff6ff; border-radius: 0 0.5rem 0.5rem 0; color: #1e3a5f; }
+    blockquote p { margin: 0; }
+    .key-takeaway { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .key-takeaway strong { color: #92400e; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-size: 0.9em; }
+    .internal-links { background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 2rem 0; }
+    .internal-links h4 { margin-top: 0; color: #166534; }
+    .internal-links ul { margin-bottom: 0; }
+    .internal-links a { color: #15803d; }
+    .example-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .example-box h4 { margin-top: 0; color: #1e3a5f; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .example-box p { margin-bottom: 0.5rem; }
+    .example-box p:last-child { margin-bottom: 0; }
+    footer { margin-top: 2.5rem; font-size: 0.85rem; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Meal Prep Tracker Excel Template: Plan, Prep &amp; Track Macros Without an App</h1>
+  <p class="subtitle">Published August 2026 · 14-minute read · Category: Fitness &amp; Nutrition</p>
+
+  <p>Most meal prep fails at the same point every week: Thursday. You planned Sunday's meals with good intentions, but by midweek the plan has drifted, you're guessing what's left in the fridge, and the takeaway app is open. The problem isn't willpower — it's that the plan lives in your head or on a sticky note, not in a system that calculates what you actually need.</p>
+
+  <p>A <strong>meal prep tracker template</strong> fixes that. It's a spreadsheet that plans your meals for the week, calculates calories and macros automatically from the foods you select, generates your grocery list, and keeps a running check on whether you're hitting your nutrition targets — all without a subscription app, an account, or an internet connection.</p>
+
+  <p>This guide covers what a good template includes, how to calculate your own macro targets, how to build a tracker from scratch in Excel (with the exact formulas), and how a template compares to apps like MyFitnessPal. Everything here works in Excel, Google Sheets, and LibreOffice.</p>
+
+  <h2 id="faq">Quick Answers: Meal Prep Tracker Templates</h2>
+  <div class="faq-section">
+    <details class="faq-item">
+      <summary>What is a meal prep tracker template?</summary>
+      <div class="faq-answer"><p>A pre-built spreadsheet that plans your weekly meals, auto-calculates calories and macronutrients from a food database, generates your grocery list, and tracks your progress. The core mechanic: pick a food from a dropdown, enter the grams, and VLOOKUP formulas do the nutrition math for you.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I track macros in Excel?</summary>
+      <div class="faq-answer"><p>Build a food database with calories, protein, carbs, and fat per 100g; use a dropdown to select foods in your meal planner; then use <code>=VLOOKUP(food, FoodDB, column, FALSE) * grams / 100</code> to calculate nutrition for any portion. Sum by day and compare against your targets.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How much does a meal prep tracker template cost?</summary>
+      <div class="faq-answer"><p>Between $0 and $15. Free if you build it yourself (5-10 hours of work), or $9 USD one-time for a complete 7-tab pre-built template with a 100+ food database. Subscription macro apps run $20-25/month — $240-300/year.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the best meal prep tracker template?</summary>
+      <div class="faq-answer"><p>The best meal prep tracker template for most people is a 7-day Excel planner with a built-in food database, auto-calculating macros, and an auto-generated grocery list — meal planning, macro tracking, and shopping in one offline file with no subscription. The <a href="https://brangabrew.gumroad.com/l/cskepz">Meal Prep &amp; Macro Tracker</a> is a complete $9 example.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I calculate my macro targets?</summary>
+      <div class="faq-answer"><p>Multiply bodyweight (lbs) by 12-13 to lose fat, 14-16 to maintain, or 16-18 to gain. Set protein at 0.7-1g per pound of bodyweight, then split remaining calories between carbs and fat based on your activity and preference.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Is Excel or Google Sheets better for meal prep tracking?</summary>
+      <div class="faq-answer"><p>Google Sheets if you edit from your phone at the store or share with a partner; Excel for offline reliability. Templates built on standard formulas (VLOOKUP, SUMIF, data validation) work identically in both — plus LibreOffice Calc and Apple Numbers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I create a grocery list from a meal plan?</summary>
+      <div class="faq-answer"><p>Use <code>=SUMIF(Planner!B:B, food, Planner!C:C)</code> to total the grams of each food across your weekly plan. Any food with a total above zero goes on the list, sorted by store aisle. The whole list builds itself in one formula refresh.</p></div>
+    </details>
+  </div>
+
+  <h2>What a Meal Prep Tracker Template Actually Includes</h2>
+
+  <p>Not all meal prep spreadsheets are equal. Most free templates online are just a blank weekly grid with "Breakfast / Lunch / Dinner" headers — a meal <em>plan</em>, but not a meal prep <em>tracker</em>. The difference matters: a plan records intentions; a tracker calculates nutrition, generates shopping quantities, and shows whether you hit your targets.</p>
+
+  <p>A complete meal prep tracker template includes seven components:</p>
+
+  <ol>
+    <li><strong>A food database.</strong> At minimum 100 common foods, each with calories, protein, carbs, and fat per 100g. This is the engine of the whole system — without it, every meal must be nutritionally calculated by hand.</li>
+    <li><strong>A 7-day meal planner.</strong> Rows for breakfast, lunch, dinner, and snacks; columns for the seven days. Each cell lets you pick a food from a dropdown (data validation against the food database) and enter a gram amount.</li>
+    <li><strong>Auto-calculating macros.</strong> Formulas that pull nutrition data from the database for each food selected and scale it to the portion entered. This is what turns a menu into a nutrition system.</li>
+    <li><strong>A daily totals panel.</strong> Sum of calories, protein, carbs, and fat per day, ideally colour-coded against your targets — green when you're within range, amber when close, red when you've missed.</li>
+    <li><strong>An auto-generated grocery list.</strong> Every unique food in the plan, with the total grams needed for the week. This is the single biggest time-saver: the plan and the shopping list can never go out of sync.</li>
+    <li><strong>A meal prep schedule.</strong> A cooking plan for your prep session — what gets batch-cooked Sunday, what's cooked fresh, what gets frozen.</li>
+    <li><strong>A progress tracker.</strong> Weekly weight or measurement log with a simple trend, so the plan can be adjusted based on real results rather than guesses.</li>
+  </ol>
+
+  <div class="key-takeaway"><strong>Key takeaway:</strong> If a template doesn't have a food database and auto-calculating macros, it's a menu — not a tracker. The database-to-planner link is what saves you the 10-15 minutes of manual nutrition math per day that makes most people quit tracking within two weeks.</div>
+
+  <h2>Step 1: Calculate Your Macro Targets (Real Numbers)</h2>
+
+  <p>Before any template is useful, you need targets. The standard method, used across evidence-based nutrition coaching, takes three steps:</p>
+
+  <h3>1. Estimate daily calories</h3>
+  <p>Multiply bodyweight in pounds by a factor matched to your goal:</p>
+  <ul>
+    <li><strong>Fat loss:</strong> 12-13 calories per pound</li>
+    <li><strong>Maintenance:</strong> 14-16 calories per pound</li>
+    <li><strong>Muscle gain:</strong> 16-18 calories per pound</li>
+  </ul>
+  <p>An 80 kg (176 lb) moderately active man maintaining would target roughly 176 × 15 = <strong>2,640 calories</strong>. A 65 kg (143 lb) woman aiming for gradual fat loss would target roughly 143 × 12.5 = <strong>1,790 calories</strong>.</p>
+
+  <h3>2. Set protein first</h3>
+  <p>Protein is the one macro with a firm evidence-based range: <strong>0.7-1 g per pound of bodyweight</strong> (1.6-2.2 g/kg) for anyone training. The 80 kg man targets 160-176g; the 65 kg woman targets 100-143g. Protein is set first because it protects muscle in a deficit and drives recovery — the rest of the budget is negotiable, protein isn't.</p>
+
+  <h3>3. Split the remainder between carbs and fat</h3>
+  <p>Whatever calories remain after protein get split by activity and preference. Endurance training leans carbs (50-55% of total calories); sedentary days and low-carb preferences lean fat (30-35%). Both work — adherence beats optimisation.</p>
+
+  <div class="example-box">
+    <h4>Worked example — 80 kg male, maintenance, trains 4x/week</h4>
+    <p>Calories: 176 lb × 15 = <strong>2,640 kcal</strong></p>
+    <p>Protein: 176 × 0.9 = <strong>160g</strong> = 640 kcal</p>
+    <p>Remaining budget: 2,640 − 640 = 2,000 kcal. Split 55/45 toward carbs (4x weekly training):</p>
+    <p>Carbs: 1,100 kcal ÷ 4 = <strong>275g</strong> · Fat: 900 kcal ÷ 9 = <strong>100g</strong></p>
+    <p><strong>Final targets: 2,640 kcal · 160g protein · 275g carbs · 100g fat</strong> (check: 640 + 1,100 + 900 = 2,640 ✓). A good template has a target row above each day so you can see these numbers against your actuals at a glance.</p>
+  </div>
+
+  <h2>Step 2: How to Build a Meal Prep Tracker in Excel From Scratch</h2>
+
+  <p>If you'd rather build than buy, here's the minimum viable build. Expect 5-10 hours including the food database — the database alone is the bulk of the work, since each food needs accurate per-100g values for four nutrients.</p>
+
+  <h3>Tab 1: Food Database</h3>
+  <p>Five columns: <code>Food</code>, <code>Calories</code>, <code>Protein (g)</code>, <code>Carbs (g)</code>, <code>Fat (g)</code> — all per 100g. Name the range (Formulas → Name Manager → "FoodDB") so formulas stay readable. A 100-row database covering the foods you actually eat weekly beats a 10,000-row download you'll never search. You can pull values from any USDA-style food composition source.</p>
+
+  <h3>Tab 2: Meal Planner</h3>
+  <p>Rows: Breakfast, Lunch, Dinner, Snack 1, Snack 2. Columns: Day, Food (dropdown via data validation pointing at FoodDB column 1), Grams, then four formula columns:</p>
+
+  <ul>
+    <li>Calories: <code>=VLOOKUP(B2, FoodDB, 2, FALSE) * C2 / 100</code></li>
+    <li>Protein: <code>=VLOOKUP(B2, FoodDB, 3, FALSE) * C2 / 100</code></li>
+    <li>Carbs: <code>=VLOOKUP(B2, FoodDB, 4, FALSE) * C2 / 100</code></li>
+    <li>Fat: <code>=VLOOKUP(B2, FoodDB, 5, FALSE) * C2 / 100</code></li>
+  </ul>
+
+  <p>Cell B2 is the food selected from the dropdown; C2 is the gram amount. The <code>/100</code> converts per-100g values to your actual portion. One formula, four nutrient columns, every meal calculated the moment you enter a portion.</p>
+
+  <h3>Tab 3: Daily Totals</h3>
+  <p>Use <code>=SUMIFS</code> to roll each day up: <code>=SUMIFS(Planner!E:E, Planner!A:A, "Monday")</code> for Monday's calories, repeated for each macro. Add conditional formatting (green/amber/red) against your target row. This is the panel you'll actually look at every morning.</p>
+
+  <h3>Tab 4: Grocery List</h3>
+  <p>For each food in the database: <code>=SUMIF(Planner!B:B, A2, Planner!C:C)</code> totals the weekly grams needed. Filter out the zeros, sort by store section, done.</p>
+
+  <blockquote><p>The build is straightforward spreadsheet work — the time sink is the food database. That's exactly why pre-built templates exist: the formula logic is 30 minutes, the 100+ food database with verified per-100g values is the product.</p></blockquote>
+
+  <h2>Meal Prep Tracker Template vs Macro Apps: Honest Comparison</h2>
+
+  <p>Macro tracking apps are good products. But for <em>meal prep specifically</em> — planning a week ahead, batch cooking, and shopping once — a spreadsheet has structural advantages. Here's the honest comparison:</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Free app (MyFitnessPal free)</th><th>Premium app (MFP / Cronometer)</th><th>Excel template (pre-built)</th><th>DIY spreadsheet</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cost</td><td>$0 (ads, locked features)</td><td>$20-25/month ($240-300/yr)</td><td>$9-15 once</td><td>$0 + 5-10 hrs</td></tr>
+      <tr><td>Plan meals a week ahead</td><td>Clunky — built for logging past meals</td><td>Clunky — same</td><td>Purpose-built 7-day grid</td><td>Whatever you build</td></tr>
+      <tr><td>Auto-calculated macros per meal</td><td>Yes (huge database)</td><td>Yes</td><td>Yes, from 100+ food database</td><td>Yes, if you build the formulas</td></tr>
+      <tr><td>Auto-generated grocery list</td><td>No</td><td>No</td><td>Yes — totals grams for the week</td><td>Yes, if built</td></tr>
+      <tr><td>Meal prep / batch-cook schedule</td><td>No</td><td>No</td><td>Yes</td><td>Manual</td></tr>
+      <tr><td>Works offline</td><td>No</td><td>Limited</td><td>Fully — it's a file</td><td>Fully</td></tr>
+      <tr><td>Data ownership</td><td>Their platform</td><td>Their platform</td><td>Your file, forever</td><td>Your file</td></tr>
+      <tr><td>Phone logging of past meals</td><td>Best in class</td><td>Best in class</td><td>View-only on mobile</td><td>View-only</td></tr>
+      <tr><td>Ad-free</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>The pattern: apps win at <em>retrospective logging</em> ("what did I just eat?"); spreadsheets win at <em>prospective planning</em> ("what will I eat this week, and what do I need to buy?"). Meal prep is prospective by definition — you're deciding Thursday's lunch on Sunday. Some people run both: app for the day-of logging, template for the weekly plan and shop. But if you're prepping your meals in advance and eating what you planned, the template alone covers both jobs, because the plan <em>is</em> the record.</p>
+
+  <h2>How Much Does a Meal Prep Tracker Template Cost?</h2>
+
+  <p>Direct answer: a good one costs <strong>$9-15 as a one-time purchase</strong>, or free if you build it yourself over a weekend. What you're paying for isn't the grid — it's the 100+ food database with verified nutrition values, the formula wiring between planner and database, and the grocery list automation. Against a $20/month premium app subscription, a $9 template pays for itself in two weeks and saves $230+ in year one.</p>
+
+  <p>Free options exist — search "meal planner template" and you'll find hundreds of blank weekly grids. Just check the component list above before committing: if there's no food database, no dropdowns, and no macro math, you're downloading a menu with formatting, and you'll be doing the nutrition math by hand within a week.</p>
+
+  <h2>The Weekly Meal Prep Workflow (How to Actually Use It)</h2>
+
+  <p>A template only works inside a routine. Here's the workflow that survives past Thursday, designed around one 45-minute planning session and one 2-hour cook session per week:</p>
+
+  <ol>
+    <li><strong>Saturday, 15 minutes — plan.</strong> Duplicate last week's plan tab (or pull from your 4-week rotation), swap the meals you're bored of, and check the daily totals panel. Adjust portions until each day lands within ±5% of your calorie and protein targets.</li>
+    <li><strong>Saturday, 5 minutes — shop.</strong> Open the auto-generated grocery list. Delete anything you already have. Order the rest by store section and shop once.</li>
+    <li><strong>Sunday, 2 hours — prep.</strong> Follow the prep schedule: batch-cook proteins and carbs, portion into containers, prep snacks. Foods that don't survive 4 days (salad greens, cut fruit) get flagged for a midweek 15-minute top-up.</li>
+    <li><strong>Mon-Fri — eat and glance.</strong> Because you're eating what you planned, tracking is mostly passive. Glance at the totals panel each evening; if you deviated (work lunch, dinner out), enter what you actually ate — the dropdown makes it a 30-second correction.</li>
+    <li><strong>Sunday, 5 minutes — review.</strong> Log your weekly weight in the progress tracker. Trend flat for 2 weeks while targeting fat loss? Drop daily calories by 100-150 and re-run the plan. This feedback loop is the whole point.</li>
+  </ol>
+
+  <div class="key-takeaway"><strong>Key takeaway:</strong> The 4-week rotation is what makes this sustainable. Once you've built four weeks of plans that each hit your macros, meal planning stops being a weekly creative task and becomes a 5-minute shuffle. That's also why a template with a rotation tab beats a blank planner — the blank one makes you start from zero every week.</div>
+
+  <h2>Five Mistakes That Kill Meal Prep Tracking</h2>
+
+  <ol>
+    <li><strong>Tracking to the gram forever.</strong> Weigh everything for your first two weeks to calibrate your eyeball portions. After that, ±10g on a 150g portion is invisible in your weekly trend. Perfectionism is what makes people quit, not inaccuracy.</li>
+    <li><strong>Planning seven dinners you've never cooked.</strong> Week one should be meals you've made before. Novel recipes triple your prep time and guarantee the rotation dies. Add one new recipe per week, maximum.</li>
+    <li><strong>No buffer meals.</strong> Life happens — plan two emergency meals per week (frozen protein + microwave rice + frozen veg, macro-counted in the database). A plan with no slack breaks on the first unexpected late night.</li>
+    <li><strong>Ignoring the weekly trend.</strong> Daily weight fluctuates 1-2 kg from water, sodium, and carbs. Review the weekly average only; adjust targets only after two flat weeks. Adjusting after one bad day creates a see-saw nobody sustains.</li>
+    <li><strong>Prepping food you don't like eating.</strong> A perfectly macro-balanced container of boiled chicken and broccoli is a plan you'll abandon by Wednesday. Hit your macros from foods you actually enjoy — the database doesn't judge.</li>
+  </ol>
+
+  <h2>The Complete Template: Meal Prep &amp; Macro Tracker</h2>
+
+  <p>Everything in this guide — the 100+ food database, dropdown meal planner, auto-calculating macros, auto-generated grocery list, prep schedule, progress tracker, and a 4-week rotation system — is packaged in the <strong>Meal Prep &amp; Macro Tracker</strong>, a 7-tab Excel template built exactly around the workflow above.</p>
+
+  <div class="cta-box">
+    <h3>Meal Prep &amp; Macro Tracker — 7-Day Excel Planner</h3>
+    <p>7 tabs: Dashboard, 100+ Food Database, 7-Day Meal Planner, auto-generated Grocery List, Meal Prep Schedule, Progress Tracker, and 4-Week Rotation. Pick foods from dropdowns, enter grams, and every macro calculates automatically. One-time $9 — no subscription, works offline in Excel, Google Sheets, LibreOffice, and Numbers.</p>
+    <a class="cta-button" href="https://brangabrew.gumroad.com/l/cskepz" rel="noopener">Get the Template on Gumroad →</a>
+  </div>
+
+  <p>Pair it with a training plan and the system is complete: the <a href="/home-workout-plan-pdf.html">12-week home workout plan</a> covers progressive training with no equipment, and the <a href="/habit-tracker-excel-template.html">90-day habit tracker</a> keeps the prep-session streak alive while the new routine bedded in. If meal prep is part of a broader life reset, the <a href="/30-day-productivity-reset.html">30-day productivity reset</a> walks through rebuilding your whole weekly operating system, meals included.</p>
+
+  <div class="internal-links">
+    <h4>Related guides from Kowhai Goods</h4>
+    <ul>
+      <li><a href="/home-workout-plan-pdf.html">Home Workout Plan PDF: 12-Week Program</a> — the training half of the fitness equation</li>
+      <li><a href="/habit-tracker-excel-template.html">Habit Tracker Excel Template</a> — build the 90-day meal prep streak</li>
+      <li><a href="/30-day-productivity-reset.html">30-Day Productivity Reset</a> — rebuild your weekly system from scratch</li>
+      <li><a href="/free-excel-templates-for-freelancers.html">Free Excel Templates for Freelancers</a> — more spreadsheet systems that replace subscriptions</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Kowhai Goods — practical templates and playbooks for work, money, and health. Store: <a href="https://brangabrew.gumroad.com">brangabrew.gumroad.com</a></p>
+  </footer>
+</body>
+</html>
