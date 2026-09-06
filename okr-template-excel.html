@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKR Template for Excel &amp; Google Sheets (2026 Guide)</title>
+  <meta name="description" content="Free OKR template structure for Excel &amp; Google Sheets: 5 components, scoring formula, real quarterly examples, weekly cadence, 7 mistakes to avoid.">
+  <link rel="canonical" href="https://kowhaigoods.com/okr-template-excel.html">
+  <script async defer src="https://hosting-memorial-yesterday-roses.trycloudflare.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an OKR template?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An OKR template is a pre-built spreadsheet or document with sections for Objectives (the 3-4 memorable goals a team commits to for a quarter) and Key Results (the 3-5 measurable outcomes that prove each objective was achieved), usually with progress formulas, a check-in log, and a quarter-end scoring sheet. A good OKR template contains five things: an objectives sheet, key results with start/target/current values, auto-calculated progress, a weekly check-in log, and a quarterly scoring sheet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you write an OKR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Write the objective as a qualitative, inspiring one-liner (e.g. 'Make the website our biggest revenue channel'), then attach 3-5 key results using the formula: verb + metric + from baseline X to target Y by date. Example key result: 'Grow organic sessions from 12,000/month to 18,000/month by 31 March.' If a key result has no number and no baseline, it is a task, not a key result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you score OKRs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Score each key result on a 0.0-1.0 scale: current value divided by target value (for increase metrics) or start value divided by current value (for decrease metrics). A 0.7 average is the sweet spot made popular by Google — it means the goal was ambitious but the plan worked. Consistent 1.0 scores mean the goals were sandbagged; consistent 0.2s mean the plan or the key results were wrong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many OKRs should a team have?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A team should have 1-3 objectives per quarter, each with 3-5 key results. More than three objectives means nothing gets full attention — OKRs exist to force prioritisation, and a list of eight objectives is just a to-do list with better branding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between OKRs and KPIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "KPIs are steady-state health metrics you monitor continuously (uptime, churn, revenue per month); OKRs are time-boxed change goals that move a KPI from one level to another within a quarter. The practical relationship: your KPIs tell you what needs fixing, and an OKR is the committed, measurable effort to fix one of them this quarter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should you update OKRs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Set OKRs quarterly and check in on them weekly. The weekly check-in takes 15 minutes: update the current value on each key result, set a confidence percentage, and note blockers. Quarterly, score every key result 0.0-1.0, capture lessons learned, and set the next quarter's OKRs. Annual OKRs move too slowly to steer a team; daily tracking turns OKRs into micromanagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes a good key result?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good key result is an outcome, not an output: it measures the change you want ('week-4 activation from 34% to 50%') rather than the work you'll do ('launch the new onboarding flow'). It has a real baseline, a target that would be genuinely difficult, and a metric the team can influence directly. If the metric would not change the business, it should not be a key result."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "OKR Tracker Template — 8-Tab Excel Workbook for Objectives & Key Results",
+    "description": "8-tab Excel OKR template with auto-calculating key-result progress, weekly check-in log, quarterly scoring sheet, alignment map, and initiative tracker. No macros — works in Excel, Google Sheets, LibreOffice Calc, and Apple Numbers.",
+    "category": "Business and Money",
+    "brand": "Kowhai Goods",
+    "offers": {
+      "@type": "Offer",
+      "price": "11.00",
+      "priceCurrency": "USD",
+      "url": "https://brangabrew.gumroad.com/l/twrmb",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; max-width: 780px; margin: 0 auto; padding: 1.5rem 1rem; color: #1a1a1a; background: #fafafa; }
+    h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.45rem; margin-top: 2.5rem; margin-bottom: 0.75rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.15rem; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .subtitle { color: #555; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; }
+    .cta-box { background: linear-gradient(135deg, #1e293b, #334155); color: #fff; border-radius: 0.75rem; padding: 1.5rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; color: #fff; }
+    .cta-box p { margin-bottom: 1rem; color: #e2e8f0; }
+    .cta-button { display: inline-block; background: #38bdf8; color: #0c1626; font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-size: 1.05rem; transition: transform 0.15s; }
+    .cta-button:hover { transform: translateY(-2px); }
+    .faq-section { margin: 2rem 0; }
+    .faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-item summary { padding: 1rem; cursor: pointer; font-weight: 600; list-style: none; font-size: 1.02rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before { content: "\25B6 "; color: #2563eb; font-size: 0.8rem; transition: transform 0.2s; display: inline-block; }
+    .faq-item[open] summary::before { transform: rotate(90deg); }
+    .faq-answer { padding: 0 1rem 1rem; color: #334155; }
+    .faq-answer p { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; text-align: left; }
+    th { background: #1e293b; color: #fff; font-weight: 600; }
+    tr:nth-child(even) { background: #f1f5f9; }
+    .comparison-wrap { overflow-x: auto; }
+    blockquote { border-left: 4px solid #2563eb; margin: 1.5rem 0; padding: 0.75rem 1.25rem; background: #eff6ff; border-radius: 0 0.5rem 0.5rem 0; color: #1e3a5f; }
+    blockquote p { margin: 0; }
+    .key-takeaway { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .key-takeaway strong { color: #92400e; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.45rem; }
+    code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-size: 0.9em; }
+    .internal-links { background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 2rem 0; }
+    .internal-links h4 { margin-top: 0; color: #166534; }
+    .internal-links ul { margin-bottom: 0; }
+    .internal-links a { color: #15803d; }
+    .example-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .example-box h4 { margin-top: 0; color: #1e293b; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .good { color: #166534; font-weight: 600; }
+    .bad { color: #b91c1c; font-weight: 600; }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 0.85rem; }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.75rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+      th, td { padding: 0.45rem 0.5rem; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Complete OKR Template for Excel &amp; Google Sheets (2026)</h1>
+  <p class="subtitle">Published September 2026 · 11 min read</p>
+
+  <p>The best OKR format for a first-time team is <strong>1-3 objectives per quarter, 3-5 key results per objective, scored 0.0-1.0, reviewed in a weekly check-in</strong>. Any <strong>OKR template</strong> worth using must have five parts: an objectives sheet, key results with start/target/current values, auto-calculated progress, a weekly check-in log, and a quarter-end scoring sheet. Miss any of those five and the template becomes what most of them become — a scoreboard nobody updates after week two.</p>
+
+  <p>This guide gives you the complete structure to build or evaluate an OKR template, the scoring system Google popularised, two fully worked quarterly examples, the weekly cadence that keeps OKRs alive, and the seven mistakes that quietly kill most OKR programmes in their first quarter.</p>
+
+  <h2>OKR Template FAQs</h2>
+  <div class="faq-section">
+    <details class="faq-item">
+      <summary>What is an OKR template?</summary>
+      <div class="faq-answer"><p>A pre-built spreadsheet or document with sections for Objectives (the 3-4 goals a team commits to for a quarter) and Key Results (the 3-5 measurable outcomes that prove each objective was achieved), usually with progress formulas, a check-in log, and a quarter-end scoring sheet. A good one has five parts: objectives, key results with start/target/current values, auto-calculated progress, a weekly check-in log, and a quarterly scoring sheet.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do you write an OKR?</summary>
+      <div class="faq-answer"><p>Write the objective as a qualitative, inspiring one-liner — "Make the website our biggest revenue channel" — then attach 3-5 key results using the formula <code>verb + metric + from baseline to target by date</code>. Example: "Grow organic sessions from 12,000/month to 18,000/month by 31 March." No number and no baseline means it's a task, not a key result.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do you score OKRs?</summary>
+      <div class="faq-answer"><p>Score each key result 0.0-1.0: current ÷ target for increase metrics, start ÷ current for decrease metrics. A 0.7 average is the sweet spot popularised by Google — ambitious but delivered. Consistent 1.0s mean sandbagged goals; consistent 0.2s mean the plan or the key results were wrong.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How many OKRs should a team have?</summary>
+      <div class="faq-answer"><p>1-3 objectives per quarter, each with 3-5 key results. OKRs exist to force prioritisation — a list of eight objectives is a to-do list with better branding, and nothing on it gets full attention.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the difference between OKRs and KPIs?</summary>
+      <div class="faq-answer"><p>KPIs are steady-state health metrics you monitor continuously — uptime, churn, revenue per month. OKRs are time-boxed change goals that move one of those KPIs from one level to another within a quarter. Your KPI dashboard tells you what needs fixing; the OKR is the committed effort to fix it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How often should you update OKRs?</summary>
+      <div class="faq-answer"><p>Set them quarterly, check in weekly. The weekly check-in takes 15 minutes: update each key result's current value, set a confidence percentage, note blockers. Quarter-end, score everything 0.0-1.0, capture lessons, and set the next quarter. Annual OKRs steer too slowly; daily tracking becomes micromanagement.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What makes a good key result?</summary>
+      <div class="faq-answer"><p>An outcome, not an output: "raise week-4 activation from 34% to 50%" beats "launch the new onboarding flow." It needs a real baseline, a target that would be genuinely difficult, and a metric the team can influence directly. If hitting it wouldn't change the business, it shouldn't be a key result.</p></div>
+    </details>
+  </div>
+
+  <h2>What Is an OKR Template?</h2>
+
+  <p>OKR stands for <strong>Objectives and Key Results</strong>, a goal-setting framework popularised at Intel by Andy Grove and later at Google by John Doerr. An <strong>Objective</strong> is where you're going — qualitative, memorable, a little bit inspiring. <strong>Key Results</strong> are how you'll know you arrived — quantitative, time-boxed, measurable. The template is simply the structure that holds them: a spreadsheet with places for the objective, the key results, the numbers that track progress, and the cadence that keeps the numbers honest.</p>
+
+  <p>The framework's entire value comes from two behaviours the template must make easy: <strong>choosing fewer, harder goals</strong> (three objectives beats eight) and <strong>checking in weekly</strong>. That's why the check-in log and the scoring sheet are not optional extras — they are the parts that separate an OKR system from a goal list made in January and forgotten by February.</p>
+
+  <div class="key-takeaway"><strong>Key takeaway:</strong> an OKR template is 20% structure and 80% cadence. The spreadsheet is easy; the weekly check-in is what actually delivers the results. Build or buy a template that makes the check-in effortless.</div>
+
+  <h2>The 5 Things Every OKR Template Needs</h2>
+
+  <ol>
+    <li><strong>An objectives sheet</strong> — one row per objective, with a name, an owner, a quarter, and an auto-derived status. Objectives should be written so a new hire could repeat them from memory.</li>
+    <li><strong>Key results with start / target / current</strong> — three number columns per key result. This is the non-negotiable core: progress should calculate itself from <code>(current − start) ÷ (target − start)</code>, not be typed in by feel.</li>
+    <li><strong>A weekly check-in log</strong> — one entry per key result per week: current value, confidence 0-100%, and a one-line note on blockers. The delta week-over-week is the most honest progress signal you'll get.</li>
+    <li><strong>A quarterly scoring sheet</strong> — 0.0-1.0 grade per key result at quarter end, plus an "achieved / nearly / behind / missed" verdict and a lessons-learned field. Without this, teams never calibrate what "ambitious" means.</li>
+    <li><strong>An alignment map</strong> — which company objective each team objective supports. This is what stops six teams from running six disconnected goal programmes.</li>
+  </ol>
+
+  <p>Nice-to-haves that earn their place once the basics work: an initiatives sheet (the projects you're running to move the key results — kept deliberately separate so tasks never masquerade as outcomes), a confidence roll-up on the dashboard, and red-amber-green formatting so anyone can scan status in five seconds.</p>
+
+  <h2>How to Write an OKR (With a Formula)</h2>
+
+  <p>The best OKR format for most teams is <strong>one qualitative objective plus three quantitative key results</strong>. Write them like this:</p>
+
+  <div class="example-box">
+    <h4>The two formulas</h4>
+    <p><strong>Objective:</strong> <em>[Directional statement everyone would repeat]</em> — "Make the website our biggest revenue channel."</p>
+    <p><strong>Key result:</strong> <code>verb + metric + from X to Y by [date]</code> — "Grow organic sessions from 12,000/month to 18,000/month by 31 March."</p>
+  </div>
+
+  <p>Three writing rules keep OKRs sharp:</p>
+
+  <ul>
+    <li><strong>Objectives have no numbers.</strong> If the objective contains a metric, it's a key result wearing a costume. The objective is the story; key results are the proof.</li>
+    <li><strong>Key results have no verbs like "help," "improve," or "explore."</strong> Those are directions, not destinations. Every key result passes the stranger test: could someone who has never met the team score it from the numbers alone?</li>
+    <li><strong>Three to five key results per objective.</strong> Two is a checklist; seven is a strategy doc. The act of cutting from seven to three is where the prioritisation value lives.</li>
+  </ul>
+
+  <h2>Worked Example: One Quarter of OKRs for a 6-Person E-Commerce Brand</h2>
+
+  <p>Here's a complete quarter for a small online retailer, exactly as it would look in the template. Company-level objective:</p>
+
+  <p><strong>Objective:</strong> <em>Make the website our biggest revenue channel.</em> <span class="good">(Qualitative, memorable, no numbers — correct.)</span></p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Key result</th><th>Start</th><th>Target</th><th>Current (wk 6)</th><th>Progress</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Grow organic sessions from 12,000/mo to 18,000/mo</td><td>12,000</td><td>18,000</td><td>15,400</td><td>57%</td></tr>
+      <tr><td>Grow email list from 3,400 to 6,000 subscribers</td><td>3,400</td><td>6,000</td><td>4,900</td><td>58%</td></tr>
+      <tr><td>Reduce homepage load time from 4.2s to under 2.0s</td><td>4.2</td><td>2.0</td><td>2.6</td><td>64%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>A second team — customer support — picks an objective that maps to the company's retention goal:</p>
+
+  <p><strong>Objective:</strong> <em>Customers get answers fast.</em></p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Key result</th><th>Start</th><th>Target</th><th>Current (wk 6)</th><th>Progress</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cut first-response time from 9h to 2h</td><td>9.0</td><td>2.0</td><td>4.1</td><td>70%</td></tr>
+      <tr><td>Raise CSAT from 82% to 92%</td><td>82%</td><td>92%</td><td>87%</td><td>50%</td></tr>
+      <tr><td>Reduce open ticket backlog from 340 to under 50</td><td>340</td><td>50</td><td>120</td><td>76%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Notice what's absent: no "launch chatbot," no "improve content," no "work on the site." Launching the chatbot is an <em>initiative</em> — it goes on the initiatives sheet, linked to the key result it's meant to move. If it doesn't move the number, the initiative changes, not the key result.</p>
+
+  <h2>How to Score OKRs: The 0.0-1.0 Scale</h2>
+
+  <p>The scoring system Google popularised grades each key result from 0.0 (no movement) to 1.0 (fully achieved). For increase metrics, score = <code>(current − start) ÷ (target − start)</code>. For decrease metrics (backlog, churn, load time), score = <code>(start − current) ÷ (start − target)</code>. At quarter end, average the key results under each objective.</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Score</th><th>Verdict</th><th>What it actually means</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0.7 - 1.0</td><td>Delivered</td><td>If this happens <em>every</em> quarter, goals are sandbagged — raise the targets</td></tr>
+      <tr><td>0.4 - 0.6</td><td>Real progress</td><td>Healthy for genuinely ambitious goals; recalibrate the next quarter's plan</td></tr>
+      <tr><td>0.0 - 0.3</td><td>Missed</td><td>Diagnose: was the key result wrong, or the plan wrong? Both are useful answers</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>The target zone for stretch OKRs is a <strong>0.6-0.7 average</strong>. This is the part teams find hardest to believe: a 0.7 is a <em>success</em>, not a near-failure, because it means the goal was set hard enough to matter. Teams that score 1.0 across the board haven't overachieved — they've forecasted conservatively, and the framework has stopped stretching anyone. Google's own guidance separates "committed" OKRs (expected to hit 1.0, e.g. release uptime) from "aspirational" ones (expected around 0.7); mark which type each key result is so the scores are read correctly.</p>
+
+  <blockquote><p>Scoring rule of thumb: 1.0 everywhere = sandbagging. 0.7 average = the programme is working. 0.2 everywhere for two straight quarters = wrong key results, not wrong team.</p></blockquote>
+
+  <h2>OKRs vs KPIs: Which One Do You Need?</h2>
+
+  <p>This is the most common confusion in goal-setting, and the answer is that you probably need both — they do different jobs:</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th></th><th>OKRs</th><th>KPIs</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Job</strong></td><td>Drive change this quarter</td><td>Monitor ongoing health</td></tr>
+      <tr><td><strong>Question answered</strong></td><td>"Are we winning at what we said mattered?"</td><td>"Is the business healthy right now?"</td></tr>
+      <tr><td><strong>Lifespan</strong></td><td>One quarter, then reset</td><td>Continuous, forever</td></tr>
+      <tr><td><strong>Count</strong></td><td>1-3 objectives, 3-5 KRs each</td><td>As many as you actually review</td></tr>
+      <tr><td><strong>Target difficulty</strong></td><td>Uncomfortable; ~0.7 expected</td><td>Known steady-state ranges</td></tr>
+      <tr><td><strong>Example</strong></td><td>"Grow email list 3,400 → 6,000 by 31 Mar"</td><td>"Email list size" or "churn rate"</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>A practical relationship that works for small teams: run a <a href="/small-business-kpi-dashboard.html">KPI dashboard</a> as your always-on health monitor, and each quarter pick the one or two KPIs that most need to move — those become the key results. The OKR supplies the deadline, the ambition, and the weekly attention that a passive dashboard never generates.</p>
+
+  <h2>The Cadence That Keeps OKR Templates Alive</h2>
+
+  <p>Most OKR spreadsheets don't die of bad design — they die of no calendar. The programme that survives week three looks like this:</p>
+
+  <ul>
+    <li><strong>Week 0 (before the quarter):</strong> draft objectives, pressure-test key results for baselines and targets, map team objectives to company objectives. Half a day.</li>
+    <li><strong>Every Monday (15 minutes):</strong> update current values, set confidence %, name the one blocker per struggling key result. No slides, no meeting theatrics.</li>
+    <li><strong>Mid-quarter (once):</strong> recalibrate. If a key result is impossible, fix the target honestly rather than letting it rot; if the plan isn't moving the number, change the plan.</li>
+    <li><strong>Last week of the quarter:</strong> score everything 0.0-1.0, write the lessons, grade the objective, roll anything unfinished into next quarter's draft — as an input, not a copy-paste.</li>
+  </ul>
+
+  <p>The weekly check-in is deliberately small. Its value is not the data — it's that <em>looking at the numbers weekly</em> is what converts a goal into behaviour. A quarterly-only review finds out in week thirteen what a weekly check-in would have surfaced in week two.</p>
+
+  <h2>Weak vs Strong Key Results (Before / After)</h2>
+
+  <p>The fastest quality upgrade to any OKR template is rewriting its example rows. The pattern: outputs become outcomes, adjectives become numbers:</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Weak (output / vague)</th><th>Strong (outcome / measurable)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="bad">"Improve marketing"</td><td class="good">"Grow organic sessions 12,000 → 18,000/mo by 31 Mar"</td></tr>
+      <tr><td class="bad">"Launch the new onboarding flow"</td><td class="good">"Raise week-4 activation from 34% to 50%"</td></tr>
+      <tr><td class="bad">"Make customers happier"</td><td class="good">"Move CSAT from 82% to 92%"</td></tr>
+      <tr><td class="bad">"Post more on social media"</td><td class="good">"Grow newsletter signups from social from 90/mo to 300/mo"</td></tr>
+      <tr><td class="bad">"Get better at sales"</td><td class="good">"Lift win rate on qualified deals from 22% to 30%"</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>The left column isn't stupid — it's what every team writes first. The rewrite is mechanical, which is exactly why a template with good example rows pays for itself: people copy the pattern of the examples they see.</p>
+
+  <h2>7 OKR Mistakes That Kill the Programme</h2>
+
+  <ol>
+    <li><strong>Business-as-usual key results.</strong> "Keep the site up" and "answer support tickets" are the job, not goals. Key results describe <em>change</em>; if you'd hit it anyway, it's a KPI, not a key result.</li>
+    <li><strong>Four or more objectives.</strong> Focus is the entire product. Three objectives with real ambition beats eight with none.</li>
+    <li><strong>Outputs dressed as outcomes.</strong> "Ship the redesign" is a task. "Cut load time 4.2s → 2.0s" is a result. Teams that list outputs finish their list and still haven't moved the business.</li>
+    <li><strong>Sandbagging.</strong> Every key result lands at 1.0, every quarter. The fix is cultural: celebrate a well-run 0.6 and treat a boring 1.0 as a target-setting error.</li>
+    <li><strong>No weekly check-in.</strong> The template becomes a January artefact. This is the failure mode that kills more OKR programmes than every other mistake combined — and it's purely a cadence problem.</li>
+    <li><strong>Score-panic.</strong> Treating a 0.5 as a failure teaches the team to set safe goals next quarter. The score is information about the <em>goal</em>, not a performance review of the <em>people</em>.</li>
+    <li><strong>Set-and-forget alignment.</strong> Team OKRs nobody mapped to a company objective — six teams, six directions. The alignment map takes ten minutes per quarter and prevents all of it.</li>
+  </ol>
+
+  <h2>Spreadsheet or Dedicated OKR Software?</h2>
+
+  <p>Honest answer: for teams under roughly 20 people, a well-built spreadsheet is the right tool, and the honest best choice. Beyond that size, rollup automation starts earning per-seat fees:</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th></th><th>Excel / Google Sheets template</th><th>OKR software</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Cost</strong></td><td>$0-$12 once</td><td>$5-15 per person / month</td></tr>
+      <tr><td><strong>Setup</strong></td><td>Minutes; you own the file</td><td>Account, onboarding, seats</td></tr>
+      <tr><td><strong>Flexibility</strong></td><td>Total — change anything</td><td>Within the vendor's model</td></tr>
+      <tr><td><strong>Auto-rollup to company level</strong></td><td>Manual (dashboard formulas)</td><td>Automatic</td></tr>
+      <tr><td><strong>Nudges &amp; integrations</strong></td><td>None (calendar reminders)</td><td>Slack/email reminders</td></tr>
+      <tr><td><strong>Best for</strong></td><td>Small teams, first 2-4 quarters</td><td>50+ people, many teams</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Start with a spreadsheet, run two or three full quarterly cycles, and you'll know exactly which features a paid tool would need to justify — most small teams never get there, because the discipline (weekly check-in, honest scoring) was never the software's job anyway.</p>
+
+  <h2>The Shortcut: an OKR Template Built to Survive Week Three</h2>
+
+  <p>Everything in this guide is pre-built in the <strong>OKR Tracker Template</strong>: objectives with auto-derived status, 47-row key-results tracker that scores both increase and decrease metrics automatically, a 42-row weekly check-in log with week-over-week deltas, a quarterly scoring sheet, a company-to-team alignment map, and an initiatives tracker — 8 tabs, 3 charts, and no macros, so it runs in Excel, Google Sheets, LibreOffice Calc, and Apple Numbers.</p>
+
+  <div class="cta-box">
+    <h3>OKR Tracker Template — 8-Tab Excel Workbook</h3>
+    <p>Auto-calculating key-result progress, weekly check-in log, quarterly 0.0-1.0 scoring, alignment map, and initiative tracker. Pre-loaded with 6 sample objectives and 24 key results so you can see a working quarter before entering your own. No macros — Excel, Google Sheets, LibreOffice Calc, and Numbers. One-time $11 — currently 40% off in the September sale.</p>
+    <a class="cta-button" href="https://brangabrew.gumroad.com/l/twrmb" rel="noopener">Get the OKR Tracker Template on Gumroad →</a>
+  </div>
+
+  <p>Once the goals are set, the surrounding system matters too: the <a href="/cash-flow-forecast-excel-template.html">cash flow forecast template</a> tracks the financial key results, the <a href="/crm-excel-template.html">CRM template</a> moves the sales pipeline the OKRs commit to, and the <a href="/how-to-price-a-product.html">product pricing guide</a> is the playbook for the margin targets behind a revenue objective.</p>
+
+  <div class="internal-links">
+    <h4>Related guides from Kowhai Goods</h4>
+    <ul>
+      <li><a href="/small-business-kpi-dashboard.html">Small Business KPI Dashboard</a> — the always-on metrics behind your key results</li>
+      <li><a href="/crm-excel-template.html">CRM &amp; Sales Pipeline Template</a> — execute the revenue OKR deal by deal</li>
+      <li><a href="/cash-flow-forecast-excel-template.html">Cash Flow Forecast Template</a> — model the financial targets you set</li>
+      <li><a href="/how-to-price-a-product.html">How to Price a Product</a> — the margin math behind profit objectives</li>
+      <li><a href="/30-day-productivity-reset.html">30-Day Productivity Reset</a> — execute the quarterly plan at a personal level</li>
+      <li><a href="/side-hustle-ideas.html">25 Side Hustle Ideas</a> — pick the business the first OKR will steer</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Kowhai Goods — practical templates and playbooks for work, money, and health. Store: <a href="https://brangabrew.gumroad.com">brangabrew.gumroad.com</a></p>
+  </footer>
+</body>
+</html>
