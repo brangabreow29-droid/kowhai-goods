@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20 Newsletter HTML Templates (Ready to Send)</title>
+  <meta name="description" content="20 responsive newsletter HTML templates for every send type — welcome, launch, digest, re-engagement — plus email-client rules and testing steps.">
+  <link rel="canonical" href="https://kowhaigoods.com/newsletter-html-templates.html">
+  <script async defer src="https://hosting-memorial-yesterday-roses.trycloudflare.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a newsletter HTML template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A newsletter HTML template is a pre-built, email-client-safe HTML file that contains the full structure of a recurring email \u2014 masthead, content blocks, buttons, and footer \u2014 so you can replace the text and send it every issue without redesigning anything. Unlike a webpage, a newsletter HTML template is built with table-based layout, inline CSS, and a fixed 600-pixel width, because those are the only techniques that render reliably in Apple Mail, Gmail, Outlook, and Yahoo Mail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get free newsletter HTML templates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best free newsletter HTML template sources are Beefree (1,280+ templates, free plan with HTML export) and Stripo (1,650+ templates, free tier), both of which export production-ready HTML. The catch is that free tiers keep you inside their builders, add watermarks or require accounts, and exports sometimes inject builder-specific code. A one-time paid pack \u2014 like the 20-template Newsletter HTML Template Pack \u2014 costs about $11, has no subscription, no watermark, and gives you clean standalone HTML files you own and can edit in any text editor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I create my own HTML newsletter template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To create your own HTML newsletter template: (1) start from a table-based skeleton \u2014 wrapper table, 600px container table, one row per content block; (2) inline all critical CSS on each element and treat any <style> block as enhancement only; (3) add a hidden preheader, a bulletproof VML button for Outlook, a mobile-stacking media query, and a footer with your postal address and unsubscribe link; (4) test in Gmail, Apple Mail, and Outlook desktop before the first send. Copy the complete annotated skeleton in this guide and customise it \u2014 that is faster than starting from a blank file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do email newsletters still use tables instead of divs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Email newsletters use tables because Outlook desktop on Windows renders HTML email with Microsoft Word's layout engine, which does not support flexbox, CSS grid, or reliable float/position-based layout \u2014 it only lays out HTML reliably with table cells. The rest of the email ecosystem (Gmail, Apple Mail, Yahoo) must support Outlook recipients, so table-based layout became the universal standard. Every professional newsletter template in 2026 still uses nested tables with inline CSS for exactly this reason."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What width should a newsletter HTML template be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard width for an email newsletter is 600 pixels. 600px fits the widest email client preview pane, reads comfortably at typical desktop resolutions, and leaves room for Gmail's and Outlook's side panels. Templates wider than 600px get horizontally scaled or clipped on desktop clients. The correct pattern is a 100%-width wrapper table for the background colour, with a fixed 600px container table inside it that mobile media queries expand to 100%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add an HTML template to Mailchimp or Beehiiv?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Mailchimp, create a campaign, choose 'Paste in code' (or import via the Templates page), paste your HTML, and replace personalisation tags with Mailchimp merge tags like *|FNAME|* and *|UNSUB|*. In Beehiiv, open a post and insert your HTML into a code block, or paste it into the custom HTML email section. Klaviyo, ActiveCampaign, and ConvertKit (Kit) all accept a full custom HTML upload for broadcasts. Substack is the exception: it does not support importing custom HTML templates, so use its built-in editor there and keep your HTML template for your other platforms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do newsletter HTML templates work on mobile phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 a well-built newsletter HTML template renders correctly on mobile, where 55-60% of email opens now happen. What makes a template mobile-safe is not a separate mobile version but three techniques inside one file: a max-width 600px container that expands to 100% under a 600px media query, multi-column rows that stack into a single column on small screens, and font sizes of at least 14-16px so text stays readable without pinching. If a template's only responsive behaviour is horizontal shrinking, it is not mobile-safe."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Newsletter HTML Template Pack \u2014 20 Responsive Email Templates",
+  "description": "20 responsive, email-client-safe HTML newsletter templates covering the full newsletter lifecycle \u2014 classic issues, digests, welcome emails, product launches, re-engagement and more \u2014 all table-based with inline CSS, 600px width, mobile-stacking media queries, hidden preheaders, bulletproof CTA buttons, and CAN-SPAM footers. Includes a README with merge-tag references for Mailchimp, ConvertKit, Beehiiv, Substack, Klaviyo, and ActiveCampaign plus import and testing instructions.",
+  "category": "Writing and Publishing",
+  "brand": {
+    "@type": "Brand",
+    "name": "Kowhai Goods"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "11.00",
+    "priceCurrency": "USD",
+    "url": "https://brangabrew.gumroad.com/l/gyyne",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; max-width: 780px; margin: 0 auto; padding: 1.5rem 1rem; color: #1a1a1a; background: #fafafa; }
+    h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.45rem; margin-top: 2.5rem; margin-bottom: 0.75rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.15rem; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    .subtitle { color: #555; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; }
+    .cta-box { background: linear-gradient(135deg, #1e293b, #334155); color: #fff; border-radius: 0.75rem; padding: 1.5rem; margin: 2rem 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; color: #fff; }
+    .cta-box p { margin-bottom: 1rem; color: #e2e8f0; }
+    .cta-button { display: inline-block; background: #38bdf8; color: #0c1626; font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-size: 1.05rem; transition: transform 0.15s; }
+    .cta-button:hover { transform: translateY(-2px); }
+    .faq-section { margin: 2rem 0; }
+    .faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-item summary { padding: 1rem; cursor: pointer; font-weight: 600; list-style: none; font-size: 1.02rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before { content: "\25B6 "; color: #2563eb; font-size: 0.8rem; transition: transform 0.2s; display: inline-block; }
+    .faq-item[open] summary::before { transform: rotate(90deg); }
+    .faq-answer { padding: 0 1rem 1rem; color: #334155; }
+    .faq-answer p { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.6rem 0.75rem; text-align: left; }
+    th { background: #1e293b; color: #fff; font-weight: 600; }
+    tr:nth-child(even) { background: #f1f5f9; }
+    .comparison-wrap { overflow-x: auto; }
+    blockquote { border-left: 4px solid #2563eb; margin: 1.5rem 0; padding: 0.75rem 1.25rem; background: #eff6ff; border-radius: 0 0.5rem 0.5rem 0; color: #1e3a5f; }
+    blockquote p { margin: 0; }
+    .key-takeaway { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .key-takeaway strong { color: #92400e; }
+    ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.45rem; }
+    code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-size: 0.9em; }
+    .internal-links { background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 2rem 0; }
+    .internal-links h4 { margin-top: 0; color: #166534; }
+    .internal-links ul { margin-bottom: 0; }
+    .internal-links a { color: #15803d; }
+    .code-block { background: #0f172a; border-radius: 0.5rem; padding: 1rem 1.25rem; margin: 1.25rem 0; overflow-x: auto; }
+    .code-block pre { margin: 0; }
+    .code-block code { background: transparent; color: #e2e8f0; font-family: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.78rem; line-height: 1.55; padding: 0; }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 0.85rem; }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.75rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+      th, td { padding: 0.45rem 0.5rem; font-size: 0.82rem; }
+      .code-block code { font-size: 0.68rem; }
+    }
+</style>
+</head>
+<body>
+  <h1>20 Newsletter HTML Templates That Render Perfectly in Every Email Client</h1>
+  <p class="subtitle">Published September 2026 · 14 min read</p>
+
+  <p>The best newsletter HTML template is a <strong>600-pixel-wide, table-based layout with inline CSS, a hidden preheader, and a plain-text fallback</strong> — because that is the only combination that renders correctly in Apple Mail, Gmail, Outlook, and Yahoo Mail at the same time. Anything fancier breaks somewhere, and the breakage is always invisible until a subscriber replies with a screenshot.</p>
+
+  <p>This guide gives you the full picture: the seven rules that make newsletter HTML work, a complete annotated template skeleton you can copy today, platform-by-platform import steps, a compatibility table for the four clients that matter, and — if you'd rather skip the building entirely — a tour of <strong>20 ready-to-send newsletter HTML templates</strong> covering every send type from welcome emails to re-engagement campaigns.</p>
+
+  <h2>Newsletter HTML Template FAQs</h2>
+
+  <div class="faq-section">
+<details class="faq-item"><summary>What is a newsletter HTML template?</summary><div class="faq-answer"><p>A newsletter HTML template is a pre-built, email-client-safe HTML file that contains the full structure of a recurring email — masthead, content blocks, buttons, and footer — so you can replace the text and send it every issue without redesigning anything. Unlike a webpage, a newsletter HTML template is built with table-based layout, inline CSS, and a fixed 600-pixel width, because those are the only techniques that render reliably in Apple Mail, Gmail, Outlook, and Yahoo Mail.</p></div></details>
+<details class="faq-item"><summary>Where can I get free newsletter HTML templates?</summary><div class="faq-answer"><p>The best free newsletter HTML template sources are Beefree (1,280+ templates, free plan with HTML export) and Stripo (1,650+ templates, free tier), both of which export production-ready HTML. The catch is that free tiers keep you inside their builders, add watermarks or require accounts, and exports sometimes inject builder-specific code. A one-time paid pack — like the 20-template Newsletter HTML Template Pack — costs about $11, has no subscription, no watermark, and gives you clean standalone HTML files you own and can edit in any text editor.</p></div></details>
+<details class="faq-item"><summary>How do I create my own HTML newsletter template?</summary><div class="faq-answer"><p>To create your own HTML newsletter template: (1) start from a table-based skeleton — wrapper table, 600px container table, one row per content block; (2) inline all critical CSS on each element and treat any <style> block as enhancement only; (3) add a hidden preheader, a bulletproof VML button for Outlook, a mobile-stacking media query, and a footer with your postal address and unsubscribe link; (4) test in Gmail, Apple Mail, and Outlook desktop before the first send. Copy the complete annotated skeleton in this guide and customise it — that is faster than starting from a blank file.</p></div></details>
+<details class="faq-item"><summary>Why do email newsletters still use tables instead of divs?</summary><div class="faq-answer"><p>Email newsletters use tables because Outlook desktop on Windows renders HTML email with Microsoft Word's layout engine, which does not support flexbox, CSS grid, or reliable float/position-based layout — it only lays out HTML reliably with table cells. The rest of the email ecosystem (Gmail, Apple Mail, Yahoo) must support Outlook recipients, so table-based layout became the universal standard. Every professional newsletter template in 2026 still uses nested tables with inline CSS for exactly this reason.</p></div></details>
+<details class="faq-item"><summary>What width should a newsletter HTML template be?</summary><div class="faq-answer"><p>The standard width for an email newsletter is 600 pixels. 600px fits the widest email client preview pane, reads comfortably at typical desktop resolutions, and leaves room for Gmail's and Outlook's side panels. Templates wider than 600px get horizontally scaled or clipped on desktop clients. The correct pattern is a 100%-width wrapper table for the background colour, with a fixed 600px container table inside it that mobile media queries expand to 100%.</p></div></details>
+<details class="faq-item"><summary>How do I add an HTML template to Mailchimp or Beehiiv?</summary><div class="faq-answer"><p>In Mailchimp, create a campaign, choose 'Paste in code' (or import via the Templates page), paste your HTML, and replace personalisation tags with Mailchimp merge tags like *|FNAME|* and *|UNSUB|*. In Beehiiv, open a post and insert your HTML into a code block, or paste it into the custom HTML email section. Klaviyo, ActiveCampaign, and ConvertKit (Kit) all accept a full custom HTML upload for broadcasts. Substack is the exception: it does not support importing custom HTML templates, so use its built-in editor there and keep your HTML template for your other platforms.</p></div></details>
+<details class="faq-item"><summary>Do newsletter HTML templates work on mobile phones?</summary><div class="faq-answer"><p>Yes — a well-built newsletter HTML template renders correctly on mobile, where 55-60% of email opens now happen. What makes a template mobile-safe is not a separate mobile version but three techniques inside one file: a max-width 600px container that expands to 100% under a 600px media query, multi-column rows that stack into a single column on small screens, and font sizes of at least 14-16px so text stays readable without pinching. If a template's only responsive behaviour is horizontal shrinking, it is not mobile-safe.</p></div></details>
+  </div>
+
+  <h2>Why Email HTML Is Not Web HTML</h2>
+
+  <p>Here's the sentence that saves everyone the most time: <strong>an email newsletter is not a webpage that happens to arrive in an inbox.</strong> In 2007, Microsoft switched Outlook desktop on Windows to render HTML email using Microsoft Word's layout engine — and it never switched back. Word's engine has no flexbox, no CSS grid, no reliable positioning, and it rescales pixel dimensions unless you explicitly tell it not to. A newsletter built like a modern webpage collapses into a stack of unstyled text for every Outlook desktop recipient.</p>
+
+  <p>The rest of the ecosystem adapted around Outlook. Gmail historically stripped or repurposed <code>&lt;head&gt;</code> styles, clips any message over roughly 102KB, and rewrites bits of your markup. Yahoo fragments CSS. Each client supports a different subset of CSS, so the industry standard became: build with the least common denominator — tables, inline styles, and conservative CSS — then layer enhancements for clients that support them.</p>
+
+  <p>It also matters where you send. As of Litmus's February 2026 email client market share reading, <strong>Apple Mail accounts for 51.5% of opens, Gmail for 26.7%, Outlook for 7.7%, and Yahoo Mail for 3.2%</strong> — nearly 90% of the market in two clients, and 55-60% of all opens happen on mobile. That's the target list your template has to survive.</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Email client</th><th>Opens (Litmus, Feb 2026)</th><th>What breaks easiest</th><th>Defence in your template</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Apple Mail (iPhone/iPad/Mac)</td><td>51.5%</td><td>Nothing much — best CSS support of the majors; enable Privacy Protection inflates open metrics</td><td>Don't obsess over open rate; focus CTR and CTO instead</td></tr>
+      <tr><td>Gmail</td><td>26.7%</td><td>Clips messages over ~102KB; historically strips some <code>&lt;style&gt;</code> blocks; rewrites classes</td><td>Keep HTML lean; inline critical CSS; put the hook in the first 102KB</td></tr>
+      <tr><td>Outlook (desktop Windows)</td><td>7.7%</td><td>Word engine: no flexbox/grid, no border-radius on some elements, DPI image scaling</td><td>Table layout, VML bulletproof buttons, 96 PPI <code>PixelsPerInch</code> fix</td></tr>
+      <tr><td>Yahoo Mail</td><td>3.2%</td><td>Fragments embedded CSS; picky about media queries</td><td>Inline everything critical; treat media queries as bonus</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The 7 Rules of Email-Safe Newsletter HTML</h2>
+
+  <h3>1. Use tables for layout — never divs, flexbox, or grid</h3>
+  <p>Every structural element in a newsletter HTML template — masthead, columns, footer — is a <code>&lt;table&gt;</code> with <code>role="presentation"</code> so screen readers skip announcing it as a data table. A one-column newsletter is a wrapper table (100% wide, for the background colour) containing a 600px container table, with one <code>&lt;tr&gt;</code> per content block. That's the whole skeleton. Multi-column sections are just tables nested inside a cell.</p>
+
+  <h3>2. Inline your CSS — the <code>&lt;style&gt;</code> block is enhancement only</h3>
+  <p>Web pages keep styles in one stylesheet; email HTML puts the styles <em>on each element</em> via <code>style="..."</code>. When a client strips your <code>&lt;style&gt;</code> block — and several do — inline styles survive. The rule professional template builders use: <strong>if removing the <code>&lt;head&gt;</code> changes how the email looks, the template is broken.</strong> The only things that belong in <code>&lt;style&gt;</code> are the mobile media query and hover effects.</p>
+
+  <h3>3. Build to 600 pixels wide</h3>
+  <p><strong>The standard width for an email newsletter is 600px.</strong> It fits every preview pane, avoids Gmail's horizontal squeeze, and keeps line lengths readable. You get there with the wrapper-plus-container pattern: an outer table at <code>width="100%"</code> for the background, an inner table at <code>width="600"</code> (with <code>max-width:600px</code>) for the content.</p>
+
+  <h3>4. Buttons must be "bulletproof"</h3>
+  <p>HTML buttons built with <code>padding</code> on an <code>&lt;a&gt;</code> collapse into a thin, hard-to-tap sliver in Outlook, because Word's engine ignores padding on anchors. The fix is the classic bulletproof button: a VML <code>v:roundrect</code> wrapped in Outlook-only conditional comments, plus the padded anchor for every other client:</p>
+  <div class="code-block"><pre><code>&lt;!-- Outlook gets the VML version --&gt;
+&lt;!--[if mso]&gt;
+&lt;v:roundrect xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:w=&quot;urn:schemas-microsoft-com:office:word&quot;
+  href=&quot;https://yoursite.com&quot; style=&quot;height:44px; v-text-anchor:middle; width:220px;&quot;
+  arcsize=&quot;10%&quot; stroke=&quot;f&quot; fillcolor=&quot;#2563eb&quot;&gt;
+  &lt;w:anchorlock/&gt;
+  &lt;center style=&quot;color:#ffffff; font-family:Arial,sans-serif; font-size:15px; font-weight:bold;&quot;&gt;
+    Read the full guide
+  &lt;/center&gt;
+&lt;/v:roundrect&gt;
+&lt;![endif]--&gt;
+&lt;!-- Everyone else gets the anchor version --&gt;
+&lt;!--[if !mso]&gt;&lt;!--&gt;
+&lt;a href=&quot;https://yoursite.com&quot;
+   style=&quot;display:inline-block; background:#2563eb; color:#ffffff;
+          font-family:Arial,sans-serif; font-size:15px; font-weight:bold;
+          line-height:44px; text-decoration:none; padding:0 28px; border-radius:6px;&quot;&gt;
+  Read the full guide
+&lt;/a&gt;
+&lt;!--&lt;![endif]--&gt;</code></pre></div>
+  <p>Outlook desktop reads the VML version and ignores the anchor; every other client does the reverse. Both sit in the same cell, so only one ever renders.</p>
+
+  <h3>5. Hide a preheader in the top of the HTML</h3>
+  <p>The preheader is the summary text Gmail and Apple Mail show after the subject line. It comes from the first text in the email, so if you don't control it, your footer's "Unsubscribe" link becomes your sales pitch. Hide it deliberately:</p>
+  <div class="code-block"><pre><code>&lt;div style=&quot;display:none; max-height:0; overflow:hidden; mso-hide:all;&quot;&gt;
+  Your preheader text here — it shows after the subject line in the inbox.
+&lt;/div&gt;</code></pre></div>
+  <p>Give it 40-90 characters, treat it as a second subject line, and never leave it empty (some clients fall back to "If you can't read this email…").</p>
+
+  <h3>6. Make columns stack on mobile with one media query</h3>
+  <p>Mobile is where 55-60% of opens happen, and the fix is a single <code>@media</code> rule that widens the container and forces side-by-side cells to stack:</p>
+  <div class="code-block"><pre><code>@media screen and (max-width: 600px) {
+  .container { width: 100% !important; }
+  .stack { display: block !important; width: 100% !important; }
+}</code></pre></div>
+  <p>Then mark each column cell with <code>class="stack"</code>. Keep body text at 16px minimum so nothing needs pinch-zooming.</p>
+
+  <h3>7. Keep the CAN-SPAM footer — always</h3>
+  <p>Every send needs a visible physical postal address and a working unsubscribe link — CAN-SPAM requires both, and the 2024 Google and Yahoo bulk-sender rules add a practical requirement on top: <strong>spam complaints must stay under 0.3% of messages sent to each provider, and large senders must support one-click unsubscribe.</strong> A clean footer is not just legal hygiene; it protects deliverability for the whole list. The standard block is a short "why you're receiving this" line, the company name and address, and Unsubscribe / Update preferences links.</p>
+
+  <h2>A Complete Newsletter HTML Template Skeleton</h2>
+
+  <p>Here is the entire skeleton — preheader, wrapper, container, masthead, headline, body block, bulletproof button, and CAN-SPAM footer — in one copy-pasteable file. It's the base every serious newsletter template is built from:</p>
+
+  <div class="code-block"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot;
+      xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;title&gt;Issue #12 — Your Newsletter&lt;/title&gt;
+  &lt;!--[if mso]&gt;
+  &lt;noscript&gt;&lt;xml&gt;&lt;o:OfficeDocumentSettings&gt;
+    &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+  &lt;/o:OfficeDocumentSettings&gt;&lt;/xml&gt;&lt;/noscript&gt;
+  &lt;![endif]--&gt;
+  &lt;style&gt;
+    /* Enhancement only — everything critical is inline */
+    @media screen and (max-width: 600px) {
+      .container { width: 100% !important; }
+      .stack { display: block !important; width: 100% !important; }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin:0; padding:0; background:#f4f5f7;&quot;&gt;
+
+  &lt;!-- 1. Hidden preheader --&gt;
+  &lt;div style=&quot;display:none; max-height:0; overflow:hidden; mso-hide:all;&quot;&gt;
+    Issue #12: five rules of email-safe HTML, plus a template to steal.
+  &lt;/div&gt;
+
+  &lt;!-- 2. Full-width wrapper table --&gt;
+  &lt;table role=&quot;presentation&quot; width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;
+         style=&quot;background:#f4f5f7;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding:24px 12px;&quot;&gt;
+
+        &lt;!-- 3. 600px container --&gt;
+        &lt;table role=&quot;presentation&quot; class=&quot;container&quot; width=&quot;600&quot; cellpadding=&quot;0&quot;
+               cellspacing=&quot;0&quot; border=&quot;0&quot;
+               style=&quot;width:600px; max-width:600px; background:#ffffff;
+                      border-radius:8px; overflow:hidden;&quot;&gt;
+
+          &lt;!-- Masthead --&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding:28px 32px 0; font-family:Arial,Helvetica,sans-serif;&quot;&gt;
+              &lt;p style=&quot;margin:0; font-size:12px; color:#6b7280; letter-spacing:2px;
+                        text-transform:uppercase;&quot;&gt;Your Newsletter Name&lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;!-- Headline + dateline --&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding:12px 32px 0; font-family:Arial,Helvetica,sans-serif;&quot;&gt;
+              &lt;h1 style=&quot;margin:0; font-size:26px; line-height:1.3; color:#111827;&quot;&gt;
+                Issue #12 — Email-safe HTML, explained&lt;/h1&gt;
+              &lt;p style=&quot;margin:8px 0 0; font-size:13px; color:#6b7280;&quot;&gt;
+                September 14, 2026 · 6 min read&lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;!-- Body: one idea per block --&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding:20px 32px; font-family:Arial,Helvetica,sans-serif;&quot;&gt;
+              &lt;p style=&quot;margin:0 0 16px; font-size:16px; line-height:1.6; color:#374151;&quot;&gt;
+                Hello *|FNAME|*, quick note before the links…
+              &lt;/p&gt;
+              &lt;p style=&quot;margin:0 0 8px; font-size:16px; line-height:1.6; color:#374151;&quot;&gt;
+                &lt;a href=&quot;https://yoursite.com&quot; style=&quot;color:#2563eb;&quot;&gt;This week&#x27;s essay&lt;/a&gt;
+                — why email HTML still uses tables in 2026.&lt;/p&gt;
+              &lt;p style=&quot;margin:0; font-size:16px; line-height:1.6; color:#374151;&quot;&gt;
+                &lt;a href=&quot;https://yoursite.com/2&quot; style=&quot;color:#2563eb;&quot;&gt;Tool of the week&lt;/a&gt;
+                — a free inbox preview checker.&lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;!-- 4. Bulletproof CTA button --&gt;
+          &lt;tr&gt;
+            &lt;td align=&quot;center&quot; style=&quot;padding:8px 32px 32px;&quot;&gt;
+              &lt;!--[if mso]&gt;
+              &lt;v:roundrect xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot;
+                xmlns:w=&quot;urn:schemas-microsoft-com:office:office&quot;
+                href=&quot;https://yoursite.com&quot; style=&quot;height:44px; v-text-anchor:middle;
+                width:220px;&quot; arcsize=&quot;10%&quot; stroke=&quot;f&quot; fillcolor=&quot;#2563eb&quot;&gt;
+                &lt;w:anchorlock/&gt;
+                &lt;center style=&quot;color:#ffffff; font-family:Arial,sans-serif;
+                  font-size:15px; font-weight:bold;&quot;&gt;Read the full guide&lt;/center&gt;
+              &lt;/v:roundrect&gt;
+              &lt;![endif]--&gt;
+              &lt;!--[if !mso]&gt;&lt;!--&gt;
+              &lt;a href=&quot;https://yoursite.com&quot;
+                 style=&quot;display:inline-block; background:#2563eb; color:#ffffff;
+                        font-family:Arial,sans-serif; font-size:15px; font-weight:bold;
+                        line-height:44px; text-decoration:none; padding:0 28px;
+                        border-radius:6px;&quot;&gt;Read the full guide&lt;/a&gt;
+              &lt;!--&lt;![endif]--&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;!-- 5. CAN-SPAM footer --&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding:24px 32px; background:#111827;
+                        font-family:Arial,Helvetica,sans-serif;&quot;&gt;
+              &lt;p style=&quot;margin:0 0 8px; font-size:12px; line-height:1.5; color:#9ca3af;&quot;&gt;
+                You&#x27;re receiving this because you subscribed at yoursite.com.&lt;/p&gt;
+              &lt;p style=&quot;margin:0 0 8px; font-size:12px; line-height:1.5; color:#9ca3af;&quot;&gt;
+                Your Company, 123 Example Street, Wellington, New Zealand&lt;/p&gt;
+              &lt;p style=&quot;margin:0; font-size:12px;&quot;&gt;
+                &lt;a href=&quot;*|UNSUB|*&quot; style=&quot;color:#9ca3af;&quot;&gt;Unsubscribe&lt;/a&gt;
+                &lt;a href=&quot;*|UPDATE_PROFILE|*&quot; style=&quot;color:#9ca3af;&quot;&gt;Update preferences&lt;/a&gt;
+              &lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;&lt;!-- /container --&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;&lt;!-- /wrapper --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+  <p>Three details worth noticing: the <code>xmlns:v</code> and <code>xmlns:o</code> namespaces in the <code>&lt;html&gt;</code> tag make VML buttons validate; the <code>o:PixelsPerInch</code> block stops Outlook desktop rescaling your 600px to something wider on high-DPI screens; and every <code>&lt;td&gt;</code> carries its own <code>font-family</code>, because fonts don't inherit reliably in email.</p>
+
+  <h2>The 20 Templates: What Each One Is For</h2>
+
+  <p>One skeleton can send any newsletter, but the fastest workflow is a set of purpose-built newsletter HTML templates — one per send type, each with the structure and psychology pre-embedded. These are the 20 from the <a href="https://brangabrew.gumroad.com/l/gyyne" rel="noopener">Newsletter HTML Template Pack</a> and what each is for:</p>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>#</th><th>Template</th><th>Best for</th><th>Customise first</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Classic Issue</td><td>Regular weekly/biweekly newsletter</td><td>Masthead name + link colours</td></tr>
+      <tr><td>2</td><td>Minimal Issue</td><td>Text-first writers (Substack-style)</td><td>Signature sign-off</td></tr>
+      <tr><td>3</td><td>Magazine Issue</td><td>Multi-article issues with images</td><td>Featured article hero block</td></tr>
+      <tr><td>4</td><td>Personal Note</td><td>One-topic, one-CTA founder emails</td><td>Opening sentence</td></tr>
+      <tr><td>5</td><td>Links Roundup</td><td>Curated link lists ("5 things this week")</td><td>Link description length</td></tr>
+      <tr><td>6</td><td>Welcome Email</td><td>First message after signup</td><td>Your origin story paragraph</td></tr>
+      <tr><td>7</td><td>Lead Magnet Delivery</td><td>Delivering the promised freebie</td><td>Download button URL</td></tr>
+      <tr><td>8</td><td>Weekly Digest</td><td>Blog/content roundups</td><td>Section headers</td></tr>
+      <tr><td>9</td><td>Monthly Recap</td><td>Progress reports, changelogs</td><td>Metrics block</td></tr>
+      <tr><td>10</td><td>Product Launch</td><td>Announcing a new product</td><td>Hero image + launch offer</td></tr>
+      <tr><td>11</td><td>Flash Sale</td><td>48-72 hour promotions</td><td>Deadline + discount code</td></tr>
+      <tr><td>12</td><td>Event Invitation</td><td>Webinars, workshops, meetups</td><td>Date/time + registration link</td></tr>
+      <tr><td>13</td><td>Feedback Request</td><td>Surveys and reader input</td><td>Question + incentive</td></tr>
+      <tr><td>14</td><td>Re-engagement</td><td>Winning back inactive subscribers</td><td>Subject line (it's 80% of the send)</td></tr>
+      <tr><td>15</td><td>Sponsored Issue</td><td>Paid placements in your newsletter</td><td>Sponsor copy + disclosure line</td></tr>
+      <tr><td>16</td><td>Podcast Episode</td><td>Episode announcements with player links</td><td>Episode title + embed block</td></tr>
+      <tr><td>17</td><td>Blog Broadcast</td><td>Repurposing a single post</td><td>Teaser paragraph</td></tr>
+      <tr><td>18</td><td>Case Study</td><td>Customer results stories</td><td>Result numbers in the headline</td></tr>
+      <tr><td>19</td><td>Holiday Special</td><td>Seasonal sends</td><td>Them imagery + promo dates</td></tr>
+      <tr><td>20</td><td>Plain Text</td><td>Deliverability-critical or personal sends</td><td>Nothing — send as-is</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Every one of these 20 uses the same underlying rules: table-based layout, inline CSS, 600px container, mobile-stacking media queries, hidden preheader, bulletproof buttons, and a CAN-SPAM-compliant footer with unsubscribe and preference-center placeholders. The variety is in the content structure, not the engineering — which is exactly why a template pack saves so much time: the engineering is already done, twenty times, for twenty different jobs.</p>
+
+  <h2>How to Import an HTML Template Into Each Platform</h2>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Platform</th><th>How to use a custom HTML template</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Mailchimp</td><td>Create campaign → <strong>Paste in code</strong>; or Templates → Import via paste</td><td>Use <code>*|FNAME|*</code>, <code>*|UNSUB|*</code>, <code>*|UPDATE_PROFILE|*</code> merge tags</td></tr>
+      <tr><td>ConvertKit (Kit)</td><td>Broadcast → switch to custom HTML</td><td>Unsubscribe block appended automatically; use liquid subscriber tags</td></tr>
+      <tr><td>Beehiiv</td><td>Post editor → insert a <strong>code block</strong> / paste HTML</td><td>Keep styles inline; Beehiiv adds its own footer on lower tiers</td></tr>
+      <tr><td>Substack</td><td>Not supported — Substack uses its own editor</td><td>Use the skeleton as a design reference; Substack handles the HTML</td></tr>
+      <tr><td>Klaviyo</td><td>Templates → New template → upload HTML</td><td>Preserve <code>{ unsubscribe| }</code>-style tags Klaviyo requires</td></tr>
+      <tr><td>ActiveCampaign</td><td>Templates → Import from HTML</td><td>Unsubscribe link is required — don't strip the footer</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Whichever platform you use, the non-negotiable is the unsubscribe and postal-address block from rule 7. The 2024 Google/Yahoo sender rules mean platforms increasingly enforce this for you, but enforcement-at-send is a bad place to discover your template's footer was optional.</p>
+
+  <h2>The 10-Point Pre-Send Testing Checklist</h2>
+
+  <ol>
+    <li><strong>Preview in a rendering tool</strong> (Litmus, Email on Acid, or a free preview pane) across Apple Mail, Gmail, and Outlook.</li>
+    <li><strong>Send a live test</strong> to a real Gmail, an iCloud, and an Outlook desktop account — previews miss clipping and spam foldering.</li>
+    <li><strong>Check total HTML weight stays under ~100KB</strong> so Gmail never clips it (your call-to-action must live above the fold of the clip).</li>
+    <li><strong>Confirm the preheader</strong> shows your chosen text after the subject line, not a fallback.</li>
+    <li><strong>Tap the button in Outlook desktop</strong> — if the VML version renders, every other client is fine.</li>
+    <li><strong>Open on a phone</strong>: columns stack, text is ≥14px, nothing requires horizontal scrolling.</li>
+    <li><strong>Verify images have alt text and fixed dimensions</strong> (width/height attributes), because half your opens have images blocked or auto-loaded.</li>
+    <li><strong>Click unsubscribe</strong> end-to-end and confirm the recipient is actually removed.</li>
+    <li><strong>Check dark mode</strong> — Apple and Outlook mobile render dark by default; avoid pure black text on transparent PNGs.</li>
+    <li><strong>Scan the spam score</strong> (Mail Tester or your platform's built-in checker) before the send, not after.</li>
+  </ol>
+
+  <h2>Build vs. Builder Tool vs. Template Pack</h2>
+
+  <div class="comparison-wrap">
+  <table>
+    <thead>
+      <tr><th>Approach</th><th>Upfront effort</th><th>Ongoing cost</th><th>What you get</th><th>Best for</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Build from the skeleton</td><td>Hours per template; learning curve</td><td>$0</td><td>Total control, exactly one layout</td><td>Developers and the curious</td></tr>
+      <tr><td>Free builder (Beefree, Stripo)</td><td>Minutes</td><td>$0 tier, account required; exports can carry builder code</td><td>Huge libraries, drag-and-drop</td><td>Frequent design tinkerers</td></tr>
+      <tr><td>Builder subscription</td><td>Minutes</td><td>~$15-50+/month, forever</td><td>Team features, automation integrations</td><td>Marketing teams</td></tr>
+      <tr><td><strong>One-time template pack</strong></td><td><strong>Minutes — find-and-replace, done</strong></td><td><strong>$11 once, no subscription</strong></td><td><strong>20 clean standalone HTML files you own</strong></td><td><strong>Newsletter operators who want to write, not build</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <blockquote><p>The economics are brutal for subscriptions: a $30/month builder costs $360/year to keep access to HTML you could own outright. If you send a regular issue plus a welcome sequence and occasional promos, a one-time pack pays for itself in the first month — and the files work in every platform above, so you keep them even if you switch.</p></blockquote>
+
+  <h2>Get the 20 Newsletter HTML Templates</h2>
+
+  <p>Everything in this guide — the rules, the skeleton, the testing checklist — ships finished in the <strong>Newsletter HTML Template Pack</strong>: 20 responsive, email-client-safe HTML files covering the full newsletter lifecycle, all table-based with inline CSS, 600px containers, mobile-stacking media queries, hidden preheaders, bulletproof CTA buttons, and CAN-SPAM footers. The included README walks through placeholder find-and-replace, merge-tag references for Mailchimp, ConvertKit, Beehiiv, Substack, Klaviyo, and ActiveCampaign, image hosting, and the import + testing steps for each platform.</p>
+
+  <div class="cta-box">
+    <h3>Newsletter HTML Template Pack — 20 Responsive Email Templates</h3>
+    <p>20 ready-to-send, email-client-safe newsletter HTML templates covering every send type — welcome emails, product launches, digests, re-engagement, and more. Clean standalone HTML you own. Instant download. One-time $11.</p>
+    <a class="cta-button" href="https://brangabrew.gumroad.com/l/gyyne" rel="noopener">Get the 20 Newsletter HTML Templates on Gumroad →</a>
+  </div>
+
+  <p>A great template only carries the payload — the words still do the selling. For the strategy behind the sends, see <a href="/how-to-start-a-newsletter.html">how to start a newsletter</a> and <a href="/email-list-monetization.html">how to monetize an email list</a>; for the copy inside them, the <a href="/copywriting-swipe-file.html">copywriting swipe file</a> and <a href="/professional-email-templates.html">professional email templates</a> guides. And since every email ends with a sender, the <a href="/email-signature-templates.html">email signature templates</a> guide covers the block underneath the footer.</p>
+
+  <div class="internal-links">
+    <h4>Related guides from Kowhai Goods</h4>
+    <ul>
+      <li><a href="/how-to-start-a-newsletter.html">How to Start a Newsletter</a> — the 30-day launch plan these templates plug into</li>
+      <li><a href="/email-list-monetization.html">How to Monetize an Email List</a> — revenue models for the list you're sending to</li>
+      <li><a href="/professional-email-templates.html">Professional Email Templates</a> — 75 copy-paste email bodies for every situation</li>
+      <li><a href="/email-signature-templates.html">Professional Email Signature Templates</a> — 20 HTML signatures that pair with these newsletters</li>
+      <li><a href="/copywriting-swipe-file.html">Copywriting Swipe File</a> — subject lines and CTAs that get your template opened</li>
+      <li><a href="/cold-email-templates.html">Cold Email Templates</a> — one-to-one outreach, a different game from newsletters</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Kowhai Goods — practical templates and playbooks for work, money, and health. Store: <a href="https://brangabrew.gumroad.com">brangabrew.gumroad.com</a></p>
+  </footer>
+</body>
+</html>
