@@ -18,8 +18,9 @@
         .hero .cta:hover { background: #c0392b; }
         .hero .cta.secondary { background: transparent; border: 2px solid white; margin-left: 12px; }
         .hero .cta.secondary:hover { background: rgba(255,255,255,0.1); }
-        .sale-banner { background: #e74c3c; color: white; text-align: center; padding: 14px 20px; font-weight: 600; font-size: 1rem; }
+        .sale-banner { background: #e74c3c; color: white; text-align: center; padding: 14px 20px; font-weight: 600; font-size: 1rem; line-height: 1.5; }
         .sale-banner a { color: white; text-decoration: underline; }
+        .sale-banner #sale-countdown { font-variant-numeric: tabular-nums; white-space: nowrap; }
         .lead-magnet { background: white; border-bottom: 1px solid #ecf0f1; padding: 40px 20px; text-align: center; }
         .lead-magnet h2 { font-size: 1.5rem; margin-bottom: 10px; }
         .lead-magnet p { color: #7f8c8d; max-width: 520px; margin: 0 auto 16px; }
@@ -48,13 +49,43 @@
     </style>
 </head>
 <body>
-    <div class="sale-banner">
-        🎉 SEPTEMBER LAUNCH SALE — <strong>40% off everything</strong>, applied automatically · ends 30 Sep · <a href="https://brangabrew.gumroad.com">Shop now</a>
+    <div class="sale-banner" id="sale-banner">
+        🎉 <strong>SEPTEMBER SALE — 40% off everything</strong> · <span id="sale-countdown">ends soon</span> · Best deal: <a href="https://brangabrew.gumroad.com/l/complete-library"><strong>The Complete Library</strong> — all 41 products, $59</a>
     </div>
+    <script>
+        (function () {
+            var banner = document.getElementById('sale-banner');
+            if (!banner) return;
+            // Sale restore job fires 2026-10-01T09:00:00+13:00 NZDT
+            var deadline = new Date('2026-10-01T09:00:00+13:00').getTime();
+            function render() {
+                var left = deadline - Date.now();
+                if (left <= 0) {
+                    banner.innerHTML = 'The September sale has ended — but every product is still one-time purchase, no subscriptions. <a href="https://brangabrew.gumroad.com/l/complete-library">Check out the Complete Library →</a>';
+                    return;
+                }
+                var d = Math.floor(left / 86400000),
+                    h = Math.floor((left % 86400000) / 3600000),
+                    m = Math.floor((left % 3600000) / 60000),
+                    s = Math.floor((left % 60000) / 1000);
+                var el = document.getElementById('sale-countdown');
+                if (!el) return;
+                if (d > 0) {
+                    el.textContent = 'ends in ' + d + (d === 1 ? ' day' : ' days') + ' ' + h + (h === 1 ? ' hr' : ' hrs');
+                } else if (h > 0) {
+                    el.textContent = 'final hours — ' + h + (h === 1 ? ' hr' : ' hrs') + ' ' + m + ' min left';
+                } else {
+                    el.textContent = 'last ' + m + ' minutes!';
+                }
+            }
+            render();
+            setInterval(render, 30000);
+        })();
+    </script>
     <div class="hero">
         <h1>Practical Templates &amp; Playbooks</h1>
         <p>Professional Excel templates, PDF playbooks and digital tools for freelancers, small business owners and creators. One-time purchase. No subscriptions. Instant download.</p>
-        <a href="https://brangabrew.gumroad.com" class="cta">Browse All 43 Products →</a>
+        <a href="https://brangabrew.gumroad.com" class="cta">Browse All 52 Products →</a>
         <a href="https://brangabrew.gumroad.com/l/nfigy" class="cta secondary">Free Planner Download</a>
     </div>
 
