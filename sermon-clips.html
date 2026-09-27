@@ -1,76 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index, follow">
-<title>Sermon Clips for Churches — Done-For-You Vertical Clips | KowhaiGoods</title>
-<meta name="description" content="We turn your weekly sermon into 3-5 captioned vertical clips for YouTube Shorts, Instagram Reels and TikTok. Free preview from your latest sermon — pay only if you love it.">
-<link rel="canonical" href="https://kowhaigoods.com/sermon-clips.html">
-<style>
-  :root { --ink:#1c2430; --paper:#faf9f6; --accent:#2563eb; --soft:#eef2f7; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:Georgia,'Times New Roman',serif; background:var(--paper); color:var(--ink); line-height:1.6; }
-  .wrap { max-width:860px; margin:0 auto; padding:2rem 1.25rem 4rem; }
-  h1 { font-size:2.1rem; line-height:1.2; margin:1.5rem 0 .75rem; }
-  h2 { font-size:1.35rem; margin:2.25rem 0 .5rem; }
-  p  { margin:.75rem 0; }
-  .kicker { text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; color:#5b6b7c; font-family:Arial,Helvetica,sans-serif; }
-  .badge { display:inline-block; background:var(--soft); border-radius:6px; padding:.15rem .6rem; font-size:.85rem; margin:.2rem .25rem .2rem 0; font-family:Arial,Helvetica,sans-serif; }
-  .price { font-size:1.15rem; font-family:Arial,Helvetica,sans-serif; background:#fff; border:1px solid #e3e6ea; border-radius:10px; padding:1.25rem; margin:1.5rem 0; }
-  .price strong { font-size:1.5rem; }
-  .cta { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-family:Arial,Helvetica,sans-serif; font-weight:600; padding:.8rem 1.4rem; border-radius:8px; margin-top:.75rem; }
-  .steps li { margin:.6rem 0 .6rem 1.2rem; }
-  .faq details { margin:.75rem 0; }
-  .faq summary { cursor:pointer; font-weight:600; font-family:Arial,Helvetica,sans-serif; }
-  footer { margin-top:3rem; font-size:.85rem; color:#6a7683; font-family:Arial,Helvetica,sans-serif; }
-  a { color:var(--accent); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermon Clips for Churches — Done-For-You Vertical Clips | KowhaiGoods</title>
+    <meta name="description" content="We turn your weekly sermon into 3-5 captioned vertical clips for YouTube Shorts, Instagram Reels and TikTok. Free preview from your latest sermon — pay only if you love it.">
+    <link rel="canonical" href="https://kowhaigoods.com/sermon-clips.html">
+    <!-- Umami Analytics -->
+    <script async defer src="https://umami.kowhaigoods.com/script.js" data-website-id="4e030c82-d7eb-4913-bd93-784d1608186f"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #2c3e50; line-height: 1.6; }
+
+        .hero { background: linear-gradient(135deg, #2c3e50, #1a5276); color: white; padding: 72px 20px 56px; text-align: center; }
+        .hero .kicker { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; opacity: .75; margin-bottom: 14px; font-weight: 600; }
+        .hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); margin-bottom: 18px; font-weight: 700; max-width: 760px; margin-left: auto; margin-right: auto; }
+        .hero p.lead { font-size: 1.15rem; max-width: 680px; margin: 0 auto 26px; opacity: .92; }
+        .hero p.lead strong { color: #ffd9d4; }
+        .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .badges span { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 6px 16px; font-size: .85rem; }
+        .cta { display: inline-block; background: #e74c3c; color: white; padding: 14px 38px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: background .3s; }
+        .cta:hover { background: #c0392b; }
+        .cta.secondary { background: transparent; border: 2px solid white; margin-left: 10px; }
+        .cta.secondary:hover { background: rgba(255,255,255,.1); }
+        .hero .microcopy { font-size: .85rem; opacity: .7; margin-top: 12px; }
+
+        section { max-width: 1000px; margin: 0 auto; padding: 56px 20px; }
+        section h2 { font-size: 1.9rem; text-align: center; margin-bottom: 10px; }
+        section > p.sub { text-align: center; color: #7f8c8d; max-width: 620px; margin: 0 auto 36px; }
+
+        .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 26px; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 28px 24px; }
+        .card .day { display: inline-block; background: #eef2f7; color: #1a5276; border-radius: 6px; padding: 3px 12px; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .card p { font-size: .95rem; color: #5c6b7a; }
+
+        .compare { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 30px 28px; max-width: 760px; margin: 0 auto; }
+        .compare ul { list-style: none; }
+        .compare li { padding: 9px 0 9px 34px; position: relative; border-bottom: 1px solid #ecf0f1; font-size: .97rem; }
+        .compare li:last-child { border-bottom: none; }
+        .compare li::before { content: "✓"; position: absolute; left: 4px; color: #27ae60; font-weight: 700; }
+
+        .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; max-width: 780px; margin: 0 auto; }
+        .plan { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 32px 28px; text-align: center; position: relative; }
+        .plan.featured { border: 2px solid #2c3e50; }
+        .plan .flag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #2c3e50; color: white; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 5px 14px; border-radius: 999px; }
+        .plan .amount { font-size: 2.2rem; font-weight: 800; color: #27ae60; }
+        .plan .per { color: #7f8c8d; font-size: .9rem; margin-bottom: 18px; }
+        .plan ul { list-style: none; text-align: left; margin-bottom: 22px; }
+        .plan li { padding: 7px 0 7px 30px; position: relative; font-size: .95rem; }
+        .plan li::before { content: "✓"; position: absolute; left: 2px; color: #27ae60; font-weight: 700; }
+        .plan .buy { display: inline-block; background: #2c3e50; color: white; padding: 11px 26px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .plan .buy:hover { background: #1a5276; }
+        .pricing-note { text-align: center; color: #7f8c8d; font-size: .9rem; margin-top: 26px; }
+
+        .faq { max-width: 760px; margin: 0 auto; }
+        .faq details { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 12px; padding: 16px 22px; }
+        .faq summary { cursor: pointer; font-weight: 600; }
+        .faq details[open] summary { margin-bottom: 8px; }
+        .faq p { color: #5c6b7a; font-size: .95rem; }
+
+        .final { background: linear-gradient(135deg, #2c3e50, #1a5276); color: white; text-align: center; max-width: none; }
+        .final .inner { max-width: 680px; margin: 0 auto; }
+        .final h2 { color: white; }
+        .final p { opacity: .9; margin-bottom: 26px; }
+        .final p strong { color: #ffd9d4; }
+        .final small { display: block; opacity: .65; margin-top: 14px; font-size: .85rem; }
+
+        footer { background: #2c3e50; color: white; text-align: center; padding: 30px 20px; font-size: .9rem; }
+        footer a { color: #e74c3c; text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .hero { padding: 52px 18px 44px; }
+            .cta.secondary { margin-left: 0; margin-top: 10px; }
+            section { padding: 42px 18px; }
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="kicker">KowhaiGoods Media · Sermon Repurposing</div>
-  <h1>Your sermon, in clips your city actually watches.</h1>
-  <p>Every Sunday you preach for 35 minutes. Most people will only ever meet your church through a 45-second vertical video. We turn each week's sermon into <strong>3–5 captioned clips</strong> for YouTube Shorts, Instagram Reels and TikTok — delivered to your accounts, hands-off, for one flat monthly rate.</p>
+    <div class="hero">
+        <div class="kicker">KowhaiGoods Media · Sermon Repurposing</div>
+        <h1>Your sermon, in clips your city actually watches.</h1>
+        <p class="lead">Every Sunday you preach for 35 minutes. Most people will only ever meet your church through a 45-second vertical video. We turn each week's sermon into <strong>3–5 captioned clips</strong> for YouTube Shorts, Instagram Reels and TikTok — delivered to your accounts, hands-off, for one flat monthly rate.</p>
+        <div class="badges">
+            <span>Done-for-you</span>
+            <span>Human-reviewed captions</span>
+            <span>No contracts, cancel anytime</span>
+            <span>First preview free</span>
+        </div>
+        <a class="cta" href="mailto:kowhaigoods@gmail.com?subject=Sermon%20clips%20preview">Get my free preview</a>
+        <a class="cta secondary" href="#pricing">See pricing</a>
+        <p class="microcopy">Real clips from your latest sermon · within 48 hours · yours to keep either way</p>
+    </div>
 
-  <div>
-    <span class="badge">Done-for-you</span>
-    <span class="badge">Human-reviewed captions</span>
-    <span class="badge">No contracts, cancel anytime</span>
-    <span class="badge">First preview free</span>
-  </div>
+    <section>
+        <h2>How it works</h2>
+        <p class="sub">Your entire weekly to-do is one forwarded link.</p>
+        <div class="grid3">
+            <div class="card">
+                <span class="day">Sunday</span>
+                <h3>Forward the sermon link</h3>
+                <p>Or upload the audio if your service isn't streamed. That's it — that's your whole job.</p>
+            </div>
+            <div class="card">
+                <span class="day">Monday</span>
+                <h3>We cut the strongest moments</h3>
+                <p>A real editor picks what's worth sharing, crops vertical, adds clean captions and quality-checks every clip.</p>
+            </div>
+            <div class="card">
+                <span class="day">Tuesday</span>
+                <h3>Clips go live</h3>
+                <p>3–5 clips land in your inbox for approval, then posted to your YouTube/TikTok/Instagram — or delivered as files if you prefer to post yourself.</p>
+            </div>
+        </div>
+    </section>
 
-  <h2>How it works</h2>
-  <ol class="steps">
-    <li><strong>Sunday:</strong> forward the sermon link (or upload the audio). That's your entire to-do.</li>
-    <li><strong>Monday:</strong> we find the strongest moments, cut them vertical, add clean captions, and quality-check every clip.</li>
-    <li><strong>Tuesday:</strong> 3–5 clips land in your inbox for approval, then posted to your YouTube/TikTok/Instagram — or delivered as files if you prefer to post yourself.</li>
-  </ol>
+    <section>
+        <h2>Why churches use us instead of AI clip tools</h2>
+        <p class="sub">AI clip apps give you raw auto-crops, misheard captions — and another app for a volunteer to run.</p>
+        <div class="compare">
+            <ul>
+                <li>A real editor picks the moments worth sharing — never an algorithm guessing.</li>
+                <li>Captions human-reviewed, with sermon-appropriate handling of scripture references and names.</li>
+                <li>Posted consistently every week — no volunteer rosters, no editing apps, no drift.</li>
+                <li>Clips chosen to represent the sermon faithfully, never to sensationalise.</li>
+            </ul>
+        </div>
+    </section>
 
-  <h2>Why churches use us instead of AI clip tools</h2>
-  <p>AI clip apps (US$15–29/month) give you raw auto-crops and misheard captions — and someone on your team still has to run them. We're a done-for-you service: a real editor picks the moments worth sharing, fixes the captions, and posts consistently every week. Your volunteers never touch an editing app.</p>
+    <section id="pricing">
+        <h2>Simple flat pricing</h2>
+        <p class="sub">No setup fee. No contracts. Cancel anytime.</p>
+        <div class="pricing">
+            <div class="plan">
+                <div class="amount">US$99</div>
+                <div class="per">per month, per church</div>
+                <ul>
+                    <li>Up to 5 sermons a month</li>
+                    <li>3–5 captioned clips each</li>
+                    <li>Files + titles delivered to you</li>
+                    <li>You post to your channels</li>
+                </ul>
+                <a class="buy" href="mailto:kowhaigoods@gmail.com?subject=Sermon%20clips%20preview">Start with a free preview</a>
+            </div>
+            <div class="plan featured">
+                <span class="flag">Most popular</span>
+                <div class="amount">US$149</div>
+                <div class="per">per month, per church</div>
+                <ul>
+                    <li>Everything in the $99 plan</li>
+                    <li>We post to your channels on schedule</li>
+                    <li>Monthly reach report</li>
+                    <li>Fully hands-off</li>
+                </ul>
+                <a class="buy" href="mailto:kowhaigoods@gmail.com?subject=Sermon%20clips%20preview">Start with a free preview</a>
+            </div>
+        </div>
+        <p class="pricing-note">The preview is a real clip cut from <em>your latest sermon</em> — no mockups, no watermarks, yours to keep either way.</p>
+    </section>
 
-  <div class="price">
-    <strong>US$99/month</strong> per church — up to 5 sermons a month, 3–5 clips each.<br>
-    <strong>US$149/month</strong> — same, plus we post to your channels and manage the schedule.<br>
-    No setup fee. Cancel anytime. <a class="cta" href="mailto:kowhaigoods@gmail.com?subject=Sermon%20clips%20preview">Get my free preview</a>
-    <p style="font-size:.9rem;color:#5b6b7a;margin-top:.6rem;">The preview is a real clip cut from <em>your latest sermon</em> — no mockups, no watermarks, yours to keep either way.</p>
-  </div>
+    <section>
+        <h2>Questions churches ask</h2>
+        <p class="sub">Anything else, email us — a human replies.</p>
+        <div class="faq">
+            <details><summary>What do you need from us each week?</summary><p>A link. That's it. If your service isn't streamed, email the audio recording.</p></details>
+            <details><summary>Do the clips have our church's look?</summary><p>Yes — your name, colours and caption style, consistent across every clip. First previews include two style options.</p></details>
+            <details><summary>Will the captions be accurate?</summary><p>Every clip is human-reviewed before delivery, with sermon-appropriate handling of scripture references and names.</p></details>
+            <details><summary>Do you manage the accounts?</summary><p>On the $149 plan we post to your YouTube, TikTok and Instagram on a schedule and send you a monthly reach report. On $99 we deliver files + titles, you post.</p></details>
+            <details><summary>Anything to install?</summary><p>Nothing. Email the link, approve the clips, done.</p></details>
+            <details><summary>What denominations do you work with?</summary><p>All of them. We're careful with context — clips are chosen to represent the sermon faithfully, never to sensationalise.</p></details>
+        </div>
+    </section>
 
-  <h2>Questions churches ask</h2>
-  <div class="faq">
-    <details><summary>What do you need from us each week?</summary><p>A link. That's it. If your service isn't streamed, email the audio recording.</p></details>
-    <details><summary>Do the clips have our church's look?</summary><p>Yes — your name, colours and caption style, consistent across every clip. First previews include two style options.</p></details>
-    <details><summary>Will the captions be accurate?</summary><p>Every clip is human-reviewed before delivery, with sermon-appropriate handling of scripture references and names.</p></details>
-    <details><summary>Do you manage the accounts?</summary><p>On the $149 plan we post to your YouTube, TikTok and Instagram on a schedule and send you a monthly reach report. On $99 we deliver files + titles, you post.</p></details>
-    <details><summary>Anything to install?</summary><p>Nothing. Email the link, approve the clips, done.</p></details>
-    <details><summary>What denominations do you work with?</summary><p>All of them. We're careful with context — clips are chosen to represent the sermon faithfully, never to sensationalise.</p></details>
-  </div>
+    <section class="final">
+        <div class="inner">
+            <h2>See it before you pay anything</h2>
+            <p>Email <strong>kowhaigoods@gmail.com</strong> with your church name and latest sermon link. Within 48 hours you'll have real clips from your own sermon, free. If they're not good enough to post, we part as friends — the clips are yours either way.</p>
+            <a class="cta" href="mailto:kowhaigoods@gmail.com?subject=Sermon%20clips%20preview">Get my free preview</a>
+            <small>KowhaiGoods Media · done-for-you sermon clips · kowhaigoods.com/sermon-clips.html</small>
+        </div>
+    </section>
 
-  <h2>See it before you pay anything</h2>
-  <p>Email <strong>kowhaigoods@gmail.com</strong> with your church name and latest sermon link. Within 48 hours you'll have real clips from your own sermon, free. If they're not good enough to post, we part as friends — the clips are yours either way.</p>
-
-  <footer>KowhaiGoods Media · done-for-you sermon clips · kowhaigoods.com/sermon-clips.html</footer>
-</div>
+    <footer>
+        <p>KowhaiGoods · <a href="https://brangabrew.gumroad.com">Gumroad Store</a> · <a href="/sitemap.xml">Sitemap</a></p>
+        <p style="margin-top:8px; opacity:0.7;">© 2026 KowhaiGoods. All rights reserved.</p>
+    </footer>
 </body>
 </html>
