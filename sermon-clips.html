@@ -25,6 +25,21 @@
         .cta.secondary:hover { background: rgba(255,255,255,.1); }
         .hero .microcopy { font-size: .85rem; opacity: .7; margin-top: 12px; }
 
+ .spec-list { list-style: none; }
+ .spec-list li { padding: 9px 0 9px 32px; position: relative; border-bottom: 1px solid #ecf0f1; font-size: .95rem; }
+ .spec-list li:last-child { border-bottom: none; }
+ .spec-list li::before { content: "✓"; position: absolute; left: 4px; color: #27ae60; font-weight: 700; }
+ .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; max-width: 860px; margin: 0 auto; }
+
+ table.compare { width: 100%; max-width: 860px; margin: 0 auto; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08); font-size: .92rem; }
+ table.compare th, table.compare td { padding: 13px 16px; text-align: left; border-bottom: 1px solid #ecf0f1; }
+ table.compare th { background: #2c3e50; color: white; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
+ table.compare td:first-child { font-weight: 600; color: #2c3e50; width: 34%; }
+ table.compare tr:last-child td { border-bottom: none; }
+ table.compare .good { color: #27ae60; font-weight: 600; }
+ table.compare .bad { color: #c0392b; }
+ .table-scroll { overflow-x: auto; }
+
         section { max-width: 1000px; margin: 0 auto; padding: 56px 20px; }
         section h2 { font-size: 1.9rem; text-align: center; margin-bottom: 10px; }
         section > p.sub { text-align: center; color: #7f8c8d; max-width: 620px; margin: 0 auto 36px; }
@@ -76,6 +91,37 @@
             section { padding: 42px 18px; }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "KowhaiGoods Sermon Clips — done-for-you vertical sermon clips for churches",
+          "serviceType": "Sermon video repurposing and clipping service",
+          "provider": { "@type": "Organization", "name": "KowhaiGoods", "url": "https://kowhaigoods.com" },
+          "areaServed": "Worldwide (English-language churches)",
+          "description": "We turn a church's weekly sermon into 3-5 captioned vertical clips for YouTube Shorts, Instagram Reels and TikTok. A human editor picks the strongest moments, captions are human-reviewed including scripture references, and clips carry the church's own branding. Free preview cut from the church's latest sermon; US$99/month (files delivered) or US$149/month (we post and manage channels).",
+          "offers": [
+            { "@type": "Offer", "price": "99", "priceCurrency": "USD", "description": "Up to 5 sermons/month, 3-5 captioned clips each, files and titles delivered" },
+            { "@type": "Offer", "price": "149", "priceCurrency": "USD", "description": "Same output plus scheduled posting to church channels and a monthly reach report" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What do churches need to provide each week for sermon clips?", "acceptedAnswer": { "@type": "Answer", "text": "A link to the sermon stream — that's the entire weekly to-do. If the service isn't streamed, emailing the audio recording works too. KowhaiGoods handles everything else: picking the strongest moments, cutting vertical clips, adding human-reviewed captions with the church's branding, and delivering or posting them within 48 hours." } },
+            { "@type": "Question", "name": "How much does a sermon clipping service cost?", "acceptedAnswer": { "@type": "Answer", "text": "KowhaiGoods charges US$99 per month per church for up to 5 sermons a month with 3-5 captioned clips each (files and titles delivered for you to post), or US$149 per month if we also post to your YouTube, TikTok and Instagram on schedule and send a monthly reach report. No setup fee, no contracts, and the first preview is free." } },
+            { "@type": "Question", "name": "Are the captions on sermon clips accurate?", "acceptedAnswer": { "@type": "Answer", "text": "Every clip is human-reviewed before delivery. Scripture references, translations and names are checked against the sermon so the caption matches the Bible text actually preached — unlike AI clip apps, where captions are auto-generated and often misheard." } },
+            { "@type": "Question", "name": "Why use a done-for-you service instead of AI clip tools for church sermons?", "acceptedAnswer": { "@type": "Answer", "text": "AI clip apps (US$15-29/month) produce raw auto-crops with misheard captions, and someone on the church team still has to run them every week. A done-for-you service provides a human editor who picks moments worth sharing, fixes captions, applies the church's branding, and posts consistently — zero volunteer hours and no editing apps." } },
+            { "@type": "Question", "name": "Can sermon clips show our church's branding?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Clips carry the church's name, colours and caption style, consistent across every clip. The first free preview includes two style options to choose from." } },
+            { "@type": "Question", "name": "Do KowhaiGoods sermon clips work for any denomination?", "acceptedAnswer": { "@type": "Answer", "text": "All denominations. Clips are chosen to represent the sermon faithfully and never to sensationalise — context matters more than virality. Nothing is posted without the church's approval." } },
+            { "@type": "Question", "name": "How do I get a free sermon clip preview?", "acceptedAnswer": { "@type": "Answer", "text": "Email kowhaigoods@gmail.com with your church name and a link to your latest sermon. Within 48 hours you'll receive real clips cut from your own sermon, free, with no watermarks — yours to keep whether or not you become a customer." } }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="hero">
@@ -92,6 +138,18 @@
         <a class="cta secondary" href="#pricing">See pricing</a>
         <p class="microcopy">Real clips from your latest sermon · within 48 hours · yours to keep either way</p>
     </div>
+
+    <section>
+        <h2>See the style in 30 seconds</h2>
+        <p class="sub">A sample of our caption look, pacing and card branding.</p>
+        <div style="max-width:400px;margin:0 auto;">
+            <video controls preload="metadata" poster="/style-demo-poster.jpg" style="width:100%;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.14);">
+                <source src="/style-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p style="text-align:center;color:#7f8c8d;font-size:.85rem;margin-top:10px;">"Grove Community Church" is a placeholder — real clips carry <em>your</em> church's name and colours. The voice here is a synthetic stand-in; client clips use your actual sermon audio.</p>
+        </div>
+    </section>
 
     <section>
         <h2>How it works</h2>
@@ -116,6 +174,29 @@
     </section>
 
     <section>
+        <h2>Exactly what lands in your inbox</h2>
+        <p class="sub">Every sermon becomes a complete, post-ready package.</p>
+        <div class="spec-grid">
+            <div class="card">
+                <h3>3–5 vertical clips</h3>
+                <p>1080×1920 MP4s, 30–60 seconds each, cut from the strongest moments of the message.</p>
+            </div>
+            <div class="card">
+                <h3>Clean burned-in captions</h3>
+                <p>Large, readable, silently watchable — with scripture references and names checked by a human.</p>
+            </div>
+            <div class="card">
+                <h3>Hook titles & hashtags</h3>
+                <p>A scroll-stopping first line and researched hashtags for each clip, ready to paste.</p>
+            </div>
+            <div class="card">
+                <h3>Your church's look</h3>
+                <p>Your name and colours on every clip, consistent week to week. First previews include two style options.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
         <h2>Why churches use us instead of AI clip tools</h2>
         <p class="sub">AI clip apps give you raw auto-crops, misheard captions — and another app for a volunteer to run.</p>
         <div class="compare">
@@ -125,6 +206,38 @@
                 <li>Posted consistently every week — no volunteer rosters, no editing apps, no drift.</li>
                 <li>Clips chosen to represent the sermon faithfully, never to sensationalise.</li>
             </ul>
+        </div>
+        <div class="table-scroll">
+        <table class="compare">
+            <thead><tr><th></th><th>KowhaiGoods</th><th>AI clip apps</th><th>In-house volunteer</th></tr></thead>
+            <tbody>
+                <tr><td>Picks the moments</td><td class="good">Human editor</td><td class="bad">Algorithm guess</td><td class="bad">Whoever's free</td></tr>
+                <tr><td>Captions</td><td class="good">Human-reviewed, scripture-checked</td><td class="bad">Auto, often misheard</td><td>Varies by skill</td></tr>
+                <tr><td>Your church's branding</td><td class="good">Included</td><td class="bad">Watermark on free tiers</td><td>Manual</td></tr>
+                <tr><td>Posts every week</td><td class="good">On schedule, never drifts</td><td>You still do it</td><td class="bad">Roster gaps</td></tr>
+                <tr><td>Volunteer hours needed</td><td class="good">Zero</td><td>1–2 hrs/week</td><td class="bad">3–5 hrs/week</td></tr>
+                <tr><td>Cost</td><td class="good">US$99–149/mo flat</td><td>US$15–29 + your time</td><td>"Free" but unreliable</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>Built with care for ministry</h2>
+        <p class="sub">We handle the pulpit the way it deserves to be handled.</p>
+        <div class="grid3">
+            <div class="card">
+                <h3>Context over virality</h3>
+                <p>Clips are chosen to represent the sermon faithfully. We never cut a soundbite that misrepresents the message or embarrasses the preacher.</p>
+            </div>
+            <div class="card">
+                <h3>Scripture handled precisely</h3>
+                <p>References, translations and names are checked by a person, not an algorithm — the caption matches the Bible text you actually preached.</p>
+            </div>
+            <div class="card">
+                <h3>You approve everything</h3>
+                <p>Nothing posts without your sign-off. You see every clip before your congregation — or the internet — does.</p>
+            </div>
         </div>
     </section>
 
@@ -157,6 +270,20 @@
             </div>
         </div>
         <p class="pricing-note">The preview is a real clip cut from <em>your latest sermon</em> — no mockups, no watermarks, yours to keep either way.</p>
+        <div class="grid3" style="margin-top:30px;">
+            <div class="card" style="text-align:center;">
+                <h3>Preview first, pay second</h3>
+                <p>The free preview comes before any invoice. You only ever pay if you've already seen clips you're happy to post.</p>
+            </div>
+            <div class="card" style="text-align:center;">
+                <h3>48-hour turnaround</h3>
+                <p>Sermon link Sunday → clips in your inbox within 48 hours, every week. If we're ever late, that week is free.</p>
+            </div>
+            <div class="card" style="text-align:center;">
+                <h3>Cancel anytime, keep everything</h3>
+                <p>No contracts. Cancel with one email — every clip we've made stays yours, including the free preview.</p>
+            </div>
+        </div>
     </section>
 
     <section>
